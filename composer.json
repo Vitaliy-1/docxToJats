@@ -1,0 +1,23 @@
+{
+    "name": "doc/docx2jats",
+    "description": "DOCX to JATS XML converter",
+    "type": "library",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Vitaliy Bezsheiko",
+            "email": "vitaliybezsh@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.2",
+        "ext-zip": "^1.15",
+		"ext-dom": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "docx2jats\\": "src/docx2jats"
+        }
+    }
+}
