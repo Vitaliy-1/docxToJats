@@ -2,26 +2,39 @@
 
 use docx2jats\objectModel\DataObject;
 
+/**
+ * Class Par
+ * @package docx2jats\objectModel\body
+ * @brief represent paragraph in OOXML, includes: regular paragraph, lists, heading and other parapgraph styles
+ */
 class Par extends DataObject {
 	const DOCX_PAR_REGULAR = 1;
 	const DOCX_PAR_HEADING = 2;
+	const DOCX_PAR_LIST = 3;
 	
-	/* @var $type int */
-	private $type; // const
+	private $type = array(); // const
 	private $properties = array();
 	private $text = array();
-	private $headings = array("1", "2", "3", "4", "5", "6", "heading", "heading1", "heading2", "heading3", "heading4", "heading5", "heading6");
+	public static $headings = array("1", "2", "3", "4", "5", "6", "heading", "heading1", "heading2", "heading3", "heading4", "heading5", "heading6");
 	
-	/* @var $level int */
-	private $level;
+	/* @var $headingLevel int */
+	private $headingLevel;
+	
+	/* @var $numberingLevel int */
+	private $numberingLevel;
+	
+	/* @var $numberingId int */
+	private $numberingId;
 	
 	public function __construct(\DOMElement $domElement) {
 		parent::__construct($domElement);
 		$this->defineType();
-		$this->properties = $this->setProperty('w:pPr/child::node()');
+		$this->properties = $this->setProperties('w:pPr/child::node()');
 		$this->text = $this->setContent('w:r|w:hyperlink');
 		$this->type = $this->defineType();
-		$this->level = $this->setLevel();
+		$this->headingLevel = $this->setHeadingLevel();
+		$this->numberingLevel = $this->setNumberingLevel();
+		$this->numberingId = $this->setNumberingId();
 	}
 	
 	/**
@@ -40,7 +53,7 @@ class Par extends DataObject {
 	}
 	
 	/**
-	 * @return mixed
+	 * @return array
 	 */
 	public function getType() {
 		return $this->type;
@@ -67,16 +80,25 @@ class Par extends DataObject {
 	}
 	
 	/**
-	 * @return int
+	 * @return array
 	 */
 	private function defineType() {
-		$type = $this::DOCX_PAR_REGULAR;
+		$type = array();
 		$styles = $this->getXpath()->query('w:pPr/w:pStyle/@w:val', $this->getDomElement());
 		if ($this->isOnlyChildNode($styles)) {
-			if (in_array(strtolower($styles[0]->nodeValue), $this->headings)) {
-				$type = $this::DOCX_PAR_HEADING;
+			if (in_array(strtolower($styles[0]->nodeValue), self::$headings)) {
+				$type[] = self::DOCX_PAR_HEADING;
 			}
 			
+		}
+		
+		$numberingNode = $this->getXpath()->query('w:pPr/w:numPr', $this->getDomElement());
+		if ($this->isOnlyChildNode($numberingNode)) {
+			$type[] = self::DOCX_PAR_LIST;
+		}
+		
+		if (empty($type)) {
+			$type[] = self::DOCX_PAR_REGULAR;
 		}
 		
 		return $type;
@@ -85,10 +107,10 @@ class Par extends DataObject {
 	/**
 	 * @return int $level
 	 */
-	private function setLevel() {
+	private function setHeadingLevel() {
 		$level = 0;
 		$styleString = '';
-		if ($this->type === $this::DOCX_PAR_HEADING) {
+		if (in_array(self::DOCX_PAR_HEADING, $this->type )) {
 			$styles = $this->getXpath()->query('w:pPr/w:pStyle/@w:val', $this->getDomElement());
 			if ($this->isOnlyChildNode($styles)) {
 				$styleString = $styles[0]->nodeValue;
@@ -111,7 +133,62 @@ class Par extends DataObject {
 	/**
 	 * @return int
 	 */
-	public function getLevel(): int {
-		return $this->level;
+	public function getHeadingLevel(): int {
+		return $this->headingLevel;
+	}
+	
+	/**
+	 * @return int
+	 */
+	private function setNumberingLevel(): int {
+		$numberingLevel = 0;
+		$numberString = '';
+		if (in_array(self::DOCX_PAR_LIST, $this->type)) {
+			$numberNode = $this->getXpath()->query('w:pPr/w:numPr/w:ilvl/@w:val', $this->getDomElement());
+			if ($this->isOnlyChildNode($numberNode)) {
+				$numberString = $numberNode[0]->nodeValue;
+			}
+		}
+		
+		if (empty($numberString)) return $numberingLevel;
+		
+		$numberingLevel = intval($numberString);
+		
+		return $numberingLevel;
+	}
+	
+	/**
+	 * @return int
+	 */
+	public function getNumberingLevel(): int {
+		return $this->numberingLevel;
+	}
+	
+	/**
+	 * @return int
+	 */
+	private function setNumberingId(): int {
+		$numberingId = 0;
+		$numberString = '';
+		if (in_array(self::DOCX_PAR_LIST, $this->type)) {
+			$numberNode = $this->getXpath()->query('w:pPr/w:numPr/w:numId/@w:val', $this->getDomElement());
+			if ($this->isOnlyChildNode($numberNode)) {
+				$numberString = $numberNode[0]->nodeValue;
+			}
+		}
+		
+		if (empty($numberString)) return $numberingId;
+		
+		$numberingId = intval($numberString);
+		
+		return $numberingId;
+	}
+	
+	
+	/**
+	 * @return int
+	 */
+	public function getNumberingId(): int {
+		return $this->numberingId;
 	}
 }

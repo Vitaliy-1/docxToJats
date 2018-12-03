@@ -45,10 +45,7 @@
 				<w:pStyle w:val="Normal"/>
 				<w:ind w:firstLine="720"/>
 				<w:jc w:val="both"/>
-				<w:rPr>
-					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
-					<w:lang w:val="en-US"/>
-				</w:rPr>
+				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
 				<w:rPr>
@@ -147,6 +144,124 @@
 					sample size [10]. On the contrary, when using HR-QOL, Haverman L. et al. (2011) found significant
 					changes in the quality of life in children and adolescents with JIA [11].
 				</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Heading2"/>
+				<w:rPr></w:rPr>
+			</w:pPr>
+			<w:r>
+				<w:rPr></w:rPr>
+				<w:t>Heading 2</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Normal"/>
+				<w:numPr>
+					<w:ilvl w:val="0"/>
+					<w:numId w:val="7"/>
+				</w:numPr>
+				<w:jc w:val="both"/>
+				<w:rPr></w:rPr>
+			</w:pPr>
+			<w:r>
+				<w:rPr>
+					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+					<w:lang w:val="en-US"/>
+				</w:rPr>
+				<w:t>First</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Normal"/>
+				<w:numPr>
+					<w:ilvl w:val="0"/>
+					<w:numId w:val="7"/>
+				</w:numPr>
+				<w:jc w:val="both"/>
+				<w:rPr></w:rPr>
+			</w:pPr>
+			<w:r>
+				<w:rPr>
+					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+					<w:lang w:val="en-US"/>
+				</w:rPr>
+				<w:t>Second</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Normal"/>
+				<w:numPr>
+					<w:ilvl w:val="1"/>
+					<w:numId w:val="7"/>
+				</w:numPr>
+				<w:jc w:val="both"/>
+				<w:rPr></w:rPr>
+			</w:pPr>
+			<w:r>
+				<w:rPr>
+					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+					<w:lang w:val="en-US"/>
+				</w:rPr>
+				<w:t>Level 2 First</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Normal"/>
+				<w:numPr>
+					<w:ilvl w:val="1"/>
+					<w:numId w:val="7"/>
+				</w:numPr>
+				<w:jc w:val="both"/>
+				<w:rPr></w:rPr>
+			</w:pPr>
+			<w:r>
+				<w:rPr>
+					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+					<w:lang w:val="en-US"/>
+				</w:rPr>
+				<w:t>Level 2 Second</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Normal"/>
+				<w:numPr>
+					<w:ilvl w:val="0"/>
+					<w:numId w:val="7"/>
+				</w:numPr>
+				<w:jc w:val="both"/>
+				<w:rPr></w:rPr>
+			</w:pPr>
+			<w:r>
+				<w:rPr>
+					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+					<w:lang w:val="en-US"/>
+				</w:rPr>
+				<w:t>Third</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Normal"/>
+				<w:numPr>
+					<w:ilvl w:val="1"/>
+					<w:numId w:val="7"/>
+				</w:numPr>
+				<w:jc w:val="both"/>
+				<w:rPr></w:rPr>
+			</w:pPr>
+			<w:r>
+				<w:rPr>
+					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+					<w:lang w:val="en-US"/>
+				</w:rPr>
+				<w:t>Level 2 Third</w:t>
 			</w:r>
 		</w:p>
 		<w:p>
@@ -338,7 +453,7 @@
 				<w:rPr></w:rPr>
 				<w:fldChar w:fldCharType="separate"/>
 			</w:r>
-			<w:bookmarkStart w:id="0" w:name="__Fieldmark__32_4279585507"/>
+			<w:bookmarkStart w:id="0" w:name="__Fieldmark__39_712766526"/>
 			<w:r>
 				<w:rPr></w:rPr>
 			</w:r>
@@ -349,14 +464,23 @@
 				</w:rPr>
 				<w:t>(</w:t>
 			</w:r>
-			<w:bookmarkStart w:id="1" w:name="__Fieldmark__50_434484431"/>
+			<w:bookmarkStart w:id="1" w:name="__Fieldmark__38_2241033896"/>
 			<w:r>
 				<w:rPr>
 					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
 					<w:lang w:val="en-US"/>
 				</w:rPr>
-				<w:t>1)</w:t>
+				<w:t>1</w:t>
 			</w:r>
+			<w:bookmarkStart w:id="2" w:name="__Fieldmark__32_1225654907"/>
+			<w:r>
+				<w:rPr>
+					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+					<w:lang w:val="en-US"/>
+				</w:rPr>
+				<w:t>)</w:t>
+			</w:r>
+			<w:bookmarkStart w:id="3" w:name="__Fieldmark__32_4279585507"/>
 			<w:r>
 				<w:rPr></w:rPr>
 			</w:r>
@@ -364,8 +488,12 @@
 				<w:rPr></w:rPr>
 				<w:fldChar w:fldCharType="end"/>
 			</w:r>
+			<w:bookmarkStart w:id="4" w:name="__Fieldmark__50_434484431"/>
 			<w:bookmarkEnd w:id="0"/>
 			<w:bookmarkEnd w:id="1"/>
+			<w:bookmarkEnd w:id="2"/>
+			<w:bookmarkEnd w:id="3"/>
+			<w:bookmarkEnd w:id="4"/>
 			<w:r>
 				<w:rPr>
 					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
@@ -377,15 +505,27 @@
 		<w:p>
 			<w:pPr>
 				<w:pStyle w:val="Heading2"/>
-				<w:rPr>
-					<w:lang w:val="en-US"/>
-				</w:rPr>
+				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
 				<w:rPr>
 					<w:lang w:val="en-US"/>
 				</w:rPr>
 				<w:t>methods</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Heading3"/>
+				<w:numPr>
+					<w:ilvl w:val="2"/>
+					<w:numId w:val="2"/>
+				</w:numPr>
+				<w:rPr></w:rPr>
+			</w:pPr>
+			<w:r>
+				<w:rPr></w:rPr>
+				<w:t>First Method</w:t>
 			</w:r>
 		</w:p>
 		<w:p>
@@ -411,10 +551,7 @@
 		<w:p>
 			<w:pPr>
 				<w:pStyle w:val="Normal"/>
-				<w:rPr>
-					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
-					<w:lang w:val="en-US"/>
-				</w:rPr>
+				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
 				<w:rPr>
@@ -425,6 +562,37 @@
 					questionnaire (SF-36). We used licensed access containing (license No. QM037587) for Non-Profit
 					Academic Research from the Management of Scientific Grants and Research (OGSR) provided by
 					OptumInsight Life Sciences, Inc..
+				</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Heading3"/>
+				<w:numPr>
+					<w:ilvl w:val="2"/>
+					<w:numId w:val="2"/>
+				</w:numPr>
+				<w:rPr></w:rPr>
+			</w:pPr>
+			<w:r>
+				<w:rPr></w:rPr>
+				<w:t>Second Method</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="TextBody"/>
+				<w:rPr></w:rPr>
+			</w:pPr>
+			<w:r>
+				<w:rPr></w:rPr>
+				<w:t>Praesent vitae pretium nisi. Vestibulum vitae nunc quis velit volutpat faucibus. Donec ultrices,
+					enim sit amet maximus tincidunt, massa metus imperdiet mi, id finibus est nisl fermentum nibh. Donec
+					blandit, nunc quis vestibulum fringilla, libero orci varius justo, sit amet malesuada felis elit id
+					nisl. Mauris ornare sollicitudin tellus, in scelerisque ante pharetra a. Suspendisse non odio orci.
+					Pellentesque sem metus, mattis eget vulputate eget, semper ac leo. Lorem ipsum dolor sit amet,
+					consectetur adipiscing elit. Nullam mattis nibh porttitor elit blandit, at ullamcorper neque
+					dapibus.
 				</w:t>
 			</w:r>
 		</w:p>
@@ -2239,8 +2407,8 @@
 			<w:tblGrid>
 				<w:gridCol w:w="2065"/>
 				<w:gridCol w:w="2080"/>
-				<w:gridCol w:w="2080"/>
-				<w:gridCol w:w="2064"/>
+				<w:gridCol w:w="2079"/>
+				<w:gridCol w:w="2065"/>
 			</w:tblGrid>
 			<w:tr>
 				<w:trPr></w:trPr>
@@ -2308,7 +2476,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2080" w:type="dxa"/>
+						<w:tcW w:w="2079" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -2339,7 +2507,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2064" w:type="dxa"/>
+						<w:tcW w:w="2065" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -2447,7 +2615,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2080" w:type="dxa"/>
+						<w:tcW w:w="2079" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -2477,7 +2645,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2064" w:type="dxa"/>
+						<w:tcW w:w="2065" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -2594,7 +2762,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2080" w:type="dxa"/>
+						<w:tcW w:w="2079" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -2625,7 +2793,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2064" w:type="dxa"/>
+						<w:tcW w:w="2065" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -2742,7 +2910,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2080" w:type="dxa"/>
+						<w:tcW w:w="2079" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -2773,7 +2941,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2064" w:type="dxa"/>
+						<w:tcW w:w="2065" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -3194,7 +3362,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2080" w:type="dxa"/>
+						<w:tcW w:w="2079" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -3232,7 +3400,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2064" w:type="dxa"/>
+						<w:tcW w:w="2065" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -3343,7 +3511,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2080" w:type="dxa"/>
+						<w:tcW w:w="2079" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -3364,7 +3532,7 @@
 								<w:lang w:val="en-US"/>
 							</w:rPr>
 						</w:pPr>
-						<w:bookmarkStart w:id="2" w:name="__DdeLink__815_4279585507"/>
+						<w:bookmarkStart w:id="5" w:name="__DdeLink__815_4279585507"/>
 						<w:r>
 							<w:rPr>
 								<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman"
@@ -3393,12 +3561,12 @@
 							</w:rPr>
 							<w:t>17.1</w:t>
 						</w:r>
-						<w:bookmarkEnd w:id="2"/>
+						<w:bookmarkEnd w:id="5"/>
 					</w:p>
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2064" w:type="dxa"/>
+						<w:tcW w:w="2065" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -3519,7 +3687,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2080" w:type="dxa"/>
+						<w:tcW w:w="2079" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -3572,7 +3740,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2064" w:type="dxa"/>
+						<w:tcW w:w="2065" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -3697,7 +3865,7 @@
 								<w:lang w:val="en-US"/>
 							</w:rPr>
 						</w:pPr>
-						<w:bookmarkStart w:id="3" w:name="__DdeLink__823_4279585507"/>
+						<w:bookmarkStart w:id="6" w:name="__DdeLink__823_4279585507"/>
 						<w:r>
 							<w:rPr>
 								<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman"
@@ -3707,7 +3875,7 @@
 							</w:rPr>
 							<w:t>75.8</w:t>
 						</w:r>
-						<w:bookmarkEnd w:id="3"/>
+						<w:bookmarkEnd w:id="6"/>
 						<w:r>
 							<w:rPr>
 								<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman"
@@ -3815,8 +3983,8 @@
 								<w:lang w:val="en-US"/>
 							</w:rPr>
 						</w:pPr>
-						<w:bookmarkStart w:id="4" w:name="__DdeLink__827_4279585507"/>
-						<w:bookmarkStart w:id="5" w:name="__DdeLink__825_4279585507"/>
+						<w:bookmarkStart w:id="7" w:name="__DdeLink__825_4279585507"/>
+						<w:bookmarkStart w:id="8" w:name="__DdeLink__827_4279585507"/>
 						<w:r>
 							<w:rPr>
 								<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman"
@@ -3827,13 +3995,13 @@
 							</w:rPr>
 							<w:t>46.3±8.7</w:t>
 						</w:r>
-						<w:bookmarkEnd w:id="4"/>
-						<w:bookmarkEnd w:id="5"/>
+						<w:bookmarkEnd w:id="7"/>
+						<w:bookmarkEnd w:id="8"/>
 					</w:p>
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2080" w:type="dxa"/>
+						<w:tcW w:w="2079" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -3886,7 +4054,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2064" w:type="dxa"/>
+						<w:tcW w:w="2065" w:type="dxa"/>
 						<w:vMerge w:val="restart"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -3999,7 +4167,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2080" w:type="dxa"/>
+						<w:tcW w:w="2079" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -4052,7 +4220,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2064" w:type="dxa"/>
+						<w:tcW w:w="2065" w:type="dxa"/>
 						<w:vMerge w:val="continue"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -4137,7 +4305,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2080" w:type="dxa"/>
+						<w:tcW w:w="2079" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -4190,7 +4358,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2064" w:type="dxa"/>
+						<w:tcW w:w="2065" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -4287,7 +4455,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2080" w:type="dxa"/>
+						<w:tcW w:w="2079" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -4324,7 +4492,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2064" w:type="dxa"/>
+						<w:tcW w:w="2065" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -4448,7 +4616,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2080" w:type="dxa"/>
+						<w:tcW w:w="2079" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -4501,7 +4669,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2064" w:type="dxa"/>
+						<w:tcW w:w="2065" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -4626,7 +4794,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2080" w:type="dxa"/>
+						<w:tcW w:w="2079" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -4681,7 +4849,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2064" w:type="dxa"/>
+						<w:tcW w:w="2065" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -4728,11 +4896,23 @@
 					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
 					<w:lang w:val="en-US"/>
 				</w:rPr>
-				<w:t>* Notes: PF - physical functioning; RP - role functioning due to physical condition, BP- pain
-					intensity, GH - general health status, VT - vital activity, SF - social functioning, RE - role
-					function, conditioned by emotional state, MH - mental health, PCS - Physical well-being, PCS -
-					psychological well-being.
-				</w:t>
+				<w:t xml:space="preserve">* Notes: PF - physical functioning; RP - role functioning due to physical condition, BP- pain intensity, GH - general health status, VT - vital activity, SF - social functioning, RE - role function, conditioned by emotional state, MH - mental health, PCS - Physical well-being, </w:t>
+			</w:r>
+			<w:bookmarkStart w:id="9" w:name="__DdeLink__846_4279585507"/>
+			<w:r>
+				<w:rPr>
+					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+					<w:lang w:val="en-US"/>
+				</w:rPr>
+				<w:t>PCS - psychological well-being</w:t>
+			</w:r>
+			<w:bookmarkEnd w:id="9"/>
+			<w:r>
+				<w:rPr>
+					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+					<w:lang w:val="en-US"/>
+				</w:rPr>
+				<w:t>.</w:t>
 			</w:r>
 		</w:p>
 		<w:p>
@@ -4745,7 +4925,10 @@
 				</w:rPr>
 			</w:pPr>
 			<w:r>
-				<w:rPr></w:rPr>
+				<w:rPr>
+					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+					<w:lang w:val="en-US"/>
+				</w:rPr>
 			</w:r>
 		</w:p>
 		<w:p>
@@ -4783,7 +4966,7 @@
 			<w:tblGrid>
 				<w:gridCol w:w="2065"/>
 				<w:gridCol w:w="2080"/>
-				<w:gridCol w:w="2080"/>
+				<w:gridCol w:w="2079"/>
 				<w:gridCol w:w="2065"/>
 			</w:tblGrid>
 			<w:tr>
@@ -4858,7 +5041,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2080" w:type="dxa"/>
+						<w:tcW w:w="2079" w:type="dxa"/>
 						<w:vMerge w:val="restart"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -4876,6 +5059,7 @@
 							<w:jc w:val="center"/>
 							<w:rPr></w:rPr>
 						</w:pPr>
+						<w:bookmarkStart w:id="10" w:name="__DdeLink__844_4279585507"/>
 						<w:r>
 							<w:rPr>
 								<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman"
@@ -4883,17 +5067,9 @@
 								<w:color w:val="000000"/>
 								<w:lang w:val="en-US"/>
 							</w:rPr>
-							<w:t>80.</w:t>
+							<w:t>80.99</w:t>
 						</w:r>
-						<w:r>
-							<w:rPr>
-								<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman"
-								          w:hAnsi="Times New Roman"/>
-								<w:color w:val="000000"/>
-								<w:lang w:val="en-US"/>
-							</w:rPr>
-							<w:t>99</w:t>
-						</w:r>
+						<w:bookmarkEnd w:id="10"/>
 						<w:r>
 							<w:rPr>
 								<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman"
@@ -4911,16 +5087,7 @@
 								<w:color w:val="000000"/>
 								<w:lang w:val="en-US"/>
 							</w:rPr>
-							<w:t>18.2</w:t>
-						</w:r>
-						<w:r>
-							<w:rPr>
-								<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman"
-								          w:hAnsi="Times New Roman"/>
-								<w:color w:val="000000"/>
-								<w:lang w:val="en-US"/>
-							</w:rPr>
-							<w:t>9</w:t>
+							<w:t>18.29</w:t>
 						</w:r>
 					</w:p>
 					<w:p>
@@ -4929,7 +5096,7 @@
 							<w:jc w:val="center"/>
 							<w:rPr></w:rPr>
 						</w:pPr>
-						<w:bookmarkStart w:id="6" w:name="__DdeLink__842_4279585507"/>
+						<w:bookmarkStart w:id="11" w:name="__DdeLink__842_4279585507"/>
 						<w:r>
 							<w:rPr>
 								<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman"
@@ -4937,18 +5104,9 @@
 								<w:color w:val="000000"/>
 								<w:lang w:val="en-US"/>
 							</w:rPr>
-							<w:t>75.</w:t>
+							<w:t>75.99</w:t>
 						</w:r>
-						<w:r>
-							<w:rPr>
-								<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman"
-								          w:hAnsi="Times New Roman"/>
-								<w:color w:val="000000"/>
-								<w:lang w:val="en-US"/>
-							</w:rPr>
-							<w:t>99</w:t>
-						</w:r>
-						<w:bookmarkEnd w:id="6"/>
+						<w:bookmarkEnd w:id="11"/>
 						<w:r>
 							<w:rPr>
 								<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman"
@@ -4966,16 +5124,7 @@
 								<w:color w:val="000000"/>
 								<w:lang w:val="en-US"/>
 							</w:rPr>
-							<w:t>26.7</w:t>
-						</w:r>
-						<w:r>
-							<w:rPr>
-								<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman"
-								          w:hAnsi="Times New Roman"/>
-								<w:color w:val="000000"/>
-								<w:lang w:val="en-US"/>
-							</w:rPr>
-							<w:t>9</w:t>
+							<w:t>26.79</w:t>
 						</w:r>
 					</w:p>
 				</w:tc>
@@ -5072,7 +5221,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2080" w:type="dxa"/>
+						<w:tcW w:w="2079" w:type="dxa"/>
 						<w:vMerge w:val="continue"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -5209,7 +5358,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="2080" w:type="dxa"/>
+						<w:tcW w:w="2079" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -5234,16 +5383,7 @@
 								<w:color w:val="000000"/>
 								<w:lang w:val="en-US"/>
 							</w:rPr>
-							<w:t>68.</w:t>
-						</w:r>
-						<w:r>
-							<w:rPr>
-								<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman"
-								          w:hAnsi="Times New Roman"/>
-								<w:color w:val="000000"/>
-								<w:lang w:val="en-US"/>
-							</w:rPr>
-							<w:t>99</w:t>
+							<w:t>68.99</w:t>
 						</w:r>
 						<w:r>
 							<w:rPr>
@@ -5262,16 +5402,7 @@
 								<w:color w:val="000000"/>
 								<w:lang w:val="en-US"/>
 							</w:rPr>
-							<w:t>18.9</w:t>
-						</w:r>
-						<w:r>
-							<w:rPr>
-								<w:rFonts w:eastAsia="Times New Roman" w:ascii="Times New Roman"
-								          w:hAnsi="Times New Roman"/>
-								<w:color w:val="000000"/>
-								<w:lang w:val="en-US"/>
-							</w:rPr>
-							<w:t>9</w:t>
+							<w:t>18.99</w:t>
 						</w:r>
 					</w:p>
 				</w:tc>
@@ -5436,10 +5567,10 @@
 				<w:gridCol w:w="858"/>
 				<w:gridCol w:w="1132"/>
 				<w:gridCol w:w="850"/>
-				<w:gridCol w:w="995"/>
+				<w:gridCol w:w="998"/>
 				<w:gridCol w:w="1132"/>
-				<w:gridCol w:w="880"/>
-				<w:gridCol w:w="960"/>
+				<w:gridCol w:w="883"/>
+				<w:gridCol w:w="954"/>
 			</w:tblGrid>
 			<w:tr>
 				<w:trPr>
@@ -5690,7 +5821,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="995" w:type="dxa"/>
+						<w:tcW w:w="998" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -5760,7 +5891,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="880" w:type="dxa"/>
+						<w:tcW w:w="883" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -5795,7 +5926,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="960" w:type="dxa"/>
+						<w:tcW w:w="954" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -6107,7 +6238,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="995" w:type="dxa"/>
+						<w:tcW w:w="998" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -6183,7 +6314,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="880" w:type="dxa"/>
+						<w:tcW w:w="883" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -6219,7 +6350,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="960" w:type="dxa"/>
+						<w:tcW w:w="954" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -6532,7 +6663,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="995" w:type="dxa"/>
+						<w:tcW w:w="998" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -6608,7 +6739,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="880" w:type="dxa"/>
+						<w:tcW w:w="883" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -6644,7 +6775,7 @@
 				</w:tc>
 				<w:tc>
 					<w:tcPr>
-						<w:tcW w:w="960" w:type="dxa"/>
+						<w:tcW w:w="954" w:type="dxa"/>
 						<w:tcBorders>
 							<w:top w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
 							<w:left w:val="single" w:sz="4" w:space="0" w:color="00000A"/>
@@ -6803,15 +6934,27 @@
 		<w:p>
 			<w:pPr>
 				<w:pStyle w:val="Heading1"/>
-				<w:rPr>
-					<w:lang w:val="en-US"/>
-				</w:rPr>
+				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
 				<w:rPr>
 					<w:lang w:val="en-US"/>
 				</w:rPr>
 				<w:t>Discussion</w:t>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Heading3"/>
+				<w:numPr>
+					<w:ilvl w:val="2"/>
+					<w:numId w:val="1"/>
+				</w:numPr>
+				<w:rPr></w:rPr>
+			</w:pPr>
+			<w:r>
+				<w:rPr></w:rPr>
+				<w:t>Heading 3</w:t>
 			</w:r>
 		</w:p>
 		<w:p>
@@ -6848,7 +6991,7 @@
 				<w:pStyle w:val="Normal"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="3"/>
+					<w:numId w:val="5"/>
 				</w:numPr>
 				<w:jc w:val="both"/>
 				<w:rPr>
@@ -6856,12 +6999,21 @@
 					<w:lang w:val="en-US"/>
 				</w:rPr>
 			</w:pPr>
+			<w:bookmarkStart w:id="12" w:name="__DdeLink__888_1225654907"/>
 			<w:r>
 				<w:rPr>
 					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
 					<w:lang w:val="en-US"/>
 				</w:rPr>
-				<w:t>Our patients often received GCs, which reduced the activity of the disease.</w:t>
+				<w:t xml:space="preserve">Our patients </w:t>
+			</w:r>
+			<w:bookmarkEnd w:id="12"/>
+			<w:r>
+				<w:rPr>
+					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+					<w:lang w:val="en-US"/>
+				</w:rPr>
+				<w:t>often received GCs, which reduced the activity of the disease.</w:t>
 			</w:r>
 		</w:p>
 		<w:p>
@@ -6869,7 +7021,7 @@
 				<w:pStyle w:val="Normal"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="3"/>
+					<w:numId w:val="5"/>
 				</w:numPr>
 				<w:jc w:val="both"/>
 				<w:rPr>
@@ -6891,7 +7043,7 @@
 				<w:pStyle w:val="Normal"/>
 				<w:numPr>
 					<w:ilvl w:val="1"/>
-					<w:numId w:val="3"/>
+					<w:numId w:val="5"/>
 				</w:numPr>
 				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
@@ -6909,7 +7061,7 @@
 				<w:pStyle w:val="Normal"/>
 				<w:numPr>
 					<w:ilvl w:val="1"/>
-					<w:numId w:val="3"/>
+					<w:numId w:val="5"/>
 				</w:numPr>
 				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
@@ -6928,7 +7080,7 @@
 				<w:widowControl w:val="false"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="2"/>
+					<w:numId w:val="4"/>
 				</w:numPr>
 				<w:spacing w:before="0" w:after="240"/>
 				<w:jc w:val="both"/>
@@ -7072,14 +7224,11 @@
 				<w:widowControl w:val="false"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="2"/>
+					<w:numId w:val="6"/>
 				</w:numPr>
 				<w:spacing w:before="0" w:after="240"/>
 				<w:jc w:val="both"/>
-				<w:rPr>
-					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
-					<w:lang w:val="en-US"/>
-				</w:rPr>
+				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
 				<w:rPr>
@@ -7097,14 +7246,11 @@
 				<w:widowControl w:val="false"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="2"/>
+					<w:numId w:val="6"/>
 				</w:numPr>
 				<w:spacing w:before="0" w:after="240"/>
 				<w:jc w:val="both"/>
-				<w:rPr>
-					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
-					<w:lang w:val="en-US"/>
-				</w:rPr>
+				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
 				<w:rPr>
@@ -7121,14 +7267,11 @@
 				<w:widowControl w:val="false"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="2"/>
+					<w:numId w:val="6"/>
 				</w:numPr>
 				<w:spacing w:before="0" w:after="240"/>
 				<w:jc w:val="both"/>
-				<w:rPr>
-					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
-					<w:lang w:val="en-US"/>
-				</w:rPr>
+				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
 				<w:rPr>
@@ -7191,9 +7334,7 @@
 		<w:p>
 			<w:pPr>
 				<w:pStyle w:val="Normal"/>
-				<w:rPr>
-					<w:lang w:val="en-US"/>
-				</w:rPr>
+				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
 				<w:rPr></w:rPr>
@@ -7228,7 +7369,7 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Heading1"/>
+				<w:pStyle w:val="Normal"/>
 				<w:rPr>
 					<w:lang w:val="en-US"/>
 				</w:rPr>
@@ -7237,19 +7378,27 @@
 				<w:rPr>
 					<w:lang w:val="en-US"/>
 				</w:rPr>
+			</w:r>
+		</w:p>
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Bibliography"/>
+				<w:rPr>
+					<w:lang w:val="en-US"/>
+				</w:rPr>
+			</w:pPr>
+			<w:r>
+				<w:rPr></w:rPr>
 				<w:t>References</w:t>
 			</w:r>
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr>
 					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
 					<w:lang w:val="en-US"/>
@@ -7280,14 +7429,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -7334,14 +7480,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -7388,14 +7531,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -7442,14 +7582,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -7479,14 +7616,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -7533,14 +7667,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -7587,14 +7718,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -7641,14 +7769,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -7702,14 +7827,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -7763,14 +7885,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -7824,14 +7943,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -7878,18 +7994,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:tabs>
-					<w:tab w:val="left" w:pos="220" w:leader="none"/>
-					<w:tab w:val="left" w:pos="720" w:leader="none"/>
-				</w:tabs>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -7926,18 +8035,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:tabs>
-					<w:tab w:val="left" w:pos="220" w:leader="none"/>
-					<w:tab w:val="left" w:pos="720" w:leader="none"/>
-				</w:tabs>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -7974,18 +8076,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:tabs>
-					<w:tab w:val="left" w:pos="220" w:leader="none"/>
-					<w:tab w:val="left" w:pos="720" w:leader="none"/>
-				</w:tabs>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -8039,18 +8134,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:tabs>
-					<w:tab w:val="left" w:pos="220" w:leader="none"/>
-					<w:tab w:val="left" w:pos="720" w:leader="none"/>
-				</w:tabs>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -8104,18 +8192,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:tabs>
-					<w:tab w:val="left" w:pos="220" w:leader="none"/>
-					<w:tab w:val="left" w:pos="720" w:leader="none"/>
-				</w:tabs>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -8152,18 +8233,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:tabs>
-					<w:tab w:val="left" w:pos="220" w:leader="none"/>
-					<w:tab w:val="left" w:pos="720" w:leader="none"/>
-				</w:tabs>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -8200,10 +8274,10 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
 				<w:rPr></w:rPr>
 			</w:pPr>
@@ -8241,18 +8315,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:tabs>
-					<w:tab w:val="left" w:pos="220" w:leader="none"/>
-					<w:tab w:val="left" w:pos="720" w:leader="none"/>
-				</w:tabs>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -8289,18 +8356,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:tabs>
-					<w:tab w:val="left" w:pos="220" w:leader="none"/>
-					<w:tab w:val="left" w:pos="720" w:leader="none"/>
-				</w:tabs>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -8354,18 +8414,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:tabs>
-					<w:tab w:val="left" w:pos="220" w:leader="none"/>
-					<w:tab w:val="left" w:pos="720" w:leader="none"/>
-				</w:tabs>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -8383,11 +8436,7 @@
 				<w:t>Wipff J, Sparsa L, Lohse A, Quartier</w:t>
 			</w:r>
 			<w:r>
-				<w:rPr>
-					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
-					<w:position w:val="17"/>
-					<w:lang w:val="en-US"/>
-				</w:rPr>
+				<w:rPr></w:rPr>
 				<w:t xml:space="preserve"> </w:t>
 			</w:r>
 			<w:r>
@@ -8398,11 +8447,7 @@
 				<w:t>P, Kahan</w:t>
 			</w:r>
 			<w:r>
-				<w:rPr>
-					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
-					<w:position w:val="17"/>
-					<w:lang w:val="en-US"/>
-				</w:rPr>
+				<w:rPr></w:rPr>
 				<w:t xml:space="preserve"> </w:t>
 			</w:r>
 			<w:r>
@@ -8413,11 +8458,7 @@
 				<w:t>A, Deslandre</w:t>
 			</w:r>
 			<w:r>
-				<w:rPr>
-					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
-					<w:position w:val="17"/>
-					<w:lang w:val="en-US"/>
-				</w:rPr>
+				<w:rPr></w:rPr>
 				<w:t xml:space="preserve"> </w:t>
 			</w:r>
 			<w:r>
@@ -8464,14 +8505,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -8525,14 +8563,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -8586,14 +8621,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -8647,14 +8679,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -8708,14 +8737,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -8769,14 +8795,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -8830,14 +8853,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -8891,14 +8911,11 @@
 		</w:p>
 		<w:p>
 			<w:pPr>
-				<w:pStyle w:val="Normal"/>
-				<w:widowControl w:val="false"/>
+				<w:pStyle w:val="Bibliography"/>
 				<w:numPr>
 					<w:ilvl w:val="0"/>
-					<w:numId w:val="1"/>
+					<w:numId w:val="3"/>
 				</w:numPr>
-				<w:spacing w:before="0" w:after="240"/>
-				<w:jc w:val="both"/>
 				<w:rPr></w:rPr>
 			</w:pPr>
 			<w:r>
@@ -8956,7 +8973,7 @@
 					<w:docPartGallery w:val="Bibliographies"/>
 					<w:docPartUnique w:val="true"/>
 				</w:docPartObj>
-				<w:id w:val="1146539315"/>
+				<w:id w:val="1321763839"/>
 			</w:sdtPr>
 			<w:sdtContent>
 				<w:p>
@@ -9043,11 +9060,65 @@
 					</w:r>
 					<w:r>
 						<w:rPr></w:rPr>
-						<w:t>, стр. 4-12</w:t>
+						<w:t>, стр. 4</w:t>
 					</w:r>
 					<w:r>
 						<w:rPr></w:rPr>
 						<w:fldChar w:fldCharType="end"/>
+					</w:r>
+				</w:p>
+				<w:p>
+					<w:pPr>
+						<w:pStyle w:val="Normal"/>
+						<w:rPr></w:rPr>
+					</w:pPr>
+					<w:r>
+						<w:rPr></w:rPr>
+					</w:r>
+				</w:p>
+				<w:p>
+					<w:pPr>
+						<w:pStyle w:val="Normal"/>
+						<w:rPr></w:rPr>
+					</w:pPr>
+					<w:r>
+						<w:rPr></w:rPr>
+					</w:r>
+				</w:p>
+				<w:p>
+					<w:pPr>
+						<w:pStyle w:val="Normal"/>
+						<w:rPr></w:rPr>
+					</w:pPr>
+					<w:r>
+						<w:rPr></w:rPr>
+					</w:r>
+				</w:p>
+				<w:p>
+					<w:pPr>
+						<w:pStyle w:val="Normal"/>
+						<w:rPr></w:rPr>
+					</w:pPr>
+					<w:r>
+						<w:rPr></w:rPr>
+					</w:r>
+				</w:p>
+				<w:p>
+					<w:pPr>
+						<w:pStyle w:val="Normal"/>
+						<w:rPr></w:rPr>
+					</w:pPr>
+					<w:r>
+						<w:rPr></w:rPr>
+					</w:r>
+				</w:p>
+				<w:p>
+					<w:pPr>
+						<w:pStyle w:val="Normal"/>
+						<w:rPr></w:rPr>
+					</w:pPr>
+					<w:r>
+						<w:rPr></w:rPr>
 					</w:r>
 				</w:p>
 				<w:p>
@@ -9102,8 +9173,8 @@
 				</w:rPr>
 				<w:t>Zotero</w:t>
 			</w:r>
-			<w:bookmarkStart w:id="7" w:name="_GoBack"/>
-			<w:bookmarkEnd w:id="7"/>
+			<w:bookmarkStart w:id="13" w:name="_GoBack"/>
+			<w:bookmarkEnd w:id="13"/>
 		</w:p>
 		<w:p>
 			<w:pPr>
@@ -9123,7 +9194,7 @@
 				<w:rPr></w:rPr>
 				<w:fldChar w:fldCharType="separate"/>
 			</w:r>
-			<w:bookmarkStart w:id="8" w:name="__Fieldmark__803_4279585507"/>
+			<w:bookmarkStart w:id="14" w:name="__Fieldmark__883_712766526"/>
 			<w:r>
 				<w:rPr></w:rPr>
 			</w:r>
@@ -9134,14 +9205,36 @@
 				</w:rPr>
 				<w:t>1</w:t>
 			</w:r>
-			<w:bookmarkStart w:id="9" w:name="__Fieldmark__1213_434484431"/>
+			<w:bookmarkStart w:id="15" w:name="__Fieldmark__879_2241033896"/>
 			<w:r>
 				<w:rPr>
 					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
 					<w:lang w:val="en-US"/>
 				</w:rPr>
-				<w:t xml:space="preserve">. </w:t>
+				<w:t>.</w:t>
+			</w:r>
+			<w:bookmarkStart w:id="16" w:name="__Fieldmark__872_1225654907"/>
+			<w:r>
+				<w:rPr>
+					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+					<w:lang w:val="en-US"/>
+				</w:rPr>
+				<w:t xml:space="preserve"> </w:t>
+			</w:r>
+			<w:bookmarkStart w:id="17" w:name="__Fieldmark__803_4279585507"/>
+			<w:r>
+				<w:rPr>
+					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+					<w:lang w:val="en-US"/>
+				</w:rPr>
 				<w:tab/>
+			</w:r>
+			<w:bookmarkStart w:id="18" w:name="__Fieldmark__1213_434484431"/>
+			<w:r>
+				<w:rPr>
+					<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman"/>
+					<w:lang w:val="en-US"/>
+				</w:rPr>
 				<w:t xml:space="preserve">Chandler V. Google and suicides: what can we learn about the use of internet to prevent suicides? </w:t>
 			</w:r>
 			<w:r>
@@ -9157,8 +9250,11 @@
 				<w:rPr></w:rPr>
 				<w:fldChar w:fldCharType="end"/>
 			</w:r>
-			<w:bookmarkEnd w:id="8"/>
-			<w:bookmarkEnd w:id="9"/>
+			<w:bookmarkEnd w:id="14"/>
+			<w:bookmarkEnd w:id="15"/>
+			<w:bookmarkEnd w:id="16"/>
+			<w:bookmarkEnd w:id="17"/>
+			<w:bookmarkEnd w:id="18"/>
 		</w:p>
 		<w:p>
 			<w:pPr>

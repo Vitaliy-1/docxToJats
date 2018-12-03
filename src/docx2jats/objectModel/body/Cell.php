@@ -25,8 +25,14 @@ class Cell extends DataObject {
 		$this->cellNumber = $cellNumber;
 		$this->isMerged = $this->defineMerged();
 		$this->extractRowspanNumber();
+		$this->colspan = $this->extractColspanNumber();
+		$this->paragraphs = $this->setParagraphs();
+		$this->properties = $this->setProperties('w:tcPr');
 	}
 	
+	/**
+	 * @return bool
+	 */
 	public function defineMerged(): bool {
 		$mergeNodes = $this->getXpath()->query('w:tcPr/w:vMerge', $this->getDomElement());
 		
@@ -37,7 +43,10 @@ class Cell extends DataObject {
 		return true;
 	}
 	
-	private function extractRowspanNumber() {
+	/**
+	 * @return void
+	 */
+	private function extractRowspanNumber(): void {
 		$rowMergedNode = $this->getXpath()->query('w:tcPr/w:vMerge[@w:val=\'restart\']', $this->getDomElement());
 		$this->rowspan = 1;
 		
@@ -46,7 +55,11 @@ class Cell extends DataObject {
 		}
 	}
 	
-	private function extractRowspanRecursion(\DOMElement $node) {
+	/**
+	 * @param \DOMElement $node
+	 * @return void
+	 */
+	private function extractRowspanRecursion(\DOMElement $node): void {
 		$cellNodeListInNextRow = $this->getXpath()->query('parent::w:tr/following-sibling::w:tr[1]/w:tc', $node);
 		
 		
@@ -78,5 +91,18 @@ class Cell extends DataObject {
 				$this->extractRowspanRecursion($mergedNode);
 			}
 		}
+	}
+	
+	/**
+	 * @return int
+	 */
+	private function extractColspanNumber(): int {
+		$colspan = 1;
+		
+		$colspanAttr = $this->getXpath()->query('w:tcPr/w:gridSpan/@w:val', $this->getDomElement());
+		if ($this->isOnlyChildNode($colspanAttr)) {
+			$colspan = $colspanAttr[0]->nodeValue;
+		}
+		return $colspan;
 	}
 }

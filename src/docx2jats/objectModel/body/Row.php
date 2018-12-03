@@ -10,7 +10,7 @@ class Row extends DataObject {
 	
 	public function __construct(\DOMElement $domElement) {
 		parent::__construct($domElement);
-		$this->properties = $this->setProperty('w:trPr/child::node()');
+		$this->properties = $this->setProperties('w:trPr/child::node()');
 		$this->cells = $this->setContent('w:tc');
 	}
 	

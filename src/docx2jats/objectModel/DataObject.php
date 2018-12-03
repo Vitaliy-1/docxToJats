@@ -2,11 +2,18 @@
 
 use docx2jats\objectModel\Document;
 use docx2jats\objectModel\body\Text;
+use docx2jats\objectModel\body\Par;
 
 abstract class DataObject {
 	
 	private $domElement;
 	private $xpath;
+	
+	/* @var $flatSectionId int */
+	private $flatSectionId;
+	
+	/* @var $dimensionalSectionId array */
+	private $dimensionalSectionId = array();
 	
 	public function __construct(\DOMElement $domElement)   {
 		$this->domElement = $domElement;
@@ -17,7 +24,7 @@ abstract class DataObject {
 		return $this->xpath;
 	}
 	
-	protected function setProperty(string $xpathExpression): array {
+	protected function setProperties(string $xpathExpression): array {
 		$styleNodes = $this->getXpath()->evaluate($xpathExpression, $this->domElement);
 		$properties = $this->extractPropertyRecursion($styleNodes);
 		
@@ -61,5 +68,48 @@ abstract class DataObject {
 			}
 		}
 		return $properties;
+	}
+	
+	/**
+	 * @return array
+	 */
+	protected function setParagraphs(): array {
+		$content = array();
+		
+		$parNodes = $this->getXpath()->query('w:p', $this->getDomElement());
+		foreach ($parNodes as $parNode) {
+			$par = new Par($parNode);
+			$content[] = $par;
+		}
+		
+		return $content;
+	}
+	
+	/**
+	 * @param $flatSectionId
+	 */
+	public function setFlatSectionId($flatSectionId): void {
+		$this->flatSectionId = intval($flatSectionId);
+	}
+	
+	/**
+	 * @return int
+	 */
+	public function getFlatSectionId(): int {
+		return $this->flatSectionId;
+	}
+	
+	/**
+	 * @param array $dimensionalSectionId
+	 */
+	public function setDimensionalSectionId(array $dimensionalSectionId): void {
+		$this->dimensionalSectionId = array_filter($dimensionalSectionId);
+	}
+	
+	/**
+	 * @return array
+	 */
+	public function getDimensionalSectionId(): array {
+		return $this->dimensionalSectionId;
 	}
 }
