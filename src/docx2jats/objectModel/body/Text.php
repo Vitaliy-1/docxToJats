@@ -69,9 +69,9 @@ class Text extends DataObject {
 					if ($property->hasAttribute('w:val')) {
 						$attrValue = $property->getAttribute('w:val');
 						if ($attrValue === "superscript") {
-							$type = $this::DOCX_TEXT_SUPERSCRIPT;
+							$type[] = $this::DOCX_TEXT_SUPERSCRIPT;
 						} elseif ($attrValue === "subscript") {
-							$type = $this::DOCX_TEXT_SUBSCRIPT;
+							$type[] = $this::DOCX_TEXT_SUBSCRIPT;
 						}
 					}
 					break;
@@ -86,5 +86,12 @@ class Text extends DataObject {
 	
 	public function addType(string $type): void {
 		$this->type[] = $type;
+	}
+	
+	/**
+	 * @return array
+	 */
+	public function getType(): array {
+		return $this->type;
 	}
 }

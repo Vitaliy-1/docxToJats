@@ -105,4 +105,25 @@ class Cell extends DataObject {
 		}
 		return $colspan;
 	}
+	
+	/**
+	 * @return array
+	 */
+	public function getContent(): array {
+		return $this->paragraphs;
+	}
+	
+	/**
+	 * @return int
+	 */
+	public function getColspan(): int {
+		return $this->colspan;
+	}
+	
+	/**
+	 * @return int
+	 */
+	public function getRowspan(): int {
+		return $this->rowspan;
+	}
 }

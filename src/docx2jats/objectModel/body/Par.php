@@ -11,6 +11,10 @@ class Par extends DataObject {
 	const DOCX_PAR_REGULAR = 1;
 	const DOCX_PAR_HEADING = 2;
 	const DOCX_PAR_LIST = 3;
+	const DOCX_LIST_START = 'listStart';
+	const DOCX_LIST_END = 'listEnd';
+	const DOCX_LIST_HAS_SUBLIST = 'hasSublist';
+	const DOCX_LIST_ITEM_ID = 'itemId';
 	
 	private $type = array(); // const
 	private $properties = array();
@@ -26,6 +30,8 @@ class Par extends DataObject {
 	/* @var $numberingId int */
 	private $numberingId;
 	
+	private $numberingItemProp = array();
+	
 	public function __construct(\DOMElement $domElement) {
 		parent::__construct($domElement);
 		$this->defineType();
@@ -35,6 +41,7 @@ class Par extends DataObject {
 		$this->headingLevel = $this->setHeadingLevel();
 		$this->numberingLevel = $this->setNumberingLevel();
 		$this->numberingId = $this->setNumberingId();
+		$this->numberingItemProp = $this->setNumberingItemProp();
 	}
 	
 	/**
@@ -190,5 +197,65 @@ class Par extends DataObject {
 	 */
 	public function getNumberingId(): int {
 		return $this->numberingId;
+	}
+	
+	/**
+	 * @return array
+	 */
+	private function setNumberingItemProp(): array {
+		
+		$propArray = array();
+		$itemDimensionalId = array_fill(0, $this->getNumberingLevel()+1, 0);
+		
+		if (!in_array(self::DOCX_PAR_LIST, $this->getType())) return $propArray;
+		
+		$propArray = array(self::DOCX_LIST_START => false, self::DOCX_LIST_END => false, self::DOCX_LIST_HAS_SUBLIST => false, self::DOCX_LIST_ITEM_ID => $itemDimensionalId);
+		
+		$numberNode = $this->getXpath()->query('w:pPr/w:numPr/w:ilvl/@w:val', $this->getDomElement())[0];
+		$number = intval($numberNode->nodeValue);
+		
+		// Properties based on the previous node's level
+		$prevNumberNode = $this->getXpath()->query('preceding-sibling::w:p[1]/w:pPr/w:numPr/w:ilvl/@w:val', $this->getDomElement());
+		if ($this->isOnlyChildNode($prevNumberNode)) {
+			$prevNumber =  intval($prevNumberNode[0]->nodeValue);
+			if ($prevNumber < $number) $propArray[self::DOCX_LIST_START] = true;
+		} else {
+			$propArray[self::DOCX_LIST_START] = true;
+		}
+		
+		// Properties based on the following node's level
+		$nextNumberNode = $this->getXpath()->query('following-sibling::w:p[1]/w:pPr/w:numPr/w:ilvl/@w:val', $this->getDomElement());
+		if ($this->isOnlyChildNode($nextNumberNode)) {
+			$nextNumber = intval($nextNumberNode[0]->nodeValue);
+			if ($nextNumber < $number) $propArray[self::DOCX_LIST_END] = true;
+			if ($nextNumber > $number) $propArray[self::DOCX_LIST_HAS_SUBLIST] = true;
+		} else {
+			$propArray[self::DOCX_LIST_END] = true;
+		}
+		
+		// Determining dimensional ID based on Node's level and the number of preceding nodes on the same level and levels above
+		
+		$numberingLevel = $this->getNumberingLevel();
+		while (!($numberingLevel < 0)) {
+			$previousSiblingSameList = $this->getXpath()->query('preceding-sibling::w:p/w:pPr/w:numPr/w:numId[@w:val="' . $this->getNumberingId() . '"]', $this->getDomElement());
+			$countSameLevel = 0;
+			if (count($previousSiblingSameList) > 0) {
+				foreach ($previousSiblingSameList as $sameListItem) {
+					$previousSiblingSameId = $this->getXpath()->query('parent::w:numPr/w:ilvl[@w:val="' . $numberingLevel . '"]', $sameListItem);
+					if ($this->isOnlyChildNode($previousSiblingSameId)) $countSameLevel++;
+				}
+			}
+			
+			$itemDimensionalId[$numberingLevel] = $countSameLevel;
+			$numberingLevel--;
+		}
+		
+		$propArray[self::DOCX_LIST_ITEM_ID] = $itemDimensionalId;
+		
+		return $propArray;
+	}
+	
+	public function getNumberingItemProp() {
+		return $this->numberingItemProp;
 	}
 }

@@ -40,4 +40,8 @@ class Row extends DataObject {
 		
 		return $content;
 	}
+	
+	public function getContent() {
+		return $this->cells;
+	}
 }
