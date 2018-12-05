@@ -67,281 +67,383 @@
     <sec id="sec-4">
       <title>Results</title>
       <p>There was conducted an analysis of demographic and anthropometric data from 89 young patients with JIA and 25 healthy volunteers (Table 1). The mean age of patients was 19.4 ± 1.8 years, which did not significantly differ from the mean age in control group. The average duration of the disease was 8.7 ± 5.1 years and the average age of the disease onset - 10.2 ± 4.9 years. The mean time from the disease’s onset to the diagnosis was estimeated at 15.6 ± 25.9 months.</p>
+      <table>
+        <tr>
+          <td colspan="2">
+            <p>2 colspans</p>
+          </td>
+          <td colspan="2" rowspan="2">
+            <p>2 colspans 2 rowspans</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p></p>
+          </td>
+          <td>
+            <p></p>
+          </td>
+          <td colspan="2">
+            <p></p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" rowspan="3">
+            <p>2 colspans 3 colspans 3 paragpraphs</p>
+            <p>
+              <bold>2nd bold paraphrai with </bold>
+              <bold>
+                <italic>italic</italic>
+              </bold>
+            </p>
+            <p>
+              <bold>
+                <italic>3rd bold italic with </italic>
+              </bold>
+              <bold>
+                <italic>
+                  <sup>superscript</sup>
+                </italic>
+              </bold>
+            </p>
+          </td>
+          <td>
+            <p>1</p>
+          </td>
+          <td>
+            <p>1</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <p></p>
+          </td>
+          <td>
+            <p>1</p>
+          </td>
+          <td>
+            <p>1</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <p></p>
+          </td>
+          <td>
+            <p>1</p>
+          </td>
+          <td>
+            <p>1</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <p>2 colspans</p>
+          </td>
+          <td>
+            <p>1 colspan</p>
+          </td>
+          <td>
+            <p>1 colspan</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <p>4 colspans</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p></p>
+          </td>
+          <td>
+            <p></p>
+          </td>
+          <td>
+            <p></p>
+          </td>
+          <td>
+            <p></p>
+          </td>
+        </tr>
+      </table>
+      <p></p>
       <p>The oligoarthritis form of JIA was diagnosed in 34 patients, including 20 patients with persistent and 14 with common form. The polyarthritis variant was found in 24 patients, from whom 10 had seropositive and 14 had seronegative polyarthritis. Enthesitis-related arthritis and psoriatic arthritis were diagnosed in 18 patients, and systemic JIA - in 13 patients.</p>
       <p>Most patients (67.4%) had previously received glucocorticoids (GCs) before baseline period, and at the time of observation, only 27% received GCs. 14 patients received only NSAIDs. 75 patients received DMARD, including methotrexate (n=55), plaquenil (n=12), sulfasalazine (n=6), azathioprine (n=2). 23 patients received immunobiological therapy before or at the time of examination; 19 patients were prescribed monoclonal antibodies to the TNF-19 (etanercept - 16 patients, adalimumab - 3 patients), 2 - tocylumizabac, and remaining 2 - rituximab. Remission was diagnosed in 37 (41.6%) patients with a history of JIA.</p>
       <p>Table 1. Demographic characteristics of patients with JIA.</p>
       <table>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p></p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Patients with JIA (n=89)</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Sex (M/F)</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>41/48 (control group -12/13</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Middle age </p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>19.4±1.8 (control group - 20.1±1.9)</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Duration of the disease, years</p>
             <p></p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>8.7±5.1</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Age at onset of JIA, years</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>10.2±4.9</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Time from onset to the diagnosis, months.</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>15.6±25.9</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Persistent oligoarthritis</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>20 (22.5%)</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Common oligoarthritis</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>14 (15.7%)</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Polyarthritis RF +</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>10 (11.2%)</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Polyarthritis RF -</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>14 (15.7%)</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Enthesitis-related arthritis + psoriatic arthritis</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>18 (16.9%)</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Systemic JIA</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>13 (14.6%)</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>GCs took earlier / at the moment</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>60 (67.4%)/24 (27%)</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Remission</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>37 (41.6%)</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>NSAIDs</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>14</p>
           </td>
         </tr>
         <tr>
-          <td colspan="2" rowspan="1">
+          <td colspan="2">
             <p>DMARD (n=75)</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Methotrexate</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>55/75</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Plaquenil</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>12/75</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Sulfasalazine</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>6/75</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Azathioprine</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>2/75</p>
           </td>
         </tr>
         <tr>
-          <td colspan="2" rowspan="1">
+          <td colspan="2">
             <p>Immunobiology (n=23)</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Anti-TNF (ETA / ADA))</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>19/23 (16/3)</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Tocilizumab</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>2/23</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Rituximab</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>2/23</p>
           </td>
         </tr>
       </table>
+      <p>Table 1: This is caption</p>
       <p></p>
       <p>All patients from JIA and control group received quality assessment questionnaires SF-36 and functional status HAQ. The results of the evaluation are presented in Table 2.</p>
       <p></p>
       <p>Table 2. Quality of life in young patients with JIA and control group</p>
       <table>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Indexes</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Patients with JIA (n=89)</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>Control group (n=25)</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>p</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>HAQ</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>0.3±0.4</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p></p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p></p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>VAS patient</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>34.6±23.3</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p></p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p></p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>VAS doctor</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>27.9±24.3</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p></p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p></p>
           </td>
         </tr>
         <tr>
-          <td colspan="4" rowspan="1">
+          <td colspan="4">
             <p>SF- 36</p>
           </td>
         </tr>
         <tr>
-          <td colspan="4" rowspan="1">
+          <td colspan="4">
             <p>SF-36 physical indexes</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>
               <bold>PF</bold>
             </p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>
               <bold>74.3± 20.9</bold>
             </p>
           </td>
-          <td colspan="2" rowspan="1">
+          <td colspan="2">
             <p>
               <bold>94.7±8.7</bold>
             </p>
@@ -351,80 +453,80 @@
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>
               <bold>RF</bold>
             </p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>
               <bold>64.6±29.9</bold>
             </p>
           </td>
-          <td colspan="2" rowspan="1">
+          <td colspan="2">
             <p>
               <bold>83.8±19.5 0.02</bold>
             </p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>
               <bold>BP</bold>
             </p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>
               <bold>59.0±24.2</bold>
             </p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>
               <bold>84.5±21.6</bold>
             </p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>
               <bold>0.0002</bold>
             </p>
           </td>
         </tr>
         <tr>
-          <td colspan="2" rowspan="1">
+          <td colspan="2">
             <p>GH</p>
             <p>56.5±22.6</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>60.1±17.1</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>0.54</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>VT</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>58.2±19.1</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>59.8±20.0</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>0.77</p>
           </td>
         </tr>
         <tr>
-          <td colspan="4" rowspan="1">
+          <td colspan="4">
             <p>SF-36 psychological indexes</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>SF</p>
           </td>
-          <td colspan="1" rowspan="4">
+          <td rowspan="4">
             <p>75.8±21.2</p>
             <p>69.2±33.8</p>
             <p>69.3±18.6</p>
@@ -432,87 +534,87 @@
               <bold>46.3±8.7</bold>
             </p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>80.5±18.2</p>
           </td>
-          <td colspan="1" rowspan="2">
+          <td rowspan="2">
             <p>0.41</p>
             <p>0.52</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>RE</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p></p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>75.0±26.7</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p></p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>MH</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p></p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>68.4±18.9</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>0.86</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>
               <bold>PCS</bold>
             </p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p></p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>
               <bold>55.7±6.9</bold>
             </p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>
               <bold>0.0001</bold>
             </p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>MCS</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>47.0±10.5</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>45.1±11.7</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>0.52</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>PHQ-9</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>5.8 ±5.5</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>4.3 ±3.1</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>0.12</p>
           </td>
         </tr>
@@ -522,42 +624,42 @@
       <p></p>
       <table>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>HAQ</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>0.3±0.4</p>
           </td>
-          <td colspan="1" rowspan="2">
+          <td>
             <p>80.99±18.29</p>
             <p>75.99±26.79</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>34.55</p>
           </td>
         </tr>
         <tr>
-          <td colspan="2" rowspan="1">
+          <td colspan="2">
             <p>VAS patient - 34.6±23.3</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p></p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>32.33</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>VAS doctor</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>27.9±24.3</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>68.99±18.99</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>26.55</p>
           </td>
         </tr>
@@ -569,107 +671,107 @@
       <p>Table 3. Communication of functional activity with quality of life.</p>
       <table>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p> </p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>PCS</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>MCS</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>PF</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>RF</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>BP</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>GH</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>VT</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>SF</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>RE</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>MH</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p> HAQ</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>-0.59</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>-0.25</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>-0.56</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>-0.32</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>-0.60</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>-0.40</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>-0.46</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>-0.48</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>-0.08</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>-0.42</p>
           </td>
         </tr>
         <tr>
-          <td colspan="1" rowspan="1">
+          <td>
             <p> P</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>&lt;0.001</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>0.035</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>&lt;0.001</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>0.006</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>&lt;0.001</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>0.001</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>&lt;0.001</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>&lt;0.001</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>НД</p>
           </td>
-          <td colspan="1" rowspan="1">
+          <td>
             <p>&lt;0.001</p>
           </td>
         </tr>

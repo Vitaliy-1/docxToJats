@@ -13,8 +13,13 @@ class Cell extends Element {
 		
 		$colspan = $dataObject->getColspan();
 		$rowspan = $dataObject->getRowspan();
-		$this->setAttribute('colspan', $colspan);
-		$this->setAttribute('rowspan', $rowspan);
+		if ($colspan > 1) {
+			$this->setAttribute('colspan', $colspan);
+		}
+		
+		if ($rowspan > 1) {
+			$this->setAttribute('rowspan', $rowspan);
+		}
 		
 		foreach ($dataObject->getContent() as $content) {
 			$par = new Par($content);

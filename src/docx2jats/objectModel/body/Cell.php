@@ -24,8 +24,8 @@ class Cell extends DataObject {
 		
 		$this->cellNumber = $cellNumber;
 		$this->isMerged = $this->defineMerged();
-		$this->extractRowspanNumber();
 		$this->colspan = $this->extractColspanNumber();
+		$this->extractRowspanNumber();
 		$this->paragraphs = $this->setParagraphs();
 		$this->properties = $this->setProperties('w:tcPr');
 	}
@@ -72,14 +72,17 @@ class Cell extends DataObject {
 			if ($colspanNode->count() == 0) {
 				$numberOfCells ++;
 			} else {
-				$numberOfCells += intval($colspanNode[0]->nodeValue);
+				$numberOfCells += intval($colspanNode[0]->nodeValue) - 1;
 			}
 			
+			/*
+			echo $this->getColspan();
+			echo " : " . $numberOfCells . "-" . $this->cellNumber . "\n";
+			*/
 			if ($numberOfCells == $this->cellNumber) {
 				$mergedNode = $cellNodeInNextRow;
 				break;
 			}
-			
 		}
 		
 		// check if the node is actually merged
