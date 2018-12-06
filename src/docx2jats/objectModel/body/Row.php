@@ -16,7 +16,6 @@ class Row extends DataObject {
 	
 	private function setContent(string $xpathExpression) {
 		$content = array();
-		
 		$contentNodes = $this->getXpath()->query($xpathExpression, $this->getDomElement());
 		if ($contentNodes->count() > 0) {
 			foreach ($contentNodes as $contentNode) {
@@ -32,9 +31,12 @@ class Row extends DataObject {
 						$cellNumber += intval($colspan[0]->nodeValue);
 					}
 				}
-				
-				$cell = new Cell($contentNode, $cellNumber);
-				$content[] = $cell;
+				// Omit merged nodes
+				$colspansMerged = $this->getXpath()->query('w:tcPr/w:vMerge[@w:val="continue"]', $contentNode);
+				if (!$colspansMerged->count() > 0) {
+					$cell = new Cell($contentNode, $cellNumber);
+					$content[] = $cell;
+				}
 			}
 		}
 		

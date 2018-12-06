@@ -27,7 +27,7 @@ abstract class Element extends \DOMElement {
 				}
 				break;
 			case "docx2jats\objectModel\body\Table":
-				$name = 'table';
+				$name = 'table-wrap';
 				break;
 			case "docx2jats\objectModel\body\Row":
 				$name = 'tr';

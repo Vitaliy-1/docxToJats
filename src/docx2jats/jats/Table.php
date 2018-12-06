@@ -10,9 +10,15 @@ class Table extends Element {
 	}
 	
 	public function setContent() {
+		
+		// TODO create and append table label and caption
+		
+		$tableNode = $this->ownerDocument->createElement('table');
+		$this->appendChild($tableNode);
+		
 		foreach ($this->getDataObject()->getContent() as $content) {
 			$row = new JatsRow($content);
-			$this->appendChild($row);
+			$tableNode->appendChild($row);
 			$row->setContent();
 		}
 	}
