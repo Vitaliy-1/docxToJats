@@ -69,12 +69,13 @@ class Document extends \DOMDocument {
 			$listItem = null; // temporary container for previous list item
 			$listCounter = 0; // temporary container for current list ID
 			foreach ($document->getContent() as $key => $content) {
+				$contentId = 'sec-' . implode('_', $content->getDimensionalSectionId());
 
 				// Appending section, must correspond section nested level; TODO optimize with recursion
 				if ($content->getDimensionalSectionId() !== $latestSectionId) {
 					$sectionNode = $this->createElement("sec");
-					$sectionNode->setAttribute('id', 'sec-' . implode('_', $content->getDimensionalSectionId()));
-					$this->sections[] = $sectionNode;
+					$sectionNode->setAttribute('id', $contentId);
+					$this->sections[$contentId] = $sectionNode;
 					if (count($content->getDimensionalSectionId()) === 1) {
 						$this->body->appendChild($sectionNode);
 						$latestSections[0] = $sectionNode;
@@ -101,14 +102,11 @@ class Document extends \DOMDocument {
 					$sectionsOrBody = $this->sections;
 				}
 
-				$contentId = 'sec-' . implode('_', $content->getDimensionalSectionId());
-
 				switch (get_class($content)) {
 
 					case "docx2jats\objectModel\body\Par":
 						/* @var $content Par */
 						$jatsPar = new JatsPar($content);
-
 
 						foreach ($sectionsOrBody as $section) {
 							if ($contentId === $section->getAttribute('id') || $section->nodeName === "body") {
