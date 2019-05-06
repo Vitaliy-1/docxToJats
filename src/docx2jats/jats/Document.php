@@ -36,6 +36,10 @@ class Document extends \DOMDocument {
 		$this->preserveWhiteSpace = false;
 		$this->formatOutput = true;
 
+		// Doctype
+		$impl = new \DOMImplementation();
+		$this->appendChild($impl->createDocumentType("article", "-//NLM//DTD JATS (Z39.96) Journal Archiving DTD v1.0 20120330//EN", "https://jats.nlm.nih.gov/archiving/1.1/JATS-archivearticle1.dtd"));
+
 		$this->setBasicStructure();
 		$this->extractContent();
 	}
@@ -46,6 +50,17 @@ class Document extends \DOMDocument {
 
 	private function setBasicStructure() {
 		$this->article = $this->createElement('article');
+		$this->article->setAttributeNS(
+			"http://www.w3.org/2000/xmlns/",
+			"xmlns:xlink",
+			"http://www.w3.org/1999/xlink"
+		);
+		$this->article->setAttributeNS(
+			"http://www.w3.org/2000/xmlns/",
+			"xmlns:ali",
+			"http://www.niso.org/schemas/ali/1.0/ali.xsd"
+		);
+
 		$this->appendChild($this->article);
 
 		$this->front = $this->createElement('front');
