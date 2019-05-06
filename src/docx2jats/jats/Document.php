@@ -149,8 +149,11 @@ class Document extends \DOMDocument {
 										if ($content->getNumberingLevel() === 0) {
 
 											$this->lists[$content->getNumberingId()]->appendChild($listItem);
-										} else {
+										} elseif (array_key_exists($content->getNumberingLevel()-1, $subList)) {
 											$subList[$content->getNumberingLevel()-1]->appendChild($listItem);
+											// Append to first list level if user has set unrealistic level for nested items
+										} else {
+											$this->lists[$content->getNumberingId()]->appendChild($listItem);
 										}
 
 										if ($hasSublist) {
