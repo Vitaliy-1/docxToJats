@@ -45,7 +45,7 @@ class Document extends \DOMDocument {
 	}
 
 	public function getJatsFile() {
-		$this->save("test_jats.xml");
+		$this->save("samples/output/test_jats.xml");
 	}
 
 	private function setBasicStructure() {

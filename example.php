@@ -6,7 +6,7 @@ use docx2jats\DOCXArchive;
 use docx2jats\jats\Document;
 
 // Parsing DOCX
-$docxArchive = new DOCXArchive("example.docx");
+$docxArchive = new DOCXArchive("samples/input/example.docx");
 
 $contents = $docxArchive->getDocument()->getContent();
 
