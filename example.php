@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * @file example.php
+ *
+ * Copyright (c) 2018-2019 Vitalii Bezsheiko
+ * Distributed under the GNU GPL v3.
+ *
+ * @brief example of parsing DOCX with the converter
+ */
+
 require_once (__DIR__ . "/vendor/autoload.php");
 
 use docx2jats\DOCXArchive;
@@ -26,4 +35,4 @@ foreach ($contents as $content) {
 
 // Creating JATS XML
 $jatsXML = new Document($docxArchive);
-$jatsXML->getJatsFile();
+$jatsXML->getJatsFile("samples/output/test_jats.xml");

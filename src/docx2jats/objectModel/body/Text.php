@@ -1,5 +1,14 @@
 <?php namespace docx2jats\objectModel\body;
 
+/**
+ * @file src/docx2jats/objectModel/body/Text.php
+ *
+ * Copyright (c) 2018-2019 Vitalii Bezsheiko
+ * Distributed under the GNU GPL v3.
+ *
+ * @brief represents text with formatting
+ */
+
 use docx2jats\objectModel\DataObject;
 
 class Text extends DataObject {
@@ -9,22 +18,22 @@ class Text extends DataObject {
 	const DOCX_TEXT_SUBSCRIPT = 4;
 	const DOCX_TEXT_STRIKETHROUGH = 5;
 	const DOCX_TEXT_EXTLINK = 6;
-	
+
 	private $properties;
 	private $text;
 	private $type = array();
-	
+
 	public function __construct(\DOMElement $domElement) {
 		parent::__construct($domElement);
 		$this->properties = $this->setProperties('w:rPr/child::node()');
 		$this->text = $this->setText('w:t');
 		$this->type = $this->setType();
 	}
-	
+
 	/**
 	 * @return string
 	 */
-	
+
 	private function setText(string $xpathExpression) {
 		$stringText = '';
 		$contentNodes = $this->getXpath()->evaluate($xpathExpression, $this->getDomElement());
@@ -32,30 +41,30 @@ class Text extends DataObject {
 		foreach ($contentNodes as $contentNode) {
 			$stringText = $stringText . $contentNode->nodeValue;
 		}
-		
+
 		return $stringText;
 	}
-	
+
 	/**
 	 * @return string
 	 */
 	public function getContent(): string {
 		return $this->text;
 	}
-	
+
 	/**
 	 * @return array
 	 */
 	public function getProperties(): array {
 		return $this->properties;
 	}
-	
+
 	/**
 	 * @return array
 	 */
 	private function setType() {
 		$type = array();
-		
+
 		$properties = $this->getXpath()->query('w:rPr/child::node()', $this->getDomElement());
 		foreach ($properties as $property) {
 			switch($property->nodeName) {
@@ -80,14 +89,14 @@ class Text extends DataObject {
 					break;
 			}
 		}
-		
+
 		return $type;
 	}
-	
+
 	public function addType(string $type): void {
 		$this->type[] = $type;
 	}
-	
+
 	/**
 	 * @return array
 	 */

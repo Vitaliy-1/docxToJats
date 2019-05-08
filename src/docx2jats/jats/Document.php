@@ -1,5 +1,14 @@
 <?php namespace docx2jats\jats;
 
+/**
+ * @file src/docx2jats/jats/Document.php
+ *
+ * Copyright (c) 2018-2019 Vitalii Bezsheiko
+ * Distributed under the GNU GPL v3.
+ *
+ * @brief represent JATS XML Document; transfers the data from Document Object Model to PHP DOMDocument
+ */
+
 use docx2jats\DOCXArchive;
 use docx2jats\jats\Par as JatsPar;
 use docx2jats\objectModel\body\Par;
@@ -44,8 +53,8 @@ class Document extends \DOMDocument {
 		$this->extractContent();
 	}
 
-	public function getJatsFile() {
-		$this->save("samples/output/test_jats.xml");
+	public function getJatsFile(string $pathToFile) {
+		$this->save($pathToFile);
 	}
 
 	private function setBasicStructure() {

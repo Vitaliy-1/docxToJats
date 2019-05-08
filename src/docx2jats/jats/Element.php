@@ -1,16 +1,25 @@
 <?php namespace docx2jats\jats;
 
+/**
+ * @file src/docx2jats/jats/Element.php
+ *
+ * Copyright (c) 2018-2019 Vitalii Bezsheiko
+ * Distributed under the GNU GPL v3.
+ *
+ * @brief abstraction for JATS XML elements
+ */
+
 use docx2jats\objectModel\DataObject;
 use docx2jats\objectModel\body\Par;
 
 abstract class Element extends \DOMElement {
-	
+
 	private $dataObject;
-	
+
 	public function __construct(DataObject $dataObject) {
-		
+
 		$this->dataObject = $dataObject;
-		
+
 		// Determing element name
 		$name = '';
 		switch (get_class($dataObject)) {
@@ -36,17 +45,17 @@ abstract class Element extends \DOMElement {
 				$name = 'td';
 				break;
 		}
-		
+
 		/*
 		$textString = '';
 		foreach ($dataObject->getContent() as $text) {
 			$textString .= $text->getContent();
 		}
 		*/
-		
+
 		if (!empty($name)) parent::__construct($name);
 	}
-	
+
 	protected function getDataObject() {
 		return $this->dataObject;
 	}

@@ -1,12 +1,21 @@
 <?php namespace docx2jats;
 
+/**
+ * @file src/docx2jats/DOCXArchive.php
+ *
+ * Copyright (c) 2018-2019 Vitalii Bezsheiko
+ * Distributed under the GNU GPL v3.
+ *
+ * @brief represents DOCX archive; provides unpacking
+ */
+
 use docx2jats\objectModel\Document;
 
 class DOCXArchive extends \ZipArchive {
-	
+
 	private $ooxmlDocument;
 	private $document;
-	
+
 	public function __construct(string $filepath) {
 		if ($this->open($filepath)) {
 			$document = $this->locateName("word/document.xml");
@@ -19,13 +28,13 @@ class DOCXArchive extends \ZipArchive {
 			$this->document = $document;
 		}
 	}
-	
+
 	public function getDocumentOoxml(): \DOMDocument {
 		return $this->ooxmlDocument;
 	}
-	
+
 	public function getDocument(): Document {
 		return $this->document;
 	}
-	
+
 }

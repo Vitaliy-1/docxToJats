@@ -1,12 +1,16 @@
 <?php namespace docx2jats\objectModel\body;
 
+/**
+ * @file src/docx2jats/objectModel/body/Par.php
+ *
+ * Copyright (c) 2018-2019 Vitalii Bezsheiko
+ * Distributed under the GNU GPL v3.
+ *
+ * @brief represent paragraph in OOXML, includes: regular paragraph, lists, heading and other paragraph styles
+ */
+
 use docx2jats\objectModel\DataObject;
 
-/**
- * Class Par
- * @package docx2jats\objectModel\body
- * @brief represent paragraph in OOXML, includes: regular paragraph, lists, heading and other parapgraph styles
- */
 class Par extends DataObject {
 	const DOCX_PAR_REGULAR = 1;
 	const DOCX_PAR_HEADING = 2;
@@ -15,23 +19,23 @@ class Par extends DataObject {
 	const DOCX_LIST_END = 'listEnd';
 	const DOCX_LIST_HAS_SUBLIST = 'hasSublist';
 	const DOCX_LIST_ITEM_ID = 'itemId';
-	
+
 	private $type = array(); // const
 	private $properties = array();
 	private $text = array();
 	public static $headings = array("1", "2", "3", "4", "5", "6", "heading", "heading1", "heading2", "heading3", "heading4", "heading5", "heading6");
-	
+
 	/* @var $headingLevel int */
 	private $headingLevel;
-	
+
 	/* @var $numberingLevel int */
 	private $numberingLevel;
-	
+
 	/* @var $numberingId int */
 	private $numberingId;
-	
+
 	private $numberingItemProp = array();
-	
+
 	public function __construct(\DOMElement $domElement) {
 		parent::__construct($domElement);
 		$this->defineType();
@@ -43,29 +47,29 @@ class Par extends DataObject {
 		$this->numberingId = $this->setNumberingId();
 		$this->numberingItemProp = $this->setNumberingItemProp();
 	}
-	
+
 	/**
 	 * @return array
 	 */
 	public function getProperties(): array {
 		return $this->properties;
 	}
-	
-	
+
+
 	/**
 	 * @return array
 	 */
 	public function getContent(): array {
 		return $this->text;
 	}
-	
+
 	/**
 	 * @return array
 	 */
 	public function getType() {
 		return $this->type;
 	}
-	
+
 	protected function setContent(string $xpathExpression) {
 		$content = array();
 		$contentNodes = $this->getXpath()->query($xpathExpression, $this->getDomElement());
@@ -82,10 +86,10 @@ class Par extends DataObject {
 				}
 			}
 		}
-		
+
 		return $content;
 	}
-	
+
 	/**
 	 * @return array
 	 */
@@ -96,21 +100,21 @@ class Par extends DataObject {
 			if (in_array(strtolower($styles[0]->nodeValue), self::$headings)) {
 				$type[] = self::DOCX_PAR_HEADING;
 			}
-			
+
 		}
-		
+
 		$numberingNode = $this->getXpath()->query('w:pPr/w:numPr', $this->getDomElement());
 		if ($this->isOnlyChildNode($numberingNode)) {
 			$type[] = self::DOCX_PAR_LIST;
 		}
-		
+
 		if (empty($type)) {
 			$type[] = self::DOCX_PAR_REGULAR;
 		}
-		
+
 		return $type;
 	}
-	
+
 	/**
 	 * @return int $level
 	 */
@@ -123,27 +127,27 @@ class Par extends DataObject {
 				$styleString = $styles[0]->nodeValue;
 			}
 		}
-		
+
 		// Not a heading if empty
 		if (empty($styleString)) return $level;
-		
+
 		preg_match_all('/\d+/', $styleString, $matches);
-		
+
 		// Treat headings without a number as the 1st level headings
 		if (empty($matches[0])) return $level+1;
-		
+
 		$level = intval(implode('', $matches[0]));
-		
+
 		return $level;
 	}
-	
+
 	/**
 	 * @return int
 	 */
 	public function getHeadingLevel(): int {
 		return $this->headingLevel;
 	}
-	
+
 	/**
 	 * @return int
 	 */
@@ -156,21 +160,21 @@ class Par extends DataObject {
 				$numberString = $numberNode[0]->nodeValue;
 			}
 		}
-		
+
 		if (empty($numberString)) return $numberingLevel;
-		
+
 		$numberingLevel = intval($numberString);
-		
+
 		return $numberingLevel;
 	}
-	
+
 	/**
 	 * @return int
 	 */
 	public function getNumberingLevel(): int {
 		return $this->numberingLevel;
 	}
-	
+
 	/**
 	 * @return int
 	 */
@@ -183,37 +187,37 @@ class Par extends DataObject {
 				$numberString = $numberNode[0]->nodeValue;
 			}
 		}
-		
+
 		if (empty($numberString)) return $numberingId;
-		
+
 		$numberingId = intval($numberString);
-		
+
 		return $numberingId;
 	}
-	
-	
+
+
 	/**
 	 * @return int
 	 */
 	public function getNumberingId(): int {
 		return $this->numberingId;
 	}
-	
+
 	/**
 	 * @return array
 	 */
 	private function setNumberingItemProp(): array {
-		
+
 		$propArray = array();
 		$itemDimensionalId = array_fill(0, $this->getNumberingLevel()+1, 0);
-		
+
 		if (!in_array(self::DOCX_PAR_LIST, $this->getType())) return $propArray;
-		
+
 		$propArray = array(self::DOCX_LIST_START => false, self::DOCX_LIST_END => false, self::DOCX_LIST_HAS_SUBLIST => false, self::DOCX_LIST_ITEM_ID => $itemDimensionalId);
-		
+
 		$numberNode = $this->getXpath()->query('w:pPr/w:numPr/w:ilvl/@w:val', $this->getDomElement())[0];
 		$number = intval($numberNode->nodeValue);
-		
+
 		// Properties based on the previous node's level
 		$prevNumberNode = $this->getXpath()->query('preceding-sibling::w:p[1]/w:pPr/w:numPr/w:ilvl/@w:val', $this->getDomElement());
 		if ($this->isOnlyChildNode($prevNumberNode)) {
@@ -222,7 +226,7 @@ class Par extends DataObject {
 		} else {
 			$propArray[self::DOCX_LIST_START] = true;
 		}
-		
+
 		// Properties based on the following node's level
 		$nextNumberNode = $this->getXpath()->query('following-sibling::w:p[1]/w:pPr/w:numPr/w:ilvl/@w:val', $this->getDomElement());
 		if ($this->isOnlyChildNode($nextNumberNode)) {
@@ -232,9 +236,9 @@ class Par extends DataObject {
 		} else {
 			$propArray[self::DOCX_LIST_END] = true;
 		}
-		
+
 		// Determining dimensional ID based on Node's level and the number of preceding nodes on the same level and levels above
-		
+
 		$numberingLevel = $this->getNumberingLevel();
 		while (!($numberingLevel < 0)) {
 			$previousSiblingSameList = $this->getXpath()->query('preceding-sibling::w:p/w:pPr/w:numPr/w:numId[@w:val="' . $this->getNumberingId() . '"]', $this->getDomElement());
@@ -245,16 +249,16 @@ class Par extends DataObject {
 					if ($this->isOnlyChildNode($previousSiblingSameId)) $countSameLevel++;
 				}
 			}
-			
+
 			$itemDimensionalId[$numberingLevel] = $countSameLevel;
 			$numberingLevel--;
 		}
-		
+
 		$propArray[self::DOCX_LIST_ITEM_ID] = $itemDimensionalId;
-		
+
 		return $propArray;
 	}
-	
+
 	public function getNumberingItemProp() {
 		return $this->numberingItemProp;
 	}

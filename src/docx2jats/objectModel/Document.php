@@ -1,21 +1,30 @@
 <?php namespace docx2jats\objectModel;
 
+/**
+ * @file src/docx2jats/objectModel/Document.php
+ *
+ * Copyright (c) 2018-2019 Vitalii Bezsheiko
+ * Distributed under the GNU GPL v3.
+ *
+ * @brief representation of an article; extracts all main elements from DOCX document.xml
+ */
+
 use docx2jats\objectModel\DataObject;
 use docx2jats\objectModel\body\Par;
 use docx2jats\objectModel\body\Table;
 
 class Document {
 	const SECT_NESTED_LEVEL_LIMIT = 5; // limit the number of possible levels for sections
-	
+
 	public static $xpath;
 	private $content;
 	private static $minimalHeadingLevel;
-	
+
 	public function __construct(\DOMDocument $domDocument) {
 		self::$xpath = new \DOMXPath($domDocument);
-		
+
 		$childNodes = self::$xpath->query("//w:body/child::node()");
-		
+
 		$content = array();
 		foreach ($childNodes as $childNode) {
 			switch ($childNode->nodeName) {
@@ -29,18 +38,18 @@ class Document {
 					break;
 			}
 		}
-		
+
 		$this->content = $this->addSectionMarks($content);
 		self::$minimalHeadingLevel = $this->minimalHeadingLevel();
 	}
-	
+
 	/**
 	 * @return array
 	 */
 	public function getContent(): array {
 		return $this->content;
 	}
-	
+
 	private function minimalHeadingLevel(): int {
 		$minimalNumber = 7;
 		foreach ($this->content as $dataObject) {
@@ -51,24 +60,24 @@ class Document {
 				}
 			}
 		}
-		
+
 		return $minimalNumber;
 	}
-	
+
 	/**
 	 * @return int
 	 */
 	public static function getMinimalHeadingLevel(): int {
 		return self::$minimalHeadingLevel;
 	}
-	
+
 	/**
 	 * @param array $content
 	 * @return array
 	 * @brief set marks for the section, number in order and specific ID for nested sections
 	 */
 	private function addSectionMarks(array $content): array {
-		
+
 		$flatSectionId = 0; // simple section id
 		$dimensions = array_fill(0, self::SECT_NESTED_LEVEL_LIMIT, 0); // contains dimensional section id
 		foreach ($content as $key => $object) {
@@ -76,14 +85,14 @@ class Document {
 				$flatSectionId++;
 				$dimensions = $this->extractSectionDimension($object, $dimensions);
 			}
-			
+
 			$object->setDimensionalSectionId($dimensions);
 			$object->setFlatSectionId($flatSectionId);
 		}
-		
+
 		return $content;
 	}
-	
+
 	/**
 	 * @param $object Par
 	 * @param array $dimensions

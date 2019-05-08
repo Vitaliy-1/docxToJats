@@ -1,12 +1,21 @@
 <?php namespace docx2jats\jats;
 
+/**
+ * @file src/docx2jats/jats/Text.php
+ *
+ * Copyright (c) 2018-2019 Vitalii Bezsheiko
+ * Distributed under the GNU GPL v3.
+ *
+ * @brief represent document's text and its formatting
+ */
+
 use docx2jats\objectModel\DataObject;
 use docx2jats\objectModel\body\Text as ObjectText;
 
 class Text {
-	
+
 	public static function extractText(ObjectText $jatsText, \DOMElement $domElement) : void {
-		
+
 		// Get DOMDocument
 		$domDocument = $domElement->ownerDocument;
 		// Dealing with simple text (without any properties)
@@ -62,14 +71,14 @@ class Text {
 				if (!is_array($type)) {
 					$nodeElement = $domDocument->createElement($type);
 				}
-				
+
 				array_push($prevElements, $nodeElement);
-				
+
 				if ($key === 0) {
 					$domElement->appendChild($prevElements[0]);
 				} elseif (($key === (count($typeArray) - 1))) {
 					$nodeElement->nodeValue = $jatsText->getContent();
-					
+
 					foreach ($prevElements as $prevKey => $prevElement) {
 						if ($prevKey !== (count($prevElements) -1)) {
 							$prevElement->appendChild(next($prevElements));
