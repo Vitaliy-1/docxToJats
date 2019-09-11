@@ -15,7 +15,8 @@ use docx2jats\DOCXArchive;
 use docx2jats\jats\Document;
 
 // Parsing DOCX
-$docxArchive = new DOCXArchive("samples/input/example.docx");
+$path = "samples/input/example.docx";
+$docxArchive = new DOCXArchive($path);
 
 $contents = $docxArchive->getDocument()->getContent();
 
@@ -35,4 +36,5 @@ foreach ($contents as $content) {
 
 // Creating JATS XML
 $jatsXML = new Document($docxArchive);
-$jatsXML->getJatsFile("samples/output/test_jats.xml");
+$filename = basename($path, ".docx");
+$jatsXML->getJatsFile("samples/output/" . $filename . ".xml");
