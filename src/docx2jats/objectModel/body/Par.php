@@ -82,6 +82,7 @@ class Par extends DataObject {
 				foreach ($children as $child) {
 					$href = new Text($child);
 					$href->addType($href::DOCX_TEXT_EXTLINK);
+					$href->setLink();
 					$content[] = $href;
 				}
 			}

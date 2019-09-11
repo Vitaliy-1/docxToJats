@@ -16,11 +16,20 @@ use docx2jats\objectModel\body\Table;
 class Document {
 	const SECT_NESTED_LEVEL_LIMIT = 5; // limit the number of possible levels for sections
 
-	public static $xpath;
+	static $xpath;
 	private $content;
 	private static $minimalHeadingLevel;
 
-	public function __construct(\DOMDocument $domDocument) {
+	/* @var $relationships \DOMDocument contains relationships between document elements, e.g. the link and its target */
+	private $relationships;
+	static $relationshipsXpath;
+
+	public function __construct(\DOMDocument $domDocument, \DOMDocument $relationships = null) {
+		if ($relationships != null) {
+			$this->relationships = $relationships;
+			self::$relationshipsXpath = new \DOMXPath($relationships);
+		}
+
 		self::$xpath = new \DOMXPath($domDocument);
 
 		$childNodes = self::$xpath->query("//w:body/child::node()");
@@ -109,5 +118,11 @@ class Document {
 			$dimensions[$number] = 0;
 		}
 		return $dimensions;
+	}
+
+	static function getRelationshipById(string $id): string {
+		$element = self::$relationshipsXpath->query("//*[@Id='" .  $id ."']");
+		$target = $element[0]->getAttribute("Target");
+		return $target;
 	}
 }

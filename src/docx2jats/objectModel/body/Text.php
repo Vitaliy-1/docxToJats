@@ -10,6 +10,7 @@
  */
 
 use docx2jats\objectModel\DataObject;
+use docx2jats\objectModel\Document;
 
 class Text extends DataObject {
 	const DOCX_TEXT_BOLD = 1;
@@ -22,6 +23,7 @@ class Text extends DataObject {
 	private $properties;
 	private $text;
 	private $type = array();
+	private $link;
 
 	public function __construct(\DOMElement $domElement) {
 		parent::__construct($domElement);
@@ -102,5 +104,17 @@ class Text extends DataObject {
 	 */
 	public function getType(): array {
 		return $this->type;
+	}
+
+	function setLink(): void {
+		$parent = $this->getDomElement()->parentNode;
+		if ($parent->tagName == "w:hyperlink") {
+			$ref = $parent->getAttribute("r:id");
+			$this->link = Document::getRelationshipById($ref);
+		}
+	}
+
+	public function getLink(): ?string {
+		return $this->link;
 	}
 }

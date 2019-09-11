@@ -55,6 +55,9 @@ class Text {
 					$nodeElement = $domDocument->createElement($type);
 					$nodeElement->nodeValue = htmlspecialchars($jatsText->getContent());
 					$domElement->appendChild($nodeElement);
+					if ($type == "ext-link") {
+						$nodeElement->setAttribute("xlink:href", $jatsText->getLink());
+					}
 				} else {
 					foreach ($type as $insideKey => $insideType) {
 						$nodeElement = $domDocument->createElement($insideKey);
@@ -77,7 +80,11 @@ class Text {
 				if ($key === 0) {
 					$domElement->appendChild($prevElements[0]);
 				} elseif (($key === (count($typeArray) - 1))) {
+
 					$nodeElement->nodeValue = htmlspecialchars($jatsText->getContent());
+					if ($type == "ext-link"){
+						$nodeElement->setAttribute("xlink:href", $jatsText->getLink());
+					}
 
 					foreach ($prevElements as $prevKey => $prevElement) {
 						if ($prevKey !== (count($prevElements) -1)) {
