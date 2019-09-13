@@ -24,13 +24,13 @@ class Document {
 	private $relationships;
 	static $relationshipsXpath;
 
-	public function __construct(\DOMDocument $domDocument, \DOMDocument $relationships = null) {
-		if ($relationships != null) {
-			$this->relationships = $relationships;
-			self::$relationshipsXpath = new \DOMXPath($relationships);
+	public function __construct(array $params) {
+		if (array_key_exists('relationships', $params)) {
+			$this->relationships = $params['relationships'];
+			self::$relationshipsXpath = new \DOMXPath($this->relationships);
 		}
 
-		self::$xpath = new \DOMXPath($domDocument);
+		self::$xpath = new \DOMXPath($params["ooxmlDocument"]);
 
 		$childNodes = self::$xpath->query("//w:body/child::node()");
 

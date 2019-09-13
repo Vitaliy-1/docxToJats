@@ -25,11 +25,14 @@ class DOCXArchive extends \ZipArchive {
 			$relationships = $this->transformToXml("word/_rels/document.xml.rels");
 			$this->close();
 
+			// construct as an array
+			$params = array();
+			$params["ooxmlDocument"] = $this->ooxmlDocument;
 			if ($relationships) {
-				$document = new Document($this->ooxmlDocument, $relationships);
-			} else {
-				$document = new Document($this->ooxmlDocument);
+				$params["relationships"] = $relationships;
 			}
+
+			$document = new Document($params);
 
 			$this->document = $document;
 		}
