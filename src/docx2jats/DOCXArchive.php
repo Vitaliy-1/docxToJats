@@ -23,13 +23,20 @@ class DOCXArchive extends \ZipArchive {
 		if ($this->open($filepath)) {
 			$this->ooxmlDocument = $this->transformToXml("word/document.xml");
 			$relationships = $this->transformToXml("word/_rels/document.xml.rels");
+			$styles = $this->transformToXml("word/styles.xml");
 			$this->close();
 
 			// construct as an array
 			$params = array();
+
 			$params["ooxmlDocument"] = $this->ooxmlDocument;
+
 			if ($relationships) {
 				$params["relationships"] = $relationships;
+			}
+
+			if ($styles) {
+				$params["styles"] = $styles;
 			}
 
 			$document = new Document($params);

@@ -16,6 +16,12 @@ use docx2jats\objectModel\body\Table;
 class Document {
 	const SECT_NESTED_LEVEL_LIMIT = 5; // limit the number of possible levels for sections
 
+	// Represent styling for OOXMl structure elements
+	const DOCX_STYLES_PARAGRAPH = "paragraph";
+	const DOCX_STYLES_CHARACTER = "character";
+	const DOCX_STYLES_NUMBERING = "numbering";
+	const DOCX_STYLES_TABLE = "table";
+
 	static $xpath;
 	private $content;
 	private static $minimalHeadingLevel;
@@ -24,10 +30,19 @@ class Document {
 	private $relationships;
 	static $relationshipsXpath;
 
+	/* @var $styles \DOMDocument represents document styles, e.g., paragraphs or lists styling */
+	private $styles;
+	static $stylesXpath;
+
 	public function __construct(array $params) {
-		if (array_key_exists('relationships', $params)) {
-			$this->relationships = $params['relationships'];
+		if (array_key_exists("relationships", $params)) {
+			$this->relationships = $params["relationships"];
 			self::$relationshipsXpath = new \DOMXPath($this->relationships);
+		}
+
+		if (array_key_exists("styles", $params)) {
+			$this->styles = $params["styles"];
+			self::$stylesXpath = new \DOMXPath($this->styles);
 		}
 
 		self::$xpath = new \DOMXPath($params["ooxmlDocument"]);
@@ -124,5 +139,17 @@ class Document {
 		$element = self::$relationshipsXpath->query("//*[@Id='" .  $id ."']");
 		$target = $element[0]->getAttribute("Target");
 		return $target;
+	}
+
+	static function getElementStyling(string $constStyleType, string $id): ?string {
+		/* @var $element \DOMElement */
+		/* @var $name \DOMElement */
+		if (self::$stylesXpath) {
+			$element = self::$stylesXpath->query("/w:styles/w:style[@w:type='" . $constStyleType . "'][@w:styleId='" . $id . "']")[0];
+			$name = self::$stylesXpath->query("w:name", $element)[0];
+			return $name->getAttribute("w:val");
+		} else {
+			return null;
+		}
 	}
 }

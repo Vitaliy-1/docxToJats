@@ -10,6 +10,7 @@
  */
 
 use docx2jats\objectModel\DataObject;
+use docx2jats\objectModel\Document;
 
 class Par extends DataObject {
 	const DOCX_PAR_REGULAR = 1;
@@ -23,7 +24,7 @@ class Par extends DataObject {
 	private $type = array(); // const
 	private $properties = array();
 	private $text = array();
-	public static $headings = array("1", "2", "3", "4", "5", "6", "heading", "heading1", "heading2", "heading3", "heading4", "heading5", "heading6");
+	public static $headings = array("heading", "heading 1", "heading 2", "heading 3", "heading 4", "heading 5", "heading 6", "title");
 
 	/* @var $headingLevel int */
 	private $headingLevel;
@@ -98,7 +99,16 @@ class Par extends DataObject {
 		$type = array();
 		$styles = $this->getXpath()->query('w:pPr/w:pStyle/@w:val', $this->getDomElement());
 		if ($this->isOnlyChildNode($styles)) {
-			if (in_array(strtolower($styles[0]->nodeValue), self::$headings)) {
+
+			// Find associated style in style.xml; TODO explore consistency for different languages
+			$associatedStyle = Document::getElementStyling(Document::DOCX_STYLES_PARAGRAPH, $styles[0]->nodeValue);
+
+			// Fallback to the node content if styles.xml doesn't exist
+			if (!$associatedStyle) {
+				$associatedStyle = $styles[0]->nodeValue;
+			}
+
+			if (in_array(strtolower($associatedStyle), self::$headings)) {
 				$type[] = self::DOCX_PAR_HEADING;
 			}
 
