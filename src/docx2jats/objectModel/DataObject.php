@@ -121,4 +121,21 @@ abstract class DataObject {
 	public function getDimensionalSectionId(): array {
 		return $this->dimensionalSectionId;
 	}
+
+	/**
+	 * @param string $xpath
+	 * @param \DOMElement|null $parentElement
+	 * @return \DOMElement|null
+	 */
+	public function getFirstElementByXpath(string $xpath, \DOMElement $parentElement = null): ?\DOMElement {
+		$element = null;
+
+		if ($parentElement) {
+			$element = $this->getXpath()->query($xpath, $parentElement)[0];
+		} else {
+			$element = $this->getXpath()->query($xpath)[0];
+		}
+
+		return $element;
+	}
 }

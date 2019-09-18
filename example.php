@@ -37,4 +37,6 @@ foreach ($contents as $content) {
 // Creating JATS XML
 $jatsXML = new Document($docxArchive);
 $filename = basename($path, ".docx");
-$jatsXML->getJatsFile("samples/output/" . $filename . ".xml");
+$outputDir = "samples/output/";
+$jatsXML->getJatsFile($outputDir . $filename . ".xml");
+$docxArchive->getMediaFiles($outputDir);

@@ -13,17 +13,26 @@ use docx2jats\objectModel\Document;
 
 class DOCXArchive extends \ZipArchive {
 
+	/* @var $filePath string */
+	private $filePath;
+
 	/* @var $ooxmlDocument \DOMDocument contains the main content of the document */
 	private $ooxmlDocument;
 
 	/* @var $document Document the document object model */
 	private $document;
 
+	/* @var $mediaFiles array of strings, paths to media files inside the archive */
+	private $mediaFiles = array();
+
 	public function __construct(string $filepath) {
+		$this->filePath = $filepath;
+
 		if ($this->open($filepath)) {
 			$this->ooxmlDocument = $this->transformToXml("word/document.xml");
 			$relationships = $this->transformToXml("word/_rels/document.xml.rels");
 			$styles = $this->transformToXml("word/styles.xml");
+			$this->mediaFiles = $this->extractMediaFiles();
 			$this->close();
 
 			// construct as an array
@@ -54,12 +63,79 @@ class DOCXArchive extends \ZipArchive {
 	}
 
 	private function transformToXml(string $path): ?\DOMDocument {
-		$document = $this->locateName($path);
-		if (!$document) return null;
-		$data = $this->getFromIndex($document);
+		$index = $this->locateName($path);
+		if (!$index) return null;
+		$data = $this->getFromIndex($index);
 		$xml = new \DOMDocument();
 		$xml->loadXML($data, LIBXML_NOENT | LIBXML_XINCLUDE | LIBXML_NOERROR | LIBXML_NOWARNING);
 		return $xml;
 	}
 
+	private function extractMediaFiles() {
+		$paths = array();
+		for ($i = 0; $i < $this->numFiles; $i++) {
+			$filePath = $this->getNameIndex($i);
+
+			if (!strpos($filePath, "media/")) continue;
+
+			$paths[] = $filePath;
+		}
+
+		return $paths;
+	}
+
+	/**
+	 * @param string $path
+	 * @return string|null file extracted from DOCX archive
+	 */
+
+	public function getFile(string $path): ?string {
+		if ($this->open($this->filePath)) {
+			$index = $this->locateName("word/" . $path);
+			if (!$index) return null;
+			$data = $this->getFromIndex($index);
+			$this->close();
+			return $data;
+		}
+
+		return null;
+	}
+
+	/**
+	 * @param $outputDir string, should include trailing slash
+	 * @brief writes media files to the specified dir; preserves original filename and extension
+	 */
+	public function getMediaFiles(string $outputDir): void {
+
+		if (empty($this->mediaFiles)) return;
+
+		if ($this->open($this->filePath)) {
+			foreach ($this->mediaFiles as $mediaFile) {
+				$index = $this->locateName($mediaFile);
+				$data = $this->getFromIndex($index);
+				file_put_contents($outputDir . pathinfo($mediaFile)['basename'], $data);
+			}
+			$this->close();
+		}
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getMediaFilesContent(): array {
+		$filesContent = array();
+
+		if (empty($this->mediaFiles)) return $filesContent;
+
+		if ($this->open($this->filePath)) {
+			foreach ($this->mediaFiles as $mediaFile) {
+				$index = $this->locateName($mediaFile);
+				$data = $this->getFromIndex($index);
+				$filesContent[] = $data;
+			}
+			$this->close();
+		}
+
+		return $filesContent;
+	}
 }

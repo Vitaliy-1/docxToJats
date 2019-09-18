@@ -13,6 +13,7 @@ use docx2jats\DOCXArchive;
 use docx2jats\jats\Par as JatsPar;
 use docx2jats\objectModel\body\Par;
 use docx2jats\jats\Table as JatsTable;
+use docx2jats\jats\Figure as JatsFigure;
 use docx2jats\objectModel\body\Table;
 use docx2jats\objectModel\DataObject;
 use docx2jats\objectModel\Document as DOCXDocument;
@@ -187,6 +188,14 @@ class Document extends \DOMDocument {
 							}
 						}
 						break;
+					case "docx2jats\objectModel\body\Figure":
+						foreach ($sectionsOrBody as $section) {
+							if ($contentId === $section->getAttribute('id') || $section->nodeName === "body") {
+								$figure = new JatsFigure($content);
+								$section->appendChild($figure);
+								$figure->setContent();
+							}
+						}
 				}
 			}
 		}
