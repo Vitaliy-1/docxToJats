@@ -44,7 +44,7 @@ abstract class Element extends \DOMElement {
 			case "docx2jats\objectModel\body\Cell":
 				$name = 'td';
 				break;
-			case "docx2jats\objectModel\body\Figure":
+			case "docx2jats\objectModel\body\Image":
 				$name = 'fig';
 		}
 

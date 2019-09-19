@@ -188,7 +188,7 @@ class Document extends \DOMDocument {
 							}
 						}
 						break;
-					case "docx2jats\objectModel\body\Figure":
+					case "docx2jats\objectModel\body\Image":
 						foreach ($sectionsOrBody as $section) {
 							if ($contentId === $section->getAttribute('id') || $section->nodeName === "body") {
 								$figure = new JatsFigure($content);

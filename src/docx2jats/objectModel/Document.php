@@ -12,7 +12,7 @@
 use docx2jats\objectModel\DataObject;
 use docx2jats\objectModel\body\Par;
 use docx2jats\objectModel\body\Table;
-use docx2jats\objectModel\body\Figure;
+use docx2jats\objectModel\body\Image;
 
 class Document {
 	const SECT_NESTED_LEVEL_LIMIT = 5; // limit the number of possible levels for sections
@@ -54,9 +54,18 @@ class Document {
 		foreach ($childNodes as $childNode) {
 			switch ($childNode->nodeName) {
 				case "w:p":
-					if ($this->isFigure($childNode)) {
-						$figure = new Figure($childNode);
-						$content[] = $figure;
+					// There can be multiple drawings inside a run and multiple elements inside a drawing
+					if ($this->isDrawing($childNode)) {
+						// TODO add support for other drawings type, e.g., c:chart
+						self::$xpath->registerNamespace("pic", "http://schemas.openxmlformats.org/drawingml/2006/picture");
+						$imageNodes = self::$xpath->query(".//pic:pic", $childNode);
+						if ($imageNodes->length > 0) {
+							foreach ($imageNodes as $imageNode) {
+								$figure = new Image($imageNode);
+								$content[] = $figure;
+							}
+						}
+
 					} else {
 						$par = new Par($childNode);
 						$content[] = $par;
@@ -159,7 +168,7 @@ class Document {
 		}
 	}
 
-	private function isFigure($childNode): bool {
+	private function isDrawing($childNode): bool {
 		$element = Document::$xpath->query("w:r//w:drawing", $childNode)[0];
 		if ($element) return true;
 		return false;

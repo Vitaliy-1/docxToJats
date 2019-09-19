@@ -10,7 +10,7 @@
 */
 
 use docx2jats\objectModel\DataObject;
-use docx2jats\objectModel\body\Figure as FigureObject;
+use docx2jats\objectModel\body\Image as FigureObject;
 
 class Figure extends Element {
 	/* @var $dataObject FigureObject */
@@ -29,20 +29,17 @@ class Figure extends Element {
 
 		$pathInfo = pathinfo($this->figureObject->getLink());
 
-		if ($this->figureObject->getType() == FigureObject::DOCX_DRAWING_PICTURE) {
-			$figureNode->setAttribute("mimetype", "image");
+		$figureNode->setAttribute("mimetype", "image");
 
-			switch ($pathInfo['extension']) {
-				case "jpg":
-				case "jpeg":
-					$figureNode->setAttribute("mime-subtype", "jpeg");
-					break;
-				case "png":
-					$figureNode->setAttribute("mime-subtype", "png");
-					break;
-			}
-
-		} // TODO convert charts
+		switch ($pathInfo['extension']) {
+			case "jpg":
+			case "jpeg":
+				$figureNode->setAttribute("mime-subtype", "jpeg");
+				break;
+			case "png":
+				$figureNode->setAttribute("mime-subtype", "png");
+				break;
+		}
 
 		$figureNode->setAttribute("xlink:href", $pathInfo['basename']);
 	}
