@@ -131,7 +131,7 @@ class DOCXArchive extends \ZipArchive {
 			foreach ($this->mediaFiles as $mediaFile) {
 				$index = $this->locateName($mediaFile);
 				$data = $this->getFromIndex($index);
-				$filesContent[] = $data;
+				$filesContent[$mediaFile] = $data;
 			}
 			$this->close();
 		}
