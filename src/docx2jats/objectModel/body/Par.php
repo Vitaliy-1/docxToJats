@@ -115,7 +115,7 @@ class Par extends DataObject {
 		}
 
 		$numberingNode = $this->getXpath()->query('w:pPr/w:numPr', $this->getDomElement());
-		if ($this->isOnlyChildNode($numberingNode)) {
+		if ($this->isOnlyChildNode($numberingNode) && !in_array(self::DOCX_PAR_HEADING, $type)) { // do not include headings to lists
 			$type[] = self::DOCX_PAR_LIST;
 		}
 

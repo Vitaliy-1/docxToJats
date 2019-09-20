@@ -25,14 +25,12 @@ abstract class Element extends \DOMElement {
 		switch (get_class($dataObject)) {
 			case "docx2jats\objectModel\body\Par":
 				/* @var $dataObject \docx2jats\objectModel\body\Par */
-				foreach ($dataObject->getType() as $par) {
-					if ($par === Par::DOCX_PAR_LIST) {
-						$name = "p";
-					} elseif ($par === Par::DOCX_PAR_HEADING) {
-						$name = "title";
-					} elseif ($par === Par::DOCX_PAR_REGULAR) {
-						$name = "p";
-					}
+
+				$types = $dataObject->getType();
+				if (in_array(Par::DOCX_PAR_HEADING, $types)) {
+					$name = "title";
+				} else {
+					$name = "p";
 				}
 				break;
 			case "docx2jats\objectModel\body\Table":
