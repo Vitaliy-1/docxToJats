@@ -48,10 +48,11 @@ class Document extends \DOMDocument {
 
 		// Doctype
 		$impl = new \DOMImplementation();
-		$this->appendChild($impl->createDocumentType("article", "-//NLM//DTD JATS (Z39.96) Journal Archiving DTD v1.0 20120330//EN", "https://jats.nlm.nih.gov/archiving/1.1/JATS-archivearticle1.dtd"));
+		$this->appendChild($impl->createDocumentType("article", "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.2 20190208//EN", "https://jats.nlm.nih.gov/publishing/1.2/JATS-journalpublishing1.dtd"));
 
 		$this->setBasicStructure();
 		$this->extractContent();
+		$this->extractMetadata();
 	}
 
 	public function getJatsFile(string $pathToFile) {
@@ -64,11 +65,6 @@ class Document extends \DOMDocument {
 			"http://www.w3.org/2000/xmlns/",
 			"xmlns:xlink",
 			"http://www.w3.org/1999/xlink"
-		);
-		$this->article->setAttributeNS(
-			"http://www.w3.org/2000/xmlns/",
-			"xmlns:ali",
-			"http://www.niso.org/schemas/ali/1.0/ali.xsd"
 		);
 
 		$this->appendChild($this->article);
@@ -199,5 +195,24 @@ class Document extends \DOMDocument {
 				}
 			}
 		}
+	}
+
+	private function extractMetadata() {
+		//TODO find abd extract OOXML metadata
+
+		// Needed to make JATS XML document valid
+		$journalMetaNode = $this->createElement("journal-meta");
+		$this->front->appendChild($journalMetaNode);
+		$journalIdNode = $this->createElement("journal-id");
+		$journalMetaNode->appendChild($journalIdNode);
+		$issnNode = $this->createElement("issn");
+		$journalMetaNode->appendChild($issnNode);
+
+		$articleMetaNode = $this->createElement("article-meta");
+		$this->front->appendChild($articleMetaNode);
+		$titleGroupNode = $this->createElement("title-group");
+		$articleMetaNode->appendChild($titleGroupNode);
+		$articleTitleNode = $this->createElement("article-title");
+		$titleGroupNode->appendChild($articleTitleNode);
 	}
 }
