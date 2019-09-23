@@ -110,7 +110,10 @@ class Text extends DataObject {
 		$parent = $this->getDomElement()->parentNode;
 		if ($parent->tagName == "w:hyperlink") {
 			$ref = $parent->getAttribute("r:id");
-			$this->link = Document::getRelationshipById($ref);
+			// TODO link by other attributes for identification, e.g. w:anchor
+			if ($ref) {
+				$this->link = Document::getRelationshipById($ref);
+			}
 		}
 	}
 

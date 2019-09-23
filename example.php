@@ -24,12 +24,12 @@ foreach ($contents as $content) {
 	//echo "\n";
 	if (get_class($content) === "docx2jats\objectModel\body\Par") {
 		foreach ($content->getContent() as $textObject) {
-			//echo $textObject->getString();
+			//echo $textObject->getContent();
 		}
 		//echo $content->getNumberingId();
 	} elseif (get_class($content) === "docx2jats\objectModel\body\Table") {
 		foreach ($content->getContent() as $textObject) {
-			//echo $textObject->getString();
+			//echo $textObject->getContent();
 		}
 	}
 }
