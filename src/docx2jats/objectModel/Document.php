@@ -35,6 +35,10 @@ class Document {
 	private $styles;
 	static $stylesXpath;
 
+	/* @var $numbering \DOMDocument represents info about list/heading level and style */
+	private $numbering;
+	static $numberingXpath;
+
 	public function __construct(array $params) {
 		if (array_key_exists("relationships", $params)) {
 			$this->relationships = $params["relationships"];
@@ -44,6 +48,11 @@ class Document {
 		if (array_key_exists("styles", $params)) {
 			$this->styles = $params["styles"];
 			self::$stylesXpath = new \DOMXPath($this->styles);
+		}
+
+		if (array_key_exists("numbering", $params)) {
+			$this->numbering = $params["numbering"];
+			self::$numberingXpath = new \DOMXPath($this->numbering);
 		}
 
 		self::$xpath = new \DOMXPath($params["ooxmlDocument"]);
@@ -172,5 +181,18 @@ class Document {
 		$element = Document::$xpath->query("w:r//w:drawing", $childNode)[0];
 		if ($element) return true;
 		return false;
+	}
+
+	static function getNumberingTypeById(string $id, string $lvl): ?string {
+		$element = self::$numberingXpath->query("//*[@w:abstractNumId='" . $id . "']");
+		if ($element->count() == 0) return null;
+
+		$level = self::$numberingXpath->query("w:lvl[@w:ilvl='" . $lvl . "']", $element[0]);
+		if ($level->count() == 0) return null;
+
+		$type = self::$numberingXpath->query("w:numFmt/@w:val", $level[0]);
+		if ($type->count() == 0) return null;
+
+		return $type[0]->nodeValue;
 	}
 }

@@ -21,6 +21,9 @@ class Par extends DataObject {
 	const DOCX_LIST_HAS_SUBLIST = 'hasSublist';
 	const DOCX_LIST_ITEM_ID = 'itemId';
 
+	const DOCX_LIST_TYPE_UNORDERED = 1;
+	const DOCX_LIST_TYPE_ORDERED = 2;
+
 	private $type = array(); // const
 	private $properties = array();
 	private $text = array();
@@ -37,6 +40,16 @@ class Par extends DataObject {
 
 	private $numberingItemProp = array();
 
+	/* @var $numberingType int const DOCX_LIST_TYPE_ */
+	private $numberingType;
+
+	/* @var $numberingUnorderedMarkers array
+	 * @brief style markers for unordered lists according to OOXML specifications, see: http://officeopenxml.com/WPnumbering-numFmt.php
+	 * Other markers are used for ordered lists
+	 */
+	// TODO should more detailed list styles be implemented?
+	static $numberingUnorderedMarkers = array("bullet", "none", "");
+
 	public function __construct(\DOMElement $domElement) {
 		parent::__construct($domElement);
 		$this->defineType();
@@ -47,6 +60,7 @@ class Par extends DataObject {
 		$this->numberingLevel = $this->setNumberingLevel();
 		$this->numberingId = $this->setNumberingId();
 		$this->numberingItemProp = $this->setNumberingItemProp();
+		$this->numberingType = $this->extractNumberingType();
 	}
 
 	/**
@@ -114,9 +128,16 @@ class Par extends DataObject {
 
 		}
 
+		//w:numPr node can appear in lists, heading (heading level), text corrections -> with a child ins with the name of the editor, etc...
 		$numberingNode = $this->getXpath()->query('w:pPr/w:numPr', $this->getDomElement());
 		if ($this->isOnlyChildNode($numberingNode) && !in_array(self::DOCX_PAR_HEADING, $type)) { // do not include headings to lists
-			$type[] = self::DOCX_PAR_LIST;
+
+			// if w:ilvl is a child, in more other cases it would be a list
+			// TODO should other algorithms for list detection be considered?
+			$levelNode = $this->getXpath()->query('w:ilvl', $numberingNode[0]);
+			if ($this->isOnlyChildNode($levelNode)) {
+				$type[] = self::DOCX_PAR_LIST;
+			}
 		}
 
 		if (empty($type)) {
@@ -272,5 +293,40 @@ class Par extends DataObject {
 
 	public function getNumberingItemProp() {
 		return $this->numberingItemProp;
+	}
+
+	private function extractNumberingType(): int {
+		$numberingType = self::DOCX_LIST_TYPE_UNORDERED;
+
+		$numberingPrNode = null;
+		if (in_array(self::DOCX_PAR_LIST, $this->type)) {
+			$numberingPrNode = $this->getXpath()->query("w:pPr/w:numPr", $this->getDomElement());
+		} else {
+			// shouldn't be true; keeping if other algorithm for numbering detection would be used
+			return $numberingType;
+		}
+
+		if ($numberingPrNode->count() == 0) return $numberingType;
+
+		$lvl = $this->getXpath()->query("w:ilvl/@w:val", $numberingPrNode[0]);
+
+		if ($lvl->count() == 0) return $numberingType;
+
+		$id = $this->getXpath()->query("w:numId/@w:val", $numberingPrNode[0]);
+
+		if ($id->count() == 0) return $numberingType;
+
+		$type = Document::getNumberingTypeById($id[0]->nodeValue, $lvl[0]->nodeValue);
+
+		if (!in_array($type, self::$numberingUnorderedMarkers)) $numberingType = self::DOCX_LIST_TYPE_ORDERED;
+
+		return $numberingType;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getNumberingType(): int {
+		return $this->numberingType;
 	}
 }

@@ -19,16 +19,16 @@
       <p><bold>Juvenile idiopathic </bold><bold><italic>arthritis</italic></bold><bold> (JIA)</bold> <sup>often</sup> causes <sub>significant</sub> functional  throughout the lifespan [1,2]. Medical workers who are aware of the JIA’s clinical course specifics in adolescence can provide better assistance at the transition stage when a patient’s healthcare shifts from a pediatric to an adult health services [3, 4,5]. The patient's transmission is a multidimensional, interdisciplinary and active process, which addresses the medical, socio-psychological and educational/professional needs of adolescents with JIA [6,7,8]. Previous studies (<ext-link xlink:href="https://e-medjournal.com/index.php/psp">The link</ext-link>) have shown that the use of specific questionnaires (CHQ, Peds-QL) don’t allow fully assess psychometric changes in young adults. In particular, the interpretation of these studies’ results on Peds-QL is limited due to a small sample size [10]. On the contrary, when using HR-QOL, Haverman L. et al. (2011) found significant changes in the quality of life in children and adolescents with JIA [11].</p>
       <sec id="sec-1_1">
         <title>Heading 2</title>
-        <list>
+        <list list-type="order">
           <list-item>
             <p>First</p>
           </list-item>
           <list-item>
             <p>Second</p>
-            <list>
+            <list list-type="order">
               <list-item>
                 <p>Level 2 First</p>
-                <list>
+                <list list-type="order">
                   <list-item>
                     <p>Level 3 First</p>
                   </list-item>
@@ -44,7 +44,7 @@
           </list-item>
           <list-item>
             <p>Third</p>
-            <list>
+            <list list-type="order">
               <list-item>
                 <p>Level 2 Third</p>
               </list-item>
@@ -791,13 +791,13 @@
       <sec id="sec-5_1">
         <title>Heading 3</title>
         <p>As we expected, QoL in patients with JIA was worse than in the control group. Our findings were confirmed by data published earlier that showed a worse QoL in young people with JIA than in the control group of the corresponding age and sex [9, 16, 17, 18, 19, 20, 21]. However, our results in patients with JIA and healthy individuals are different from the data from Wipff J. et al., where authors analyzed data on patients with JIA at the stage of transmission of patients from child to an adult healthcare services during biologic therapy [22]. The SF-36 score for physical and psychological health was less influenced by the JIA in our sample than in previously published studies. These results were quite unexpected because in Ukraine biological therapy is not available for many patients [16, 18, 19, 20, 22]. There are several possible explanations for these results, including:</p>
-        <list>
+        <list list-type="bullet">
           <list-item>
             <p>Our patients often received GCs, which reduced the activity of the disease.</p>
           </list-item>
           <list-item>
             <p>Our sample included not only patients with JIA in the active phase that needed constant observation but also those who were in complete clinical remission and did not require medical therapy.</p>
-            <list>
+            <list list-type="bullet">
               <list-item>
                 <p>Nested List item 1</p>
               </list-item>
@@ -812,7 +812,7 @@
         <p>Patients with JIA may also have a low QoL while in remission. In our study, it was found that 3 out of 33 patients in the remission stage had a low physical well-being. In 5 out of 33 patients - a low level of mental well-being. These data coincide with the results of the study [22], in which 8/38 patients with JIA in the remission stage had a low physical well-being.</p>
         <p>Our study has some limitations. First, our study had cross-sectional design study that limited the assessment of the natural course and QoL prognostic factors of the JIA. Second, data on the educational and socio-economic status of patients with JIA and their parents have not been collected. These factors may influence SF-36 results. Previous studies have shown that psychological factors, therapies, geographical origin, and socioeconomic differences can have an effect on pain in the JIA [27, 28]. Third, we did not evaluate the effect of treatment on QoL, especially on biological therapy, although a number of studies have shown that QoL with JIA is improved against the background of biological therapy [29, 30].</p>
         <p>Our research also has the strengths:</p>
-        <list>
+        <list list-type="order">
           <list-item>
             <p>The experimental group consisted of patients with JIA that met the criteria for ILAR in the transition period.</p>
           </list-item>
@@ -834,7 +834,7 @@
       <p>Звичаний текст тут.</p>
       <p></p>
       <p>References</p>
-      <list>
+      <list list-type="order">
         <list-item>
           <p>Dzhus MB. Psycho-emotional condition of young adults with juvenile idiopathic arthritis. Acta Medica Leopoliensia. 2017; 23 (1-2): 44-51.</p>
         </list-item>

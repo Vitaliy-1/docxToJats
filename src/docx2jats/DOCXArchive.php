@@ -33,6 +33,7 @@ class DOCXArchive extends \ZipArchive {
 			$relationships = $this->transformToXml("word/_rels/document.xml.rels");
 			$styles = $this->transformToXml("word/styles.xml");
 			$this->mediaFiles = $this->extractMediaFiles();
+			$numbering = $this->transformToXml("word/numbering.xml");
 			$this->close();
 
 			// construct as an array
@@ -40,13 +41,11 @@ class DOCXArchive extends \ZipArchive {
 
 			$params["ooxmlDocument"] = $this->ooxmlDocument;
 
-			if ($relationships) {
-				$params["relationships"] = $relationships;
-			}
+			if ($relationships) $params["relationships"] = $relationships;
 
-			if ($styles) {
-				$params["styles"] = $styles;
-			}
+			if ($styles) $params["styles"] = $styles;
+
+			if ($numbering) $params["numbering"] = $numbering;
 
 			$document = new Document($params);
 

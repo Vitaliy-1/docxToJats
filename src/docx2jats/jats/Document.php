@@ -139,8 +139,15 @@ class Document extends \DOMDocument {
 									$hasSublist = $content->getNumberingItemProp()[Par::DOCX_LIST_HAS_SUBLIST];
 
 									// Creating and appending new list
-									if ($listCounter !== $content->getNumberingId()) {
+									// !array_key_exists... is necessary as there can be several lists with the same id, usually it's malformed doc
+									// TODO find a way to properly deal with numberings with the same id interrupted by simple regular paragraphs
+									if (($listCounter !== $content->getNumberingId()) || !array_key_exists($content->getNumberingId(), $this->lists)) {
 										$newList = $this->createElement('list');
+										if ($content->getNumberingType() == Par::DOCX_LIST_TYPE_ORDERED) {
+											$newList->setAttribute("list-type", "order");
+										} else {
+											$newList->setAttribute("list-type", "bullet");
+										}
 										$this->lists[$content->getNumberingId()] = $newList;
 									} else {
 										$section->appendChild($this->lists[$listCounter]);
@@ -164,6 +171,11 @@ class Document extends \DOMDocument {
 
 										if ($hasSublist) {
 											$subList[$content->getNumberingLevel()] = $this->createElement('list');
+											if ($content->getNumberingType() == Par::DOCX_LIST_TYPE_ORDERED) {
+												$subList[$content->getNumberingLevel()]->setAttribute("list-type", "order");
+											} else {
+												$subList[$content->getNumberingLevel()]->setAttribute("list-type", "bullet");
+											}
 											$listItem->appendChild($subList[$content->getNumberingLevel()]);
 										}
 									}
@@ -198,7 +210,7 @@ class Document extends \DOMDocument {
 	}
 
 	private function extractMetadata() {
-		//TODO find abd extract OOXML metadata
+		//TODO find and extract OOXML metadata
 
 		// Needed to make JATS XML document valid
 		$journalMetaNode = $this->createElement("journal-meta");
