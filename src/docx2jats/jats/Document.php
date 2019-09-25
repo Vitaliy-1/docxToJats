@@ -52,6 +52,7 @@ class Document extends \DOMDocument {
 
 		$this->setBasicStructure();
 		$this->extractContent();
+		$this->cleanContent();
 		$this->extractMetadata();
 	}
 
@@ -205,6 +206,19 @@ class Document extends \DOMDocument {
 						}
 				}
 			}
+		}
+	}
+
+	/*
+	 * @brief MS Word output leaves empty nodes, normalize the final document
+	 * elements with attribute and empty table cells should be left; empty table rows can be deleted as do not have semantic meaning
+	 */
+
+	private function cleanContent(): void {
+		$xpath = new \DOMXPath($this);
+		$nodesToRemove = $xpath->query("//body//*[not(normalize-space()) and not(.//@*) and not(self::td)]");
+		foreach ($nodesToRemove as $nodeToRemove) {
+			$nodeToRemove->parentNode->removeChild($nodeToRemove);
 		}
 	}
 
