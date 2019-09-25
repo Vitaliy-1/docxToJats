@@ -184,6 +184,8 @@ class Document {
 	}
 
 	static function getNumberingTypeById(string $id, string $lvl): ?string {
+		if (!self::$numberingXpath) return null; // the numbering styles are missing.
+
 		$element = self::$numberingXpath->query("//*[@w:abstractNumId='" . $id . "']");
 		if ($element->count() == 0) return null;
 

@@ -88,7 +88,7 @@ class Document extends \DOMDocument {
 
 			$subList = array(); // temporary container for sublists
 			$listItem = null; // temporary container for previous list item
-			$listCounter = 0; // temporary container for current list ID
+			$listCounter = -1; // temporary container for current list ID
 			foreach ($document->getContent() as $key => $content) {
 				$contentId = 'sec-' . implode('_', $content->getDimensionalSectionId());
 
@@ -141,7 +141,7 @@ class Document extends \DOMDocument {
 									// Creating and appending new list
 									// !array_key_exists... is necessary as there can be several lists with the same id, usually it's malformed doc
 									// TODO find a way to properly deal with numberings with the same id interrupted by simple regular paragraphs
-									if (($listCounter !== $content->getNumberingId()) || !array_key_exists($content->getNumberingId(), $this->lists)) {
+									if ($listCounter !== $content->getNumberingId()) {
 										$newList = $this->createElement('list');
 										if ($content->getNumberingType() == Par::DOCX_LIST_TYPE_ORDERED) {
 											$newList->setAttribute("list-type", "order");
@@ -149,9 +149,9 @@ class Document extends \DOMDocument {
 											$newList->setAttribute("list-type", "bullet");
 										}
 										$this->lists[$content->getNumberingId()] = $newList;
-									} else {
-										$section->appendChild($this->lists[$listCounter]);
 									}
+
+									$section->appendChild($this->lists[$content->getNumberingId()]);
 
 									// appends nested lists and list items based on their level
 									if (count($itemId) === $content->getNumberingLevel()+1) {
@@ -160,7 +160,6 @@ class Document extends \DOMDocument {
 										$jatsPar->setContent();
 
 										if ($content->getNumberingLevel() === 0) {
-
 											$this->lists[$content->getNumberingId()]->appendChild($listItem);
 										} elseif (array_key_exists($content->getNumberingLevel()-1, $subList)) {
 											$subList[$content->getNumberingLevel()-1]->appendChild($listItem);

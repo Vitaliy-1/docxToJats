@@ -1,0 +1,2 @@
+PHP Notice:  Undefined offset: 19 in /home/doc/OJS/docxToJats/src/docx2jats/objectModel/Document.php on line 154
+PHP Notice:  Undefined offset: 5 in /home/doc/OJS/docxToJats/src/docx2jats/objectModel/Document.php on line 154
