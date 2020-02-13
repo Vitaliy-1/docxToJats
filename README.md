@@ -5,7 +5,7 @@ DocxToJats is a PHP library that converts DOCX archives that comply OOXML standa
 ## Usage
 1. `git clone https://github.com/Vitaliy-1/docxToJats.git`
 2. `cd docxToJats`
-3. `php docxtojats [/path/to/input/file.docx or /path/to/input/dir/] [/path/to/output/file.xml or /path/to/output/dir]`. E.g., to process a single file: `php docxtojats.php /mydir/file.docx /mydir/converted/file.xml` - if output filename is pointed, attached files, like figures, will be moved into the same folder; to process multiple files in a folder by relative path: `samples/input/ samples/output/`.
+3. `php docxtojats.php [/path/to/input/file.docx or /path/to/input/dir/] [/path/to/output/file.xml or /path/to/output/dir]`. E.g., to process a single file: `php docxtojats.php /mydir/file.docx /mydir/converted/file.xml` - if output filename is pointed, attached files, like figures, will be moved into the same folder; to process multiple files in a folder by relative path: `samples/input/ samples/output/`.
 ## Additional info
 * The list of supported elements: https://github.com/Vitaliy-1/docxConverter#what-article-elements-are-supported. 
 * How to achieve the best results: https://github.com/Vitaliy-1/docxConverter#how-to-achieve-best-results 
