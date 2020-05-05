@@ -177,6 +177,33 @@ class Document {
 		}
 	}
 
+	static function getBuiltinStyle(string $constStyleType, string $id, array $builtinStyles): ?string {
+		// Traverse the chain of styles to see if the named id style
+		// inherits from one of the sought-for built-in styles and
+		// return the one that matches.
+		if (self::$stylesXpath) {
+			do {
+				$element = self::$stylesXpath->query("/w:styles/w:style[@w:type='" . $constStyleType . "'][@w:styleId='" . $id . "']")[0];
+
+				$basedOn = self::$stylesXpath->query("w:basedOn", $element)[0];
+				$id = $basedOn ? $basedOn->getAttribute("w:val") : null;
+
+				$name = self::$stylesXpath->query("w:name", $element)[0];
+				$styleName = $name->getAttribute("w:val");
+
+				if (in_array($styleName, $builtinStyles)) return $styleName;
+			} while($id);
+
+			return null;
+		} else {
+
+			// Fall back on using the original id as if it were the name
+			if (in_array($id, $builtinStyles)) return $id;
+			else return null;
+		}
+	}
+
+
 	private function isDrawing($childNode): bool {
 		$element = Document::$xpath->query("w:r//w:drawing", $childNode)[0];
 		if ($element) return true;

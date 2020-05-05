@@ -112,20 +112,10 @@ class Par extends DataObject {
 	private function defineType() {
 		$type = array();
 		$styles = $this->getXpath()->query('w:pPr/w:pStyle/@w:val', $this->getDomElement());
-		if ($this->isOnlyChildNode($styles)) {
+		if ($this->isOnlyChildNode($styles) &&
+			Document::getBuiltinStyle(Document::DOCX_STYLES_PARAGRAPH, $styles[0]->nodeValue, self::$headings)) {
 
-			// Find associated style in style.xml; TODO explore consistency for different languages
-			$associatedStyle = Document::getElementStyling(Document::DOCX_STYLES_PARAGRAPH, $styles[0]->nodeValue);
-
-			// Fallback to the node content if styles.xml doesn't exist
-			if (!$associatedStyle) {
-				$associatedStyle = $styles[0]->nodeValue;
-			}
-
-			if (in_array(strtolower($associatedStyle), self::$headings)) {
-				$type[] = self::DOCX_PAR_HEADING;
-			}
-
+			$type[] = self::DOCX_PAR_HEADING;
 		}
 
 		//w:numPr node can appear in lists, heading (heading level), text corrections -> with a child ins with the name of the editor, etc...
@@ -155,9 +145,7 @@ class Par extends DataObject {
 		$styleString = '';
 		if (in_array(self::DOCX_PAR_HEADING, $this->type )) {
 			$styles = $this->getXpath()->query('w:pPr/w:pStyle/@w:val', $this->getDomElement());
-			if ($this->isOnlyChildNode($styles)) {
-				$styleString = $styles[0]->nodeValue;
-			}
+			$styleString = Document::getBuiltinStyle(Document::DOCX_STYLES_PARAGRAPH, $styles[0]->nodeValue, self::$headings);
 		}
 
 		// Not a heading if empty
