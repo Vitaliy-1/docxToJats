@@ -62,6 +62,21 @@ class Text extends DataObject {
 	}
 
 	/**
+	 * For a toggle property, (see ECMA-376 Part 1, 17.7.3), determine
+	 * its enabled state.
+	 *
+	 * @return bool
+	 */
+	private function togglePropertyEnabled(\DOMElement $property): bool {
+		if ($property->hasAttribute('w:val')) {
+			$attrValue = $property->getAttribute('w:val');
+			return ($attrValue == '1' || $attrValue == 'true');
+		} else {
+			return true; // No value means it's enabled
+		}
+	}
+
+	/**
 	 * @return array
 	 */
 	private function setType() {
@@ -71,10 +86,14 @@ class Text extends DataObject {
 		foreach ($properties as $property) {
 			switch($property->nodeName) {
 				case "w:b":
-					$type[] = $this::DOCX_TEXT_BOLD;
+					if ($this->togglePropertyEnabled($property)) {
+						$type[] = $this::DOCX_TEXT_BOLD;
+					}
 					break;
 				case "w:i":
-					$type[] = $this::DOCX_TEXT_ITALIC;
+					if ($this->togglePropertyEnabled($property)) {
+						$type[] = $this::DOCX_TEXT_ITALIC;
+					}
 					break;
 				case "w:vertAlign":
 					if ($property->hasAttribute('w:val')) {
@@ -87,7 +106,9 @@ class Text extends DataObject {
 					}
 					break;
 				case "w:strike":
-					$type[] = $this::DOCX_TEXT_STRIKETHROUGH;
+					if ($this->togglePropertyEnabled($property)) {
+						$type[] = $this::DOCX_TEXT_STRIKETHROUGH;
+					}
 					break;
 			}
 		}
