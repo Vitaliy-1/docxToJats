@@ -191,7 +191,7 @@ class Document {
 				$name = self::$stylesXpath->query("w:name", $element)[0];
 				$styleName = $name->getAttribute("w:val");
 
-				if (in_array($styleName, $builtinStyles)) return $styleName;
+				if (in_array(strtolower($styleName), $builtinStyles)) return $styleName;
 			} while($id);
 
 			return null;
