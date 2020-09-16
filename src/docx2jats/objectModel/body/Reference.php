@@ -12,9 +12,16 @@ class Reference {
 	private $rawReference;
 	private $id;
 	private $cslId = 0;
+	private $csl;
+	private $hasStructure = false;
 
 	public function __construct(string $rawReference) {
 		$this->rawReference = $rawReference;
+
+		if ($csl = json_decode($rawReference)) {
+			$this->csl = $csl;
+			$this->hasStructure = true;
+		}
 	}
 
 	/**
@@ -79,5 +86,17 @@ class Reference {
 
 	public function getId() : ?int {
 		return $this->id;
+	}
+
+	public function getCSL() : ?\stdClass {
+		return $this->csl;
+	}
+
+	public function hasStructure() : bool {
+		return $this->hasStructure;
+	}
+
+	public function getRawReference() : string {
+		return $this->rawReference;
 	}
 }

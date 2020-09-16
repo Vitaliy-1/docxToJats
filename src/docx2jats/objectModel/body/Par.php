@@ -16,6 +16,7 @@ class Par extends DataObject {
 	const DOCX_PAR_REGULAR = 1;
 	const DOCX_PAR_HEADING = 2;
 	const DOCX_PAR_LIST = 3;
+	const DOCX_PAR_REF = 4;
 	const DOCX_LIST_START = 'listStart';
 	const DOCX_LIST_END = 'listEnd';
 	const DOCX_LIST_HAS_SUBLIST = 'hasSublist';
@@ -28,6 +29,7 @@ class Par extends DataObject {
 	private $properties = array();
 	private $text = array();
 	public static $headings = array("heading", "heading 1", "heading 2", "heading 3", "heading 4", "heading 5", "heading 6", "title");
+	public static $bibliography = array("bibliography");
 
 	/* @var $headingLevel int */
 	private $headingLevel;
@@ -129,6 +131,14 @@ class Par extends DataObject {
 	private function defineType() {
 		$type = array();
 		$styles = $this->getXpath()->query('w:pPr/w:pStyle/@w:val', $this->getDomElement());
+
+		if ($this->isOnlyChildNode($styles) &&
+			Document::getBuiltinStyle(Document::DOCX_STYLES_PARAGRAPH, $styles[0]->nodeValue, self::$bibliography)) {
+
+			$type[] = self::DOCX_PAR_REF;
+			return $type; // stop if reference
+		}
+
 		if ($this->isOnlyChildNode($styles) &&
 			Document::getBuiltinStyle(Document::DOCX_STYLES_PARAGRAPH, $styles[0]->nodeValue, self::$headings)) {
 
@@ -333,5 +343,14 @@ class Par extends DataObject {
 	 */
 	public function getNumberingType(): int {
 		return $this->numberingType;
+	}
+
+	public function toString(): string {
+		$text = '';
+		foreach ($this->getContent() as $content) {
+			if (get_class($content) !== 'docx2jats\objectModel\body\Text') continue;
+			$text .= $content->getContent();
+		}
+		return $text;
 	}
 }

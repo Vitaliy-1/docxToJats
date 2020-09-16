@@ -37,6 +37,9 @@ class Document extends \DOMDocument {
 	/* @var $sections array of DOMElements */
 	var $sections = array();
 
+	/* @var $references array of DOMElements */
+	var $references = array();
+
 	/* @var $lists array of DOMElements; contains all article's lists, key -> unique list ID, corresponds to ID in numbering.xml */
 	var $lists = array();
 
@@ -54,6 +57,7 @@ class Document extends \DOMDocument {
 		$this->extractContent();
 		$this->cleanContent();
 		$this->extractMetadata();
+		$this->extractReferences();
 	}
 
 	public function getJatsFile(string $pathToFile) {
@@ -239,5 +243,19 @@ class Document extends \DOMDocument {
 		$articleMetaNode->appendChild($titleGroupNode);
 		$articleTitleNode = $this->createElement("article-title");
 		$titleGroupNode->appendChild($articleTitleNode);
+	}
+
+	private function extractReferences() : void {
+		$document = $this->docxArchive->getDocument();
+		$references = $document->getReferences();
+		if (empty($references)) return;
+
+		$refList = $this->createElement('ref-list');
+		$this->back->appendChild($refList);
+		foreach ($references as $reference) {
+			$referenceEl = new Reference();
+			$refList->appendChild($referenceEl);
+			$referenceEl->setContent($reference);
+		}
 	}
 }

@@ -81,7 +81,14 @@ class Document {
 
 					} else {
 						$par = new Par($childNode, $this);
-						$content[] = $par;
+						if (in_array(Par::DOCX_PAR_REF, $par->getType())) {
+							if (!empty(trim($par->toString()))) {
+								$reference = new Reference($par->toString());
+								$this->addReference($reference);
+							}
+						} else {
+							$content[] = $par;
+						}
 					}
 					break;
 				case "w:tbl":
