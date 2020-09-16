@@ -11,14 +11,15 @@
 
 use docx2jats\objectModel\DataObject;
 use docx2jats\objectModel\body\Cell;
+use docx2jats\objectModel\Document;
 
 class Row extends DataObject {
 
 	private $properties = array();
 	private $cells = array();
 
-	public function __construct(\DOMElement $domElement) {
-		parent::__construct($domElement);
+	public function __construct(\DOMElement $domElement, Document $ownerDocument) {
+		parent::__construct($domElement, $ownerDocument);
 		$this->properties = $this->setProperties('w:trPr/child::node()');
 		$this->cells = $this->setContent('w:tc');
 	}
@@ -43,7 +44,7 @@ class Row extends DataObject {
 				// Omit merged nodes
 				$colspansMerged = $this->getXpath()->query('w:tcPr/w:vMerge[@w:val="continue"]', $contentNode);
 				if (!$colspansMerged->count() > 0) {
-					$cell = new Cell($contentNode, $cellNumber);
+					$cell = new Cell($contentNode, $cellNumber, $this->getOwnerDocument());
 					$content[] = $cell;
 				}
 			}

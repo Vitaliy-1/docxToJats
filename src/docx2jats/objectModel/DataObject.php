@@ -24,8 +24,11 @@ abstract class DataObject {
 	/* @var $dimensionalSectionId array */
 	private $dimensionalSectionId = array();
 
-	public function __construct(\DOMElement $domElement)   {
+	private $ownerDocument;
+
+	public function __construct(\DOMElement $domElement, Document $ownerDocument = null)   {
 		$this->domElement = $domElement;
+		$this->ownerDocument = $ownerDocument;
 		$this->xpath = Document::$xpath;
 	}
 
@@ -87,7 +90,7 @@ abstract class DataObject {
 
 		$parNodes = $this->getXpath()->query('w:p', $this->getDomElement());
 		foreach ($parNodes as $parNode) {
-			$par = new Par($parNode);
+			$par = new Par($parNode, $this->getOwnerDocument());
 			$content[] = $par;
 		}
 
@@ -137,5 +140,21 @@ abstract class DataObject {
 		}
 
 		return $element;
+	}
+
+	/**
+	 * @return Document;
+	 */
+	public function getOwnerDocument(): ?Document
+	{
+		return $this->ownerDocument;
+	}
+
+	/**
+	 * @param Document $ownerDocument
+	 */
+	public function setOwnerDocument(Document $ownerDocument): void
+	{
+		$this->ownerDocument = $ownerDocument;
 	}
 }

@@ -50,8 +50,8 @@ class Par extends DataObject {
 	// TODO should more detailed list styles be implemented?
 	static $numberingUnorderedMarkers = array("bullet", "none", "");
 
-	public function __construct(\DOMElement $domElement) {
-		parent::__construct($domElement);
+	public function __construct(\DOMElement $domElement, Document $ownerDocument) {
+		parent::__construct($domElement, $ownerDocument);
 		$this->defineType();
 		$this->properties = $this->setProperties('w:pPr/child::node()');
 		$this->text = $this->setContent('w:r|w:hyperlink');
@@ -85,13 +85,30 @@ class Par extends DataObject {
 		return $this->type;
 	}
 
+	/**
+	 * @param string $xpathExpression
+	 * @return array
+	 * @brief Sets a content for the paragraph: text runs, links and complex fields
+	 */
 	protected function setContent(string $xpathExpression) {
 		$content = array();
 		$contentNodes = $this->getXpath()->query($xpathExpression, $this->getDomElement());
+		$field = null;
 		foreach ($contentNodes as $contentNode) {
 			if ($contentNode->nodeName === "w:r") {
-				$text = new Text($contentNode);
-				$content[] = $text;
+				// complex field or text run; complex field spans on several text runs
+				if (!$field && Field::complexFieldStarts($contentNode)) {
+					$field = new Field($contentNode, $this->getOwnerDocument());
+					$content[] = $field;
+				} elseif ($field && !Field::complexFieldLast($contentNode)) {
+					$field->addContent($contentNode);
+				} elseif ($field && Field::complexFieldLast($contentNode)) {
+					$field->addContent($contentNode);
+					$field = null;
+				} else {
+					$text = new Text($contentNode);
+					$content[] = $text;
+				}
 			} elseif ($contentNode->nodeName === "w:hyperlink") {
 				$children = $this->getXpath()->query('child::node()', $contentNode);
 				foreach ($children as $child) {

@@ -17,8 +17,8 @@ class Image extends DataObject {
 	/* @var $link string */
 	private $link;
 
-	public function __construct(\DOMElement $domElement) {
-		parent::__construct($domElement);
+	public function __construct(\DOMElement $domElement, $ownerDocument) {
+		parent::__construct($domElement, $ownerDocument);
 
 		$this->link = $this->extractLink();
 

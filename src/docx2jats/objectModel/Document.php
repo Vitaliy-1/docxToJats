@@ -13,6 +13,7 @@ use docx2jats\objectModel\DataObject;
 use docx2jats\objectModel\body\Par;
 use docx2jats\objectModel\body\Table;
 use docx2jats\objectModel\body\Image;
+use docx2jats\objectModel\body\Reference;
 
 class Document {
 	const SECT_NESTED_LEVEL_LIMIT = 5; // limit the number of possible levels for sections
@@ -38,6 +39,9 @@ class Document {
 	/* @var $numbering \DOMDocument represents info about list/heading level and style */
 	private $numbering;
 	static $numberingXpath;
+
+	private $references = array();
+	private $refCount = 0;
 
 	public function __construct(array $params) {
 		if (array_key_exists("relationships", $params)) {
@@ -70,18 +74,18 @@ class Document {
 						$imageNodes = self::$xpath->query(".//pic:pic", $childNode);
 						if ($imageNodes->length > 0) {
 							foreach ($imageNodes as $imageNode) {
-								$figure = new Image($imageNode);
+								$figure = new Image($imageNode, $this);
 								$content[] = $figure;
 							}
 						}
 
 					} else {
-						$par = new Par($childNode);
+						$par = new Par($childNode, $this);
 						$content[] = $par;
 					}
 					break;
 				case "w:tbl":
-					$table = new Table($childNode);
+					$table = new Table($childNode, $this);
 					$content[] = $table;
 					break;
 			}
@@ -223,5 +227,20 @@ class Document {
 		if ($type->count() == 0) return null;
 
 		return $type[0]->nodeValue;
+	}
+
+	public function addReference(Reference $reference) {
+		$this->refCount++;
+		$reference->setId($this->refCount);
+		$this->references[$this->refCount] = $reference;
+	}
+
+	public function getReferences() : array {
+		return $this->references;
+	}
+
+	public function getLastReference() : ?Reference {
+		$lastId = array_key_last($this->references);
+		return $this->references[$lastId];
 	}
 }

@@ -10,6 +10,7 @@
  */
 
 use docx2jats\objectModel\DataObject;
+use docx2jats\objectModel\Document;
 
 class Cell extends DataObject {
 
@@ -28,8 +29,8 @@ class Cell extends DataObject {
 	/* @var $cellNuber int */
 	private $cellNumber;
 
-	public function __construct(\DOMElement $domElement, $cellNumber) {
-		parent::__construct($domElement);
+	public function __construct(\DOMElement $domElement, int $cellNumber, Document $ownerDocument) {
+		parent::__construct($domElement, $ownerDocument);
 
 		$this->cellNumber = $cellNumber;
 		$this->isMerged = $this->defineMerged();
