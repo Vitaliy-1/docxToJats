@@ -11,7 +11,7 @@ class Reference {
 
 	private $rawReference;
 	private $id;
-	private $cslId = 0;
+	private $cslId;
 	private $csl;
 	private $hasStructure = false;
 
@@ -27,7 +27,7 @@ class Reference {
 	/**
 	 * @return int
 	 */
-	public function getCslId(): int
+	public function getCslId(): string
 	{
 		return $this->cslId;
 	}
@@ -52,14 +52,27 @@ class Reference {
 		$plainCit = null;
 		$json = json_decode($rawCSL);
 		if (is_null($json) || !$json->{'properties'}) return $plainCit;
-		$props = $json->{'properties'};
 
-		if ($plainCit = $props->{'plainCitation'}) {
-			return $plainCit;
+		$props = null;
+		if (property_exists($json, 'properties')) {
+			$props = $json->{'properties'};
 		}
 
-		if ($plainCit = $props->{'formattedCitation'}) {
-			return $plainCit;
+		// Zotero
+		if ($props && property_exists($props, 'plainCitation')) {
+			return $props->{'plainCitation'};
+		}
+
+		if ($props && property_exists($props, 'formattedCitation')) {
+			return $props->{'formattedCitation'};
+		}
+
+		// Mendeley
+		if (property_exists($json, 'mendeley')) {
+			$mendeley = $json->{'mendeley'};
+			if (property_exists($mendeley, 'previouslyFormattedCitation')) {
+				return $mendeley->{'previouslyFormattedCitation'};
+			}
 		}
 
 		return $plainCit;
@@ -70,7 +83,9 @@ class Reference {
 	 * @param Document $document
 	 * @return Reference|null returns reference if csl id exists or null if doesn't
 	 */
-	public static function cslIdExists(int $id, Document $document) : ?Reference {
+	public static function cslIdExists(?string $id, Document $document) : ?Reference {
+		if (is_null($id)) return null;
+
 		foreach ($document->getReferences() as $reference) {
 			if ($reference->getCslId() == $id) {
 				return $reference;
