@@ -60,7 +60,7 @@ class Reference extends \DOMElement {
 		if (array_key_exists($cslPubType, self::$refTypeCSLMap)) {
 			$jatsPubType = self::$refTypeCSLMap[$cslPubType];
 		} else {
-			$jatsPubType = self::$refTypeCSLMap[0];
+			$jatsPubType = array_key_first(self::$refTypeCSLMap);
 		}
 		$elementCitationEl = $this->createAndAppendElement($this, 'element-citation', null, ['publication-type' => $jatsPubType]);
 

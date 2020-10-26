@@ -41,7 +41,7 @@ class Reference {
 		if (!$items) return $citations;
 
 		foreach ($items as $item) {
-			$reference = new Reference(json_encode($item));
+			$reference = new Reference(json_encode($item, JSON_UNESCAPED_UNICODE));
 			$reference->cslId = $item->{'id'};
 			$citations[] = $reference;
 		}
@@ -92,7 +92,7 @@ class Reference {
 			if ($reference->getCslId() == $refToCompareId && $refToCompare->isZoteroCSL) {
 				return $reference;
 				// Compare raw references for Mendeley
-			} elseif (strcmp($reference->getRawReference(), $refToCompare->getRawReference()) === 0) {
+			} elseif (Reference::isCslMendeleySimilar($refToCompare, $reference)) {
 				return $reference;
 			}
 		}
@@ -118,5 +118,24 @@ class Reference {
 
 	public function getRawReference() : string {
 		return $this->rawReference;
+	}
+
+	static function isCslMendeleySimilar(Reference $referenceToCompare, Reference $reference) : bool {
+		$ref = $reference->getCSL()->{'itemData'};
+		$refToCompare = $referenceToCompare->getCSL()->{'itemData'};
+
+		if (property_exists($refToCompare, 'id')) {
+			unset($refToCompare->{'id'});
+		}
+
+		if (property_exists($ref , 'id')) {
+			unset($ref->{'id'});
+		}
+
+		if (strcmp(json_encode($refToCompare, JSON_UNESCAPED_UNICODE), json_encode($ref, JSON_UNESCAPED_UNICODE)) === 0) {
+			return true;
+		}
+
+		return false;
 	}
 }
