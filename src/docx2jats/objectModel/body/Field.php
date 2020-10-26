@@ -17,6 +17,7 @@ class Field extends DataObject {
 	const DOCX_FIELD_CSL = 1;
 	/** @var $type int DOCX_FIELD... const */
 	private $type = 0;
+	private $isZoteroCSL = false;
 	private $refIds = array();
 	private $plainCit;
 
@@ -82,8 +83,8 @@ class Field extends DataObject {
 						$references = Reference::findRefsCSL($rawCSL);
 						$this->plainCit = Reference::findPlainCit($rawCSL);
 						foreach ($references as $reference) {
-							$cslId = $reference->getCslId();
-							if (!$ref = Reference::cslIdExists($cslId, $this->getOwnerDocument())) {
+							$reference->isZoteroCSL = $this->isZoteroCSL();
+							if (!$ref = Reference::cslExists($reference, $this->getOwnerDocument())) {
 								$this->getOwnerDocument()->addReference($reference);
 								$this->refIds[] = $reference->getId();
 							} else {
@@ -109,8 +110,13 @@ class Field extends DataObject {
 	private function extractRawCSL(string $instruction) {
 		$instruction = trim($instruction);
 		$pos = strpos($instruction, '{');
-		$instruction = substr($instruction, $pos);
-		return $instruction;
+		$instructionsRawPart = substr($instruction, 0, $pos);
+		if (strpos($instructionsRawPart, 'ZOTERO_ITEM') !== false) {
+			$this->isZoteroCSL = true;
+		}
+
+		$rawCSL = substr($instruction, $pos);
+		return $rawCSL;
 	}
 
 	public function getPlainCit() {
@@ -119,5 +125,12 @@ class Field extends DataObject {
 
 	public function getRefIds() {
 		return $this->refIds;
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function isZoteroCSL(): bool {
+		return $this->isZoteroCSL;
 	}
 }

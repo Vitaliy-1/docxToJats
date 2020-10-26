@@ -13,6 +13,7 @@ class Reference {
 	private $id;
 	private $cslId;
 	private $csl;
+	public $isZoteroCSL = false;
 	private $hasStructure = false;
 
 	public function __construct(string $rawReference) {
@@ -83,11 +84,15 @@ class Reference {
 	 * @param Document $document
 	 * @return Reference|null returns reference if csl id exists or null if doesn't
 	 */
-	public static function cslIdExists(?string $id, Document $document) : ?Reference {
-		if (is_null($id)) return null;
+	public static function cslExists(Reference $refToCompare, Document $document) : ?Reference {
 
+		$refToCompareId = $refToCompare->getCslId();
 		foreach ($document->getReferences() as $reference) {
-			if ($reference->getCslId() == $id) {
+			// Just compare by ID, it's enough for Zotero
+			if ($reference->getCslId() == $refToCompareId && $refToCompare->isZoteroCSL) {
+				return $reference;
+				// Compare raw references for Mendeley
+			} elseif (strcmp($reference->getRawReference(), $refToCompare->getRawReference()) === 0) {
 				return $reference;
 			}
 		}
