@@ -26,8 +26,8 @@ class Field extends DataObject {
 	/** @var array contains instructions to be processed as strings, e.g., CSL citations as a JSON string */
 	private $instructions = array();
 
-	public function __construct(\DOMElement $domElement, Document $ownerDocument) {
-		parent::__construct($domElement, $ownerDocument);
+	public function __construct(\DOMElement $domElement, Document $ownerDocument, Par $parent) {
+		parent::__construct($domElement, $ownerDocument, $parent);
 		$this->rawRuns[] = $domElement;
 	}
 

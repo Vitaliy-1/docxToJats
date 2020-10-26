@@ -52,8 +52,8 @@ class Par extends DataObject {
 	// TODO should more detailed list styles be implemented?
 	static $numberingUnorderedMarkers = array("bullet", "none", "");
 
-	public function __construct(\DOMElement $domElement, Document $ownerDocument) {
-		parent::__construct($domElement, $ownerDocument);
+	public function __construct(\DOMElement $domElement, Document $ownerDocument, DataObject $parent = null) {
+		parent::__construct($domElement, $ownerDocument, $parent);
 		$this->defineType();
 		$this->properties = $this->setProperties('w:pPr/child::node()');
 		$this->text = $this->setContent('w:r|w:hyperlink');
@@ -100,7 +100,7 @@ class Par extends DataObject {
 			if ($contentNode->nodeName === "w:r") {
 				// complex field or text run; complex field spans on several text runs
 				if (!$field && Field::complexFieldStarts($contentNode)) {
-					$field = new Field($contentNode, $this->getOwnerDocument());
+					$field = new Field($contentNode, $this->getOwnerDocument(), $this);
 					$content[] = $field;
 				} elseif ($field && !Field::complexFieldLast($contentNode)) {
 					$field->addContent($contentNode);

@@ -27,7 +27,8 @@ abstract class Element extends \DOMElement {
 				/* @var $dataObject \docx2jats\objectModel\body\Par */
 
 				$types = $dataObject->getType();
-				if (in_array(Par::DOCX_PAR_HEADING, $types)) {
+				// Create title tag; title shouldn't be placed inside the table cell
+				if (in_array(Par::DOCX_PAR_HEADING, $types) && get_class($dataObject->getParent()) !== "docx2jats\objectModel\body\Cell") {
 					$name = "title";
 				} else {
 					$name = "p";

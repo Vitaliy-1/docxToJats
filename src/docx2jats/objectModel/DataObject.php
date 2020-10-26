@@ -24,11 +24,22 @@ abstract class DataObject {
 	/* @var $dimensionalSectionId array */
 	private $dimensionalSectionId = array();
 
+	/* @var Document|null */
 	private $ownerDocument;
 
-	public function __construct(\DOMElement $domElement, Document $ownerDocument = null)   {
+	/* @var Document|DataObject|null */
+	private $parent;
+
+	public function __construct(\DOMElement $domElement, Document $ownerDocument = null, DataObject $parent = null)   {
 		$this->domElement = $domElement;
 		$this->ownerDocument = $ownerDocument;
+		// assuming that Document is the container of this object and a direct parent
+		if (is_null($parent)) {
+			$this->parent = $ownerDocument;
+		} else {
+			$this->parent = $parent;
+		}
+
 		$this->xpath = Document::$xpath;
 	}
 
@@ -90,7 +101,7 @@ abstract class DataObject {
 
 		$parNodes = $this->getXpath()->query('w:p', $this->getDomElement());
 		foreach ($parNodes as $parNode) {
-			$par = new Par($parNode, $this->getOwnerDocument());
+			$par = new Par($parNode, $this->getOwnerDocument(), $this);
 			$content[] = $par;
 		}
 
@@ -156,5 +167,13 @@ abstract class DataObject {
 	public function setOwnerDocument(Document $ownerDocument): void
 	{
 		$this->ownerDocument = $ownerDocument;
+	}
+
+	/**
+	 * @return DataObject|Document|null
+	 * @brief retrieve the parent/container object that holds this one
+	 */
+	public function getParent() {
+		return $this->parent;
 	}
 }

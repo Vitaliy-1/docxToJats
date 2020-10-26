@@ -18,8 +18,8 @@ class Row extends DataObject {
 	private $properties = array();
 	private $cells = array();
 
-	public function __construct(\DOMElement $domElement, Document $ownerDocument) {
-		parent::__construct($domElement, $ownerDocument);
+	public function __construct(\DOMElement $domElement, Document $ownerDocument, Table $parent) {
+		parent::__construct($domElement, $ownerDocument, $parent);
 		$this->properties = $this->setProperties('w:trPr/child::node()');
 		$this->cells = $this->setContent('w:tc');
 	}
@@ -44,7 +44,7 @@ class Row extends DataObject {
 				// Omit merged nodes
 				$colspansMerged = $this->getXpath()->query('w:tcPr/w:vMerge[@w:val="continue"]', $contentNode);
 				if (!$colspansMerged->count() > 0) {
-					$cell = new Cell($contentNode, $cellNumber, $this->getOwnerDocument());
+					$cell = new Cell($contentNode, $cellNumber, $this->getOwnerDocument(), $this);
 					$content[] = $cell;
 				}
 			}

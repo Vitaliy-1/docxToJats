@@ -29,8 +29,8 @@ class Cell extends DataObject {
 	/* @var $cellNuber int */
 	private $cellNumber;
 
-	public function __construct(\DOMElement $domElement, int $cellNumber, Document $ownerDocument) {
-		parent::__construct($domElement, $ownerDocument);
+	public function __construct(\DOMElement $domElement, int $cellNumber, Document $ownerDocument, Row $parent) {
+		parent::__construct($domElement, $ownerDocument, $parent);
 
 		$this->cellNumber = $cellNumber;
 		$this->isMerged = $this->defineMerged();
