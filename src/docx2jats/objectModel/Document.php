@@ -64,7 +64,8 @@ class Document {
 		$childNodes = self::$xpath->query("//w:body/child::node()");
 
 		$content = array();
-		foreach ($childNodes as $childNode) {
+		$unUsedCaption = null;
+		foreach ($childNodes as $key => $childNode) {
 			switch ($childNode->nodeName) {
 				case "w:p":
 					// There can be multiple drawings inside a run and multiple elements inside a drawing
@@ -76,9 +77,22 @@ class Document {
 							foreach ($imageNodes as $imageNode) {
 								$figure = new Image($imageNode, $this);
 								$content[] = $figure;
+
+								// Set caption if exists
+								if ($unUsedCaption) {
+									$figure->setCaption($unUsedCaption);
+									$unUsedCaption = null;
+								}
 							}
 						}
-
+					} elseif ($this->isCaption($childNode)) {
+						// Check if previous node is drawing or table
+						$prevObject =& $content[array_key_last($content)];
+						if (get_class($prevObject) === 'docx2jats\objectModel\body\Table' || get_class($prevObject) === 'docx2jats\objectModel\body\Image') {
+							$prevObject->setCaption($childNode);
+						} else {
+							$unUsedCaption = $childNode;
+						}
 					} else {
 						$par = new Par($childNode, $this);
 						if (in_array(Par::DOCX_PAR_REF, $par->getType())) {
@@ -94,6 +108,12 @@ class Document {
 				case "w:tbl":
 					$table = new Table($childNode, $this);
 					$content[] = $table;
+
+					// Set caption if exists
+					if ($unUsedCaption) {
+						$table->setCaption($unUsedCaption);
+						$unUsedCaption = null;
+					}
 					break;
 			}
 		}
@@ -218,6 +238,22 @@ class Document {
 	private function isDrawing($childNode): bool {
 		$element = Document::$xpath->query("w:r//w:drawing", $childNode)[0];
 		if ($element) return true;
+		return false;
+	}
+
+	/**
+	 * @param $childNode
+	 * @return bool
+	 * @brief determines if an element is caption
+	 */
+	private function isCaption($childNode): bool {
+		$elementStyle = Document::$xpath->query("w:pPr/w:pStyle/@w:val", $childNode)[0];
+		if (is_null($elementStyle)) return false;
+
+		if (Document::getBuiltinStyle(Document::DOCX_STYLES_PARAGRAPH, $elementStyle->nodeValue, Table::$caption)) {
+			return true;
+		}
+
 		return false;
 	}
 

@@ -19,13 +19,22 @@ class Table extends Element {
 	}
 
 	public function setContent() {
+		$dataObject = $this->getDataObject(); /* @var $dataObject \docx2jats\objectModel\body\Table */
 
-		// TODO create and append table label and caption
+		if ($dataObject->getLabel()) {
+			$this->appendChild($this->ownerDocument->createElement('label', $dataObject->getLabel()));
+		}
+
+		if ($dataObject->getTitle()) {
+			$captionNode = $this->ownerDocument->createElement('caption');
+			$this->appendChild($captionNode);
+			$captionNode->appendChild($this->ownerDocument->createElement('title', $dataObject->getTitle()));
+		}
 
 		$tableNode = $this->ownerDocument->createElement('table');
 		$this->appendChild($tableNode);
 
-		foreach ($this->getDataObject()->getContent() as $content) {
+		foreach ($dataObject->getContent() as $content) {
 			$row = new JatsRow($content);
 			$tableNode->appendChild($row);
 			$row->setContent();

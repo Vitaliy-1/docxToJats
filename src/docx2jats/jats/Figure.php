@@ -23,6 +23,17 @@ class Figure extends Element {
 	}
 
 	function setContent() {
+		$dataObject = $this->getDataObject(); /* @var $dataObject \docx2jats\objectModel\body\Table */
+
+		if ($dataObject->getLabel()) {
+			$this->appendChild($this->ownerDocument->createElement('label', $dataObject->getLabel()));
+		}
+
+		if ($dataObject->getTitle()) {
+			$captionNode = $this->ownerDocument->createElement('caption');
+			$this->appendChild($captionNode);
+			$captionNode->appendChild($this->ownerDocument->createElement('title', $dataObject->getTitle()));
+		}
 
 		$figureNode = $this->ownerDocument->createElement('graphic');
 		$this->appendChild($figureNode);

@@ -16,6 +16,8 @@ class Image extends DataObject {
 
 	/* @var $link string */
 	private $link;
+	private ?string $label = null;
+	private ?string $title = null;
 
 	public function __construct(\DOMElement $domElement, $ownerDocument) {
 		parent::__construct($domElement, $ownerDocument);
@@ -50,4 +52,48 @@ class Image extends DataObject {
 		return $name;
 	}
 
+	/**
+	 * @param \DOMElement $el
+	 * @brief retrieve data from caption DOMElement
+	 */
+	public function setCaption(\DOMElement $el): void {
+		$label = '';
+		$title = '';
+
+		$textNodes = Document::$xpath->query('./w:r/w:t', $el);
+		foreach ($textNodes as $key => $textNode) {
+			if ($key == 0) {
+				$label .= $textNode->nodeValue;
+			} else {
+				$title .= $textNode->nodeValue;
+			}
+		}
+
+		$labelNumber = Document::$xpath->query('./w:fldSimple//w:t', $el)[0];
+		if (!is_null($labelNumber)) {
+			$label .= $labelNumber->nodeValue;
+		}
+
+		if (!empty($label)) {
+			$this->label = $label;
+		}
+
+		if (!empty($title)) {
+			$this->title = trim($title);
+		}
+	}
+
+	/**
+	 * @return string|null
+	 */
+	public function getLabel(): ?string {
+		return $this->label;
+	}
+
+	/**
+	 * @return string|null
+	 */
+	public function getTitle(): ?string {
+		return $this->title;
+	}
 }
