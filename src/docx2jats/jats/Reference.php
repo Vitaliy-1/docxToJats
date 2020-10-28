@@ -13,6 +13,8 @@ use docx2jats\objectModel\body\Reference as ObjReference;
 
 class Reference extends \DOMElement {
 
+	public const JATS_REF_ID_PREFIX = 'bib';
+
 	public static $refTypeCSLMap = [
 		'article-journal' => 'journal',
 		'book' => 'book',
@@ -35,7 +37,7 @@ class Reference extends \DOMElement {
 	}
 
 	public function setContent(ObjReference $reference) {
-		$this->setAttribute('id', $reference->getId());
+		$this->setAttribute('id', self::JATS_REF_ID_PREFIX . $reference->getId());
 		if (!$reference->hasStructure()) {
 			$mixedCitationEl = $this->ownerDocument->createElement('mixed-citation');
 			$textContent = $this->ownerDocument->createTextNode($reference->getRawReference());
