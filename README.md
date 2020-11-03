@@ -1,7 +1,7 @@
 # Description 
 DocxToJats is a PHP library that converts DOCX archives that comply OOXML standards into JATS XML (Journal Article Tag Suite) format. It's tested with DOCX produced by LibreOffice, MS Word, and Google Docs.
 ## Requirements
-* The only requirement is PHP 7.2 or higher. CLI version if running from a command line
+* The only requirement is PHP 7.3 or higher. CLI version if running from a command line
 ## Usage
 1. `git clone https://github.com/Vitaliy-1/docxToJats.git`
 2. `cd docxToJats`

@@ -19,8 +19,8 @@ class Table extends DataObject {
 	private $properties = array();
 	private $rows = array();
 	public static $caption = array("caption");
-	private ?string $label = null;
-	private ?string $title = null;
+	private $label = null;
+	private $title = null;
 
 	public function __construct(\DOMElement $domElement, Document $ownerDocument) {
 		parent::__construct($domElement, $ownerDocument);
