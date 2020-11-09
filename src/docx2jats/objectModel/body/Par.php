@@ -3,7 +3,7 @@
 /**
  * @file src/docx2jats/objectModel/body/Par.php
  *
- * Copyright (c) 2018-2019 Vitalii Bezsheiko
+ * Copyright (c) 2018-2020 Vitalii Bezsheiko
  * Distributed under the GNU GPL v3.
  *
  * @brief represent paragraph in OOXML, includes: regular paragraph, lists, heading and other paragraph styles
@@ -45,12 +45,16 @@ class Par extends DataObject {
 	/* @var $numberingType int const DOCX_LIST_TYPE_ */
 	private $numberingType;
 
-	/* @var $numberingUnorderedMarkers array
+	/**
+	 * @var $numberingUnorderedMarkers array
 	 * @brief style markers for unordered lists according to OOXML specifications, see: http://officeopenxml.com/WPnumbering-numFmt.php
 	 * Other markers are used for ordered lists
 	 */
 	// TODO should more detailed list styles be implemented?
 	static $numberingUnorderedMarkers = array("bullet", "none", "");
+
+	public $hasBookmarks = false;
+	public $bookmarkPos = array(); // position of bookmarks in the content
 
 	public function __construct(\DOMElement $domElement, Document $ownerDocument, DataObject $parent = null) {
 		parent::__construct($domElement, $ownerDocument, $parent);
@@ -106,6 +110,9 @@ class Par extends DataObject {
 					$field->addContent($contentNode);
 				} elseif ($field && Field::complexFieldLast($contentNode)) {
 					$field->addContent($contentNode);
+
+					// record a position of field with a bookmark in an array
+					if ($field->getBookmarkId()) $this->bookmarkPos[] = count($content)-1;
 					$field = null;
 				} else {
 					$text = new Text($contentNode);

@@ -3,12 +3,13 @@
 /**
  * @file src/docx2jats/objectModel/Document.php
  *
- * Copyright (c) 2018-2019 Vitalii Bezsheiko
+ * Copyright (c) 2018-2020 Vitalii Bezsheiko
  * Distributed under the GNU GPL v3.
  *
  * @brief representation of an article; extracts all main elements from DOCX document.xml
  */
 
+use docx2jats\jats\Figure;
 use docx2jats\objectModel\DataObject;
 use docx2jats\objectModel\body\Par;
 use docx2jats\objectModel\body\Table;
@@ -43,6 +44,19 @@ class Document {
 	private $references = array();
 	private $refCount = 0;
 
+	// Set unique IDs for tables and figure in order of appearance
+	private $currentFigureId = 1;
+	private $currentTableId = 1;
+
+	/**
+	 * @var $parsHaveBookmarks array
+	 * @brief Key numbers of paragraphs that contain bookmarks inside the content
+	 * is used to speed up a search
+	 */
+	private $elsHaveBookmarks = array();
+	private $elsAreTables = array();
+	private $elsAreFigures = array();
+
 	public function __construct(array $params) {
 		if (array_key_exists("relationships", $params)) {
 			$this->relationships = $params["relationships"];
@@ -66,6 +80,7 @@ class Document {
 		$content = array();
 		$unUsedCaption = null;
 		foreach ($childNodes as $key => $childNode) {
+			// Assign block elements, i.e., Figures, Tables, Paragraphs, depending on the context
 			switch ($childNode->nodeName) {
 				case "w:p":
 					// There can be multiple drawings inside a run and multiple elements inside a drawing
@@ -77,6 +92,10 @@ class Document {
 							foreach ($imageNodes as $imageNode) {
 								$figure = new Image($imageNode, $this);
 								$content[] = $figure;
+								$this->elsAreFigures[] = count($content)-1;
+
+								// Set unique ID
+								$figure->setFigureId($this->currentFigureId++);
 
 								// Set caption if exists
 								if ($unUsedCaption) {
@@ -103,12 +122,19 @@ class Document {
 						} else {
 							$content[] = $par;
 						}
+
+						if ($par->hasBookmarks) {
+							$this->elsHaveBookmarks[] = count($content)-1;
+						}
 					}
 					break;
 				case "w:tbl":
 					$table = new Table($childNode, $this);
 					$content[] = $table;
+					$this->elsAreTables[] = count($content)-1;
 
+					// Set unique ID
+					$table->setTableId($this->currentTableId++);
 					// Set caption if exists
 					if ($unUsedCaption) {
 						$table->setCaption($unUsedCaption);
@@ -120,6 +146,7 @@ class Document {
 
 		$this->content = $this->addSectionMarks($content);
 		self::$minimalHeadingLevel = $this->minimalHeadingLevel();
+		$this->setInternalRefs();
 	}
 
 	/**
@@ -285,5 +312,59 @@ class Document {
 	public function getLastReference() : ?Reference {
 		$lastId = array_key_last($this->references);
 		return $this->references[$lastId];
+	}
+
+	/**
+	 * @brief iterate through the content and establish internal links between element
+	 * elsHaveBookmarks holds position in an array of each paragraph that includes a bookmark
+	 * it's slightly faster than looping over the whole content
+	 */
+	private function setInternalRefs(): void {
+		if (empty($this->elsHaveBookmarks)) return;
+
+		// Find and map tables' and figures' bookmarks
+		$refTableMap = $this->getBookmarkCaptionMapping($this->elsAreTables);
+		$refFigureMap = $this->getBookmarkCaptionMapping($this->elsAreFigures);
+
+		// Find bookmark refs
+		foreach ($this->elsHaveBookmarks as $parKeyWithBookmark) {
+			$par = $this->getContent()[$parKeyWithBookmark]; /* @var $par Par */
+			foreach ($par->bookmarkPos as $fieldKeyWithBookmark) {
+				$field = $par->getContent()[$fieldKeyWithBookmark]; /* @var $field \docx2jats\objectModel\body\Field */
+
+				// Set links to tables
+				foreach ($refTableMap as $tableId => $tableRefs) {
+					if (in_array($field->getBookmarkId(), $tableRefs)) {
+						$field->tableIdRef = $tableId;
+					}
+				}
+
+				// Set links to Figures
+				foreach ($refFigureMap as $figureId => $figureRefs) {
+					if (in_array($field->getBookmarkId(), $figureRefs)) {
+						$field->figureIdRef = $tableId;
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * @return array
+	 * @brief (or not so brief) Map OOXML bookmark refs inside table and figures with correspondent table/figure IDs.
+	 * In OOXML those bookmarks are stored inside captions
+	 * This is used to set right link to these objects from the text
+	 * Keep in mind that bookmarks also may be stored in an external file, e.g., Mendeley plugin for LibreOffice Writer
+	 * stores links to references this way
+	 */
+	function getBookmarkCaptionMapping(array $keysInContent): array {
+		$refMap = [];
+		foreach ($keysInContent as $tableKey) {
+			$table = $this->content[$tableKey]; /* @var $table Table|Image */
+			if (empty($table->getBookmarkIds())) continue;
+			$refMap[$table->getId()] = $table->getBookmarkIds();
+		}
+
+		return $refMap;
 	}
 }

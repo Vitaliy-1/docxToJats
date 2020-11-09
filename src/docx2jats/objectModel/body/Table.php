@@ -14,6 +14,7 @@ use docx2jats\objectModel\DataObject;
 use docx2jats\objectModel\body\Row;
 use docx2jats\objectModel\Document;
 
+// TODO create a common parent class for Image and Table
 class Table extends DataObject {
 
 	private $properties = array();
@@ -21,6 +22,9 @@ class Table extends DataObject {
 	public static $caption = array("caption");
 	private $label = null;
 	private $title = null;
+	private $bookmarkIds = array();
+	private $bookmarkText = ''; // TODO Check if there are situation where bookmark text is needed for JATS
+	private $tableId = 0;
 
 	public function __construct(\DOMElement $domElement, Document $ownerDocument) {
 		parent::__construct($domElement, $ownerDocument);
@@ -102,6 +106,15 @@ class Table extends DataObject {
 		if (!empty($title)) {
 			$this->title = trim($title);
 		}
+
+		// Caption may have bookmarks that are pointed from outside the table, retrieve their IDs;
+		// TODO Check if other bookmark types may be inserted in captions
+		$bookmarkStartEls = Document::$xpath->query('w:bookmarkStart', $el);
+		foreach ($bookmarkStartEls as $bookmarkStartEl) { /* @var $bookmarkStartEl \DOMElement */
+			if ($bookmarkStartEl->hasAttribute('w:name')) {
+				$this->bookmarkIds[] = $bookmarkStartEl->getAttribute('w:name');
+			}
+		}
 	}
 
 	/**
@@ -116,5 +129,26 @@ class Table extends DataObject {
 	 */
 	public function getTitle(): ?string {
 		return $this->title;
+	}
+
+	/**
+	 * @param int $currentTableId
+	 */
+	public function setTableId(int $currentTableId): void {
+		$this->tableId = $currentTableId;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getId(): int {
+		return $this->tableId;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getBookmarkIds(): array {
+		return $this->bookmarkIds;
 	}
 }

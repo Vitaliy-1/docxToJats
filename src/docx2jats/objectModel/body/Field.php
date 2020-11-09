@@ -14,7 +14,8 @@ use docx2jats\objectModel\Document;
 
 class Field extends DataObject {
 
-	const DOCX_FIELD_CSL = 1;
+	const DOCX_FIELD_CSL = 1; // Zotero/Mendeley JSON-CSL reference
+	const DOCX_FIELD_BOOKMARK_REF = 2; // Internal OOXML reference to the bookmark
 	/** @var $type int DOCX_FIELD... const */
 	private $type = 0;
 	private $isZoteroCSL = false;
@@ -25,6 +26,20 @@ class Field extends DataObject {
 	private $rawRuns = array();
 	/** @var array contains instructions to be processed as strings, e.g., CSL citations as a JSON string */
 	private $instructions = array();
+	private $bookmarkId;
+
+	/**
+	 * @var $tableIdRef int
+	 * @brief the reference to table that the field contains
+	 * TODO check if may include several references at once
+	 */
+	public $tableIdRef = 0;
+
+	/**
+	 * @var $figureIdRef int
+	 * @brief the reference to figure that the field contains
+	 */
+	public $figureIdRef = 0;
 
 	public function __construct(\DOMElement $domElement, Document $ownerDocument, Par $parent) {
 		parent::__construct($domElement, $ownerDocument, $parent);
@@ -77,6 +92,7 @@ class Field extends DataObject {
 				if ($instructionNode) {
 					$instructionString = $instructionNode->nodeValue;
 					$this->instructions[] = $instructionString;
+					// Check if Zotero/Mendeley Citation
 					if (strpos($instructionString, 'CSL_CITATION') !== false) {
 						$this->type = self::DOCX_FIELD_CSL;
 						$rawCSL = $this->extractRawCSL($instructionString);
@@ -91,6 +107,12 @@ class Field extends DataObject {
 								$this->refIds[] = $ref->getId();
 							}
 						}
+					}
+					// Check if Link to the Bookmark (only Tables and Figures are supported)
+					elseif (strpos($instructionString, 'REF') !== false) {
+						$this->getParent()->hasBookmarks = true;
+						$this->type = self::DOCX_FIELD_BOOKMARK_REF;
+						$this->bookmarkId = $this->extractRefID($instructionString);
 					}
 				}
 			} else {
@@ -119,6 +141,18 @@ class Field extends DataObject {
 		return $rawCSL;
 	}
 
+	private function extractRefID(string $instruction) {
+		$exploded = explode(' ', trim($instruction));
+		foreach ($exploded as $key => $word) {
+			if ($word == 'REF') {
+				if (array_key_exists($key+1, $exploded)) {
+					return $exploded[$key + 1];
+				}
+			}
+		}
+		return null;
+	}
+
 	public function getPlainCit() {
 		return $this->plainCit;
 	}
@@ -132,5 +166,16 @@ class Field extends DataObject {
 	 */
 	public function isZoteroCSL(): bool {
 		return $this->isZoteroCSL;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getBookmarkId() {
+		if ($this->type === self::DOCX_FIELD_BOOKMARK_REF) {
+			return $this->bookmarkId;
+		}
+
+		return null;
 	}
 }

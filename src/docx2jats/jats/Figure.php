@@ -1,9 +1,9 @@
 <?php namespace docx2jats\jats;
 
 /**
-* @file src/docx2jats/jats/Table.php
+* @file src/docx2jats/jats/Figure.php
 *
-* Copyright (c) 2018-2019 Vitalii Bezsheiko
+* Copyright (c) 2018-2020 Vitalii Bezsheiko
 * Distributed under the GNU GPL v3.
 *
 * @brief represent JATS XML image
@@ -13,6 +13,8 @@ use docx2jats\objectModel\DataObject;
 use docx2jats\objectModel\body\Image as FigureObject;
 
 class Figure extends Element {
+	const JATS_FIGURE_ID_PREFIX = 'fig';
+
 	/* @var $dataObject FigureObject */
 	var $figureObject;
 
@@ -23,7 +25,11 @@ class Figure extends Element {
 	}
 
 	function setContent() {
-		$dataObject = $this->getDataObject(); /* @var $dataObject \docx2jats\objectModel\body\Table */
+		$dataObject = $this->getDataObject(); /* @var $dataObject \docx2jats\objectModel\body\Image */
+
+		if ($dataObject->getId()) {
+			$this->setAttribute('id', self::JATS_FIGURE_ID_PREFIX . $dataObject->getId());
+		}
 
 		if ($dataObject->getLabel()) {
 			$this->appendChild($this->ownerDocument->createElement('label', $dataObject->getLabel()));
