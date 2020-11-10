@@ -27,13 +27,14 @@ class Image extends DataObject {
 		parent::__construct($domElement, $ownerDocument);
 
 		$this->link = $this->extractLink();
-
+		$this->setCaptionLibre();
 	}
 
 	private function extractLink(): ?string {
 		$link = null;
 		$relationshipId = null;
 
+		// Only pictures are supported
 		$this->getXpath()->registerNamespace("a", "http://schemas.openxmlformats.org/drawingml/2006/main");
 		$linkElement = $this->getFirstElementByXpath(".//a:blip", $this->getDomElement());
 		if ($linkElement && $linkElement->hasAttribute("r:embed")) {
@@ -92,6 +93,22 @@ class Image extends DataObject {
 		foreach ($bookmarkStartEls as $bookmarkStartEl) { /* @var $bookmarkStartEl \DOMElement */
 			if ($bookmarkStartEl->hasAttribute('w:name')) {
 				$this->bookmarkIds[] = $bookmarkStartEl->getAttribute('w:name');
+			}
+		}
+	}
+
+	/**
+	 * @brief LibreOffice Writer saves figure caption inside the drawing element;
+	 */
+	private function setCaptionLibre(): void {
+		$txbxContent = Document::$xpath->query('.//w:txbxContent', $this->getDomElement())[0];
+		if (!$txbxContent) return;
+
+		// Pick up the first paragraph that contains caption style
+		foreach ($txbxContent->childNodes as $childEl) {
+			if ($childEl->tagName === 'w:p' && $this->getOwnerDocument()->isCaption($childEl)) {
+				$this->setCaption($childEl);
+				return;
 			}
 		}
 	}

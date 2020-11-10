@@ -83,27 +83,44 @@ class Document {
 			// Assign block elements, i.e., Figures, Tables, Paragraphs, depending on the context
 			switch ($childNode->nodeName) {
 				case "w:p":
-					// There can be multiple drawings inside a run and multiple elements inside a drawing
+					/**
+					 * TODO add support for other drawings type, e.g., c:chart
+					 * Figures are contained inside paragraphs, particularly - in text runs;
+					 * there may be several images each inside own text run.
+					 * In addition, LibreOffice Writer's DOCX export includes 2 duplicates of drawings for compatibility reasons
+					 */
 					if ($this->isDrawing($childNode)) {
-						// TODO add support for other drawings type, e.g., c:chart
-						self::$xpath->registerNamespace("pic", "http://schemas.openxmlformats.org/drawingml/2006/picture");
-						$imageNodes = self::$xpath->query(".//pic:pic", $childNode);
-						if ($imageNodes->length > 0) {
-							foreach ($imageNodes as $imageNode) {
-								$figure = new Image($imageNode, $this);
-								$content[] = $figure;
-								$this->elsAreFigures[] = count($content)-1;
+						$drawingEls = null;
+						$textRuns = self::$xpath->query('w:r', $childNode);
+						foreach ($textRuns as $textRun) {
+							// Retrieve only first one (LibreOffice Writer duplicates with a fallback option
+							$checkDrawingEl = self::$xpath->query('.//w:drawing[1]', $textRun)[0];
+							if ($checkDrawingEl) $drawingEls[] = $checkDrawingEl;
+						}
+						if (empty($drawingEls)) break;
 
-								// Set unique ID
-								$figure->setFigureId($this->currentFigureId++);
+						foreach ($drawingEls as $drawingEl) {
+							// check if contains image, charts aren't supported
+							self::$xpath->registerNamespace("pic", "http://schemas.openxmlformats.org/drawingml/2006/picture");
+							$imageNodes = self::$xpath->query(".//pic:pic", $drawingEl);
+							if ($imageNodes->length === 0) break;
 
-								// Set caption if exists
-								if ($unUsedCaption) {
-									$figure->setCaption($unUsedCaption);
-									$unUsedCaption = null;
-								}
+							$figure = new Image($drawingEl, $this);
+							$content[] = $figure;
+
+							// Get coordinates for this figure
+							$this->elsAreFigures[] = count($content) - 1;
+
+							// Set unique ID
+							$figure->setFigureId($this->currentFigureId++);
+
+							// Set caption if exists
+							if ($unUsedCaption) {
+								$figure->setCaption($unUsedCaption);
+								$unUsedCaption = null;
 							}
 						}
+
 					} elseif ($this->isCaption($childNode)) {
 						// Check if previous node is drawing or table
 						$prevObject =& $content[array_key_last($content)];
@@ -273,7 +290,7 @@ class Document {
 	 * @return bool
 	 * @brief determines if an element is caption
 	 */
-	private function isCaption($childNode): bool {
+	function isCaption($childNode): bool {
 		$elementStyle = Document::$xpath->query("w:pPr/w:pStyle/@w:val", $childNode)[0];
 		if (is_null($elementStyle)) return false;
 
