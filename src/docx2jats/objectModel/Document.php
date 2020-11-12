@@ -41,6 +41,13 @@ class Document {
 	private $numbering;
 	static $numberingXpath;
 
+	/**
+	 * @var $docPropsCustom \DOMDocument represents custom properties of the document,
+	 * e.g., Mendeley plugin for LibreOffice Writer exports CSL in this file
+	 */
+	private $docPropsCustom;
+	static $docPropsCustomXpath;
+
 	private $references = array();
 	private $refCount = 0;
 
@@ -53,9 +60,14 @@ class Document {
 	 * @brief Key numbers of paragraphs that contain bookmarks inside the content
 	 * is used to speed up a search
 	 */
-	private $elsHaveBookmarks = array();
+	private $elsHavefldCharRefs = array();
 	private $elsAreTables = array();
 	private $elsAreFigures = array();
+
+	/**
+	 * @var array bookmark id => name
+	 */
+	public $bookMarks = array();
 
 	public function __construct(array $params) {
 		if (array_key_exists("relationships", $params)) {
@@ -73,7 +85,13 @@ class Document {
 			self::$numberingXpath = new \DOMXPath($this->numbering);
 		}
 
+		if (array_key_exists("docPropsCustom", $params)) {
+			$this->docPropsCustom = $params["docPropsCustom"];
+			self::$docPropsCustomXpath = new \DOMXPath($this->docPropsCustom);
+		}
+
 		self::$xpath = new \DOMXPath($params["ooxmlDocument"]);
+		$this->findBookmarks();
 
 		$childNodes = self::$xpath->query("//w:body/child::node()");
 
@@ -141,7 +159,7 @@ class Document {
 						}
 
 						if ($par->hasBookmarks) {
-							$this->elsHaveBookmarks[] = count($content)-1;
+							$this->elsHavefldCharRefs[] = count($content)-1;
 						}
 					}
 					break;
@@ -337,29 +355,29 @@ class Document {
 	 * it's slightly faster than looping over the whole content
 	 */
 	private function setInternalRefs(): void {
-		if (empty($this->elsHaveBookmarks)) return;
+		if (empty($this->elsHavefldCharRefs)) return;
 
 		// Find and map tables' and figures' bookmarks
 		$refTableMap = $this->getBookmarkCaptionMapping($this->elsAreTables);
 		$refFigureMap = $this->getBookmarkCaptionMapping($this->elsAreFigures);
 
 		// Find bookmark refs
-		foreach ($this->elsHaveBookmarks as $parKeyWithBookmark) {
+		foreach ($this->elsHavefldCharRefs as $parKeyWithBookmark) {
 			$par = $this->getContent()[$parKeyWithBookmark]; /* @var $par Par */
-			foreach ($par->bookmarkPos as $fieldKeyWithBookmark) {
+			foreach ($par->fldCharRefPos as $fieldKeyWithBookmark) {
 				$field = $par->getContent()[$fieldKeyWithBookmark]; /* @var $field \docx2jats\objectModel\body\Field */
 
 				// Set links to tables
 				foreach ($refTableMap as $tableId => $tableRefs) {
-					if (in_array($field->getBookmarkId(), $tableRefs)) {
+					if (in_array($field->getFldCharRefId(), $tableRefs)) {
 						$field->tableIdRef = $tableId;
 					}
 				}
 
 				// Set links to Figures
 				foreach ($refFigureMap as $figureId => $figureRefs) {
-					if (in_array($field->getBookmarkId(), $figureRefs)) {
-						$field->figureIdRef = $tableId;
+					if (in_array($field->getFldCharRefId(), $figureRefs)) {
+						$field->figureIdRef = $figureId;
 					}
 				}
 			}
@@ -368,7 +386,7 @@ class Document {
 
 	/**
 	 * @return array
-	 * @brief (or not so brief) Map OOXML bookmark refs inside table and figures with correspondent table/figure IDs.
+	 * @brief (or not so brief) Map OOXML bookmark refs inside tables and figures with correspondent table/figure IDs.
 	 * In OOXML those bookmarks are stored inside captions
 	 * This is used to set right link to these objects from the text
 	 * Keep in mind that bookmarks also may be stored in an external file, e.g., Mendeley plugin for LibreOffice Writer
@@ -383,5 +401,19 @@ class Document {
 		}
 
 		return $refMap;
+	}
+
+	/**
+	 * Find and retrieve id and name from all bookmarks in the main document part
+	 */
+	private function findBookmarks(): void {
+		$bookmarkEls = self::$xpath->query('//w:bookmarkStart');
+		foreach ($bookmarkEls as $bookmarkEl) {
+			$this->bookMarks[$bookmarkEl->getAttribute('w:id')] = $bookmarkEl->getAttribute('w:name');
+		}
+	}
+
+	public function docPropsCustom() {
+		return $this->docPropsCustom;
 	}
 }

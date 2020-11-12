@@ -33,6 +33,18 @@ class Reference {
 		return $this->cslId;
 	}
 
+	/**
+	 * @param string $instruction
+	 * @return array [instructions command, CSL as a string]
+	 */
+	public static function extractRawCSL(string $instruction): array {
+		$instruction = trim($instruction);
+		$pos = strpos($instruction, '{');
+		$instructionsRawPart = substr($instruction, 0, $pos);
+		$rawCSL = substr($instruction, $pos);
+		return array($instructionsRawPart, $rawCSL);
+	}
+
 	public static function findRefsCSL(string $rawCSL) : array {
 		$citations = [];
 		$json = json_decode($rawCSL);
@@ -71,6 +83,14 @@ class Reference {
 		// Mendeley
 		if (property_exists($json, 'mendeley')) {
 			$mendeley = $json->{'mendeley'};
+			if ($props && property_exists($mendeley, 'formattedCitation')) {
+				return $mendeley->{'formattedCitation'};
+			}
+
+			if (property_exists($mendeley, 'previouslyFormattedCitation')) {
+				return $mendeley->{'plainTextFormattedCitation'};
+			}
+
 			if (property_exists($mendeley, 'previouslyFormattedCitation')) {
 				return $mendeley->{'previouslyFormattedCitation'};
 			}

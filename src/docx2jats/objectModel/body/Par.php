@@ -54,7 +54,7 @@ class Par extends DataObject {
 	static $numberingUnorderedMarkers = array("bullet", "none", "");
 
 	public $hasBookmarks = false;
-	public $bookmarkPos = array(); // position of bookmarks in the content
+	public $fldCharRefPos = array(); // position of bookmarks in the content
 
 	public function __construct(\DOMElement $domElement, Document $ownerDocument, DataObject $parent = null) {
 		parent::__construct($domElement, $ownerDocument, $parent);
@@ -112,16 +112,16 @@ class Par extends DataObject {
 					$field->addContent($contentNode);
 
 					// record a position of field with a bookmark in an array
-					if ($field->getBookmarkId()) $this->bookmarkPos[] = count($content)-1;
+					if ($field->getFldCharRefId()) $this->fldCharRefPos[] = count($content)-1;
 					$field = null;
 				} else {
-					$text = new Text($contentNode);
+					$text = new Text($contentNode, $this->getOwnerDocument());
 					$content[] = $text;
 				}
 			} elseif ($contentNode->nodeName === "w:hyperlink") {
 				$children = $this->getXpath()->query('child::node()', $contentNode);
 				foreach ($children as $child) {
-					$href = new Text($child);
+					$href = new Text($child, $this->getOwnerDocument());
 					$href->addType($href::DOCX_TEXT_EXTLINK);
 					$href->setLink();
 					$content[] = $href;

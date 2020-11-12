@@ -31,7 +31,7 @@ class Par extends Element {
 					foreach ($content->getRefIds() as $key => $id) {
 						$refEl = $this->ownerDocument->createElement('xref', $id);
 						$refEl->setAttribute('ref-type', 'bibr');
-						$refEl->setAttribute('rid', 'bib' . $id);
+						$refEl->setAttribute('rid', Reference::JATS_REF_ID_PREFIX . $id);
 						$this->appendChild($refEl);
 						if ($key !== $lastKey) {
 							$refEl = $this->ownerDocument->createTextNode(' ');

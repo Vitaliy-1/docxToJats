@@ -26,7 +26,7 @@ class Field extends DataObject {
 	private $rawRuns = array();
 	/** @var array contains instructions to be processed as strings, e.g., CSL citations as a JSON string */
 	private $instructions = array();
-	private $bookmarkId;
+	private $fldCharRefId;
 
 	/**
 	 * @var $tableIdRef int
@@ -112,11 +112,11 @@ class Field extends DataObject {
 					elseif (strpos($instructionString, 'REF') !== false) {
 						$this->getParent()->hasBookmarks = true;
 						$this->type = self::DOCX_FIELD_BOOKMARK_REF;
-						$this->bookmarkId = $this->extractRefID($instructionString);
+						$this->fldCharRefId = $this->extractRefID($instructionString);
 					}
 				}
 			} else {
-				$this->content[] = new Text($run);
+				$this->content[] = new Text($run, $this->getOwnerDocument());
 			}
 		}
 	}
@@ -129,15 +129,16 @@ class Field extends DataObject {
 		return $this->type;
 	}
 
-	private function extractRawCSL(string $instruction) {
-		$instruction = trim($instruction);
-		$pos = strpos($instruction, '{');
-		$instructionsRawPart = substr($instruction, 0, $pos);
+	/**
+	 * @param string $instruction
+	 * @return string containing raw CSL
+	 * @brief extract CSL as a string and determine its type (Zotero or Mendeley)
+	 */
+	private function extractRawCSL(string $instruction): string {
+		list($instructionsRawPart, $rawCSL) = Reference::extractRawCSL($instruction);
 		if (strpos($instructionsRawPart, 'ZOTERO_ITEM') !== false) {
 			$this->isZoteroCSL = true;
 		}
-
-		$rawCSL = substr($instruction, $pos);
 		return $rawCSL;
 	}
 
@@ -171,9 +172,9 @@ class Field extends DataObject {
 	/**
 	 * @return mixed
 	 */
-	public function getBookmarkId() {
+	public function getFldCharRefId() {
 		if ($this->type === self::DOCX_FIELD_BOOKMARK_REF) {
-			return $this->bookmarkId;
+			return $this->fldCharRefId;
 		}
 
 		return null;

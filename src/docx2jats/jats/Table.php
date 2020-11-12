@@ -6,7 +6,7 @@
  * Copyright (c) 2018-2020 Vitalii Bezsheiko
  * Distributed under the GNU GPL v3.
  *
- * @brief represent JATS XML table
+ * @brief representі JATS XML table
  */
 
 use docx2jats\objectModel\DataObject;
