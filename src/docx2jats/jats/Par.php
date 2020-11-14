@@ -15,17 +15,15 @@ use docx2jats\jats\Text as JatsText;
 
 class Par extends Element {
 
-	public function __construct(DataObject $dataObject)
-	{
+	public function __construct(DataObject $dataObject) {
 		parent::__construct($dataObject);
-
 	}
 
 	public function setContent() {
-
+		$prevTextRefs = [];
 		foreach ($this->getDataObject()->getContent() as $content) {
 			if (get_class($content) === 'docx2jats\objectModel\body\Field') {
-				// Write links to references
+				// Write links to references from Zotero and Mendeley plugin for MS Word
 				if ($content->getType() === Field::DOCX_FIELD_CSL) {
 					$lastKey = array_key_last($content->getRefIds());
 					foreach ($content->getRefIds() as $key => $id) {
@@ -54,8 +52,27 @@ class Par extends Element {
 						$refEl->setAttribute('rid', Figure::JATS_FIGURE_ID_PREFIX . $figureIdRef);
 					}
 				}
+				$prevTextRefs = []; // restart track of refs from Mendeley LW plugin
 			} else {
-				JatsText::extractText($content, $this);
+				// Write links to references from Mendeley plugin for LibreOffice Writer
+				/* @var $content \docx2jats\objectModel\body\Text */
+				if ($content->hasCSLRefs) {
+					$currentRefs = $content->refIds;
+					foreach ($currentRefs as $currentRefId) {
+						if (!in_array($currentRefId, $prevTextRefs)) {
+							$refEl = $this->ownerDocument->createElement('xref', $currentRefId);
+							$this->appendChild($refEl);
+							$refEl->setAttribute('ref-type', 'bibr');
+							$refEl->setAttribute('rid', Reference::JATS_REF_ID_PREFIX . $currentRefId);
+						}
+					}
+					$prevTextRefs = $currentRefs;
+				}
+				// Write other text
+				else {
+					JatsText::extractText($content, $this);
+					$prevTextRefs = []; // restart track of refs from Mendeley LW plugin
+				}
 			}
 		}
 	}

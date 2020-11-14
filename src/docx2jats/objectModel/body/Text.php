@@ -196,6 +196,7 @@ class Text extends DataObject {
 				}
 			}
 		}
+		$this->refIds = array_unique($this->refIds); // TODO explore why Mendeley LW plugin includes duplicates of refs into a single text run
 	}
 
 	/**
