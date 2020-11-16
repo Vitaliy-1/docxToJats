@@ -126,7 +126,7 @@ class Reference extends \DOMElement {
 		}
 
 		$event = $this->getStdClassPropertyValue($data, 'event-place');
-		if ($event) {
+		if ($event && $jatsPubType === 'conference') { // Zotero adds event-place to books and chapters
 			$confLocEl = $this->createAndAppendElement($elementCitationEl, 'conf-loc', $event);
 		}
 
