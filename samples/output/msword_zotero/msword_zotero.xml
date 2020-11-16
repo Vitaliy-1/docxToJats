@@ -1,0 +1,1830 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.2 20190208//EN" "https://jats.nlm.nih.gov/publishing/1.2/JATS-journalpublishing1.dtd">
+<article xmlns:xlink="http://www.w3.org/1999/xlink">
+  <front>
+    <journal-meta>
+      <journal-id/>
+      <issn/>
+    </journal-meta>
+    <article-meta>
+      <title-group>
+        <article-title/>
+      </title-group>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="sec-1">
+      <title>Background</title>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nunc nibh, accumsan a rhoncus maximus, vestibulum id magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultrices interdum elementum <xref ref-type="bibr" rid="bib1">1</xref> <xref ref-type="bibr" rid="bib2">2</xref>. Curabitur dignissim sit amet nisl sed tempus. Nullam imperdiet iaculis nibh eget pulvinar. Phasellus quis quam ac dui pulvinar scelerisque ac et ex. In hac habitasse platea dictumst. Quisque nisi velit, pharetra sed mi sed, volutpat euismod sapien <xref ref-type="bibr" rid="bib3">3</xref>. Duis consectetur, odio nec cursus eleifend, odio dui varius orci, non fringilla metus turpis et quam. Nulla semper eros non arcu vehicula, vitae finibus ligula mattis <xref ref-type="bibr" rid="bib4">4</xref> <xref ref-type="bibr" rid="bib5">5</xref> <xref ref-type="bibr" rid="bib6">6</xref>. Phasellus molestie est faucibus arcu consectetur, eu cursus tortor commodo.</p>
+      <p>Maecenas pretium pulvinar libero, <italic>vel placerat mauris</italic> vehicula ac <xref ref-type="bibr" rid="bib7">7</xref>. Donec pretium fringilla sapien efficitur hendrerit. Mauris eu porttitor neque. Nulla sit amet consequat eros, nec venenatis elit. Morbi auctor arcu quis vehicula finibus. Suspendisse ultricies justo id neque finibus, id mollis tellus fringilla. Duis ac tincidunt nulla. Phasellus condimentum tincidunt nisi, id tempor ante interdum non.</p>
+      <p>Integer nec neque lacus. Sed tincidunt pretium mi, eu porttitor diam cursus efficitur <xref ref-type="bibr" rid="bib8">8</xref>. Vivamus nisl ante, sollicitudin in justo sed, laoreet ultrices leo. Suspendisse diam augue, rutrum nec condimentum ut, aliquam id ex. Morbi dictum nec velit vitae sodales. Curabitur finibus purus sit amet sapien rhoncus facilisis. Pellentesque porttitor et enim dignissim feugiat. Maecenas vulputate dolor in commodo euismod. Nulla semper blandit augue nec semper. Sed in nisi condimentum purus consectetur suscipit. Etiam interdum tempor fermentum <xref ref-type="bibr" rid="bib9">9</xref> <xref ref-type="bibr" rid="bib10">10</xref>. Cras pulvinar rhoncus tortor, quis scelerisque ex eleifend a. Fusce semper augue vitae urna luctus dapibus. Sed lacinia justo nisl, vitae rutrum libero interdum in.</p>
+      <p>In vel pellentesque est, eu placerat felis. Sed porttitor felis in aliquet imperdiet. Donec porttitor sapien purus, vitae semper diam eleifend eget <xref ref-type="bibr" rid="bib11">11</xref> <xref ref-type="bibr" rid="bib12">12</xref> <xref ref-type="bibr" rid="bib13">13</xref>. Sed condimentum massa vel mi placerat rutrum. Cras in aliquet nisl. Sed blandit pharetra tellus ac mattis. Vestibulum venenatis, nisl eget fermentum consectetur, arcu velit cursus nulla, ut euismod dui quam sed sapien.</p>
+      <p><bold><italic>Interdum et malesuada fames</italic></bold> ac ante ipsum primis in faucibus. Quisque in erat nibh. Aliquam eu eros velit. Nam pretium urna id pharetra eleifend. Pellentesque consectetur ultrices dui vel hendrerit. Suspendisse non egestas lacus, vitae cursus turpis. Quisque fringilla elit non finibus mollis. Ut tortor dui, rhoncus eget magna eget, fringilla suscipit tellus. Phasellus viverra ipsum quis auctor molestie. Nulla sodales accumsan felis vel rhoncus <xref ref-type="bibr" rid="bib14">14</xref> <xref ref-type="bibr" rid="bib15">15</xref>. Etiam velit ante, feugiat non mauris ut, pretium hendrerit diam <xref ref-type="bibr" rid="bib16">16</xref> <xref ref-type="bibr" rid="bib17">17</xref> <xref ref-type="bibr" rid="bib18">18</xref>. Aliquam dignissim at odio id fermentum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas at libero ac arcu porttitor varius. In pulvinar nulla eu massa elementum aliquet a eu tellus. In hac habitasse platea dictumst <xref ref-type="bibr" rid="bib19">19</xref>.</p>
+    </sec>
+    <sec id="sec-2">
+      <title>Methods</title>
+      <sec id="sec-2_1">
+        <title>Study design</title>
+        <p><bold>Nulla ac magna eros.</bold> Mauris sed tortor ac turpis porta semper. Maecenas condimentum tortor diam, in molestie dolor sagittis in <xref ref-type="bibr" rid="bib15">15</xref> <xref ref-type="bibr" rid="bib20">20</xref> <xref ref-type="bibr" rid="bib21">21</xref>. Praesent efficitur nisi non lorem accumsan consequat. Proin sodales nisl erat, ac accumsan ante aliquam et. Donec fringilla leo vitae justo cursus congue. Suspendisse sed nulla sem.</p>
+        <p><bold>Proin eget molestie ex</bold>, nec tempor augue. Proin ut faucibus massa. Morbi interdum eleifend sagittis. Sed pretium volutpat ante, et tincidunt dui egestas ut. Mauris tristique dapibus condimentum. Sed lacinia et leo a blandit. Duis venenatis tincidunt dignissim.</p>
+        <p><bold>Aliquam id fringilla ipsum.</bold> Sed ultrices rutrum fermentum. Praesent vel gravida augue. Maecenas in urna blandit, pellentesque lectus eu, imperdiet nibh. Aliquam pretium dignissim purus, nec dapibus ligula. Vivamus feugiat felis lectus, sit amet tempor nunc sagittis at. Suspendisse tincidunt egestas porttitor. Vestibulum mauris sapien, viverra ut ex vel, accumsan convallis tellus. Quisque elementum diam non sagittis maximus. Maecenas ut dui enim. <italic>Curabitur viverra</italic> in augue id venenatis. Integer sapien nibh, varius vel maximus quis, sollicitudin quis dui. Nulla dictum blandit nulla. Sed accumsan vestibulum tortor, non facilisis dolor facilisis eget. Donec urna justo, ullamcorper non auctor in, mollis quis metus. <italic>Maecenas aliquam luctus</italic> arcu, et mattis eros ultricies a.</p>
+      </sec>
+      <sec id="sec-2_2">
+        <title>Sample</title>
+        <p>Phasellus aliquet, nisl sollicitudin efficitur scelerisque, arcu nunc cursus nunc, non ultrices leo elit quis elit: </p>
+        <list list-type="order">
+          <list-item>
+            <p>Aliquam erat volutpat. <bold>Sed sodales</bold> tempus dapibus. </p>
+          </list-item>
+          <list-item>
+            <p>Etiam risus nulla, imperdiet quis tellus quis, vestibulum egestas eros: </p>
+            <list list-type="bullet">
+              <list-item>
+                <p>Donec quis porttitor velit. Ut dui ipsum, porta id porta ac, lacinia suscipit augue.</p>
+              </list-item>
+              <list-item>
+                <p>Donec posuere quam non ante tincidunt, et malesuada orci molestie.</p>
+              </list-item>
+              <list-item>
+                <p>Maecenas sollicitudin rutrum enim in imperdiet. </p>
+              </list-item>
+            </list>
+          </list-item>
+          <list-item>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+          </list-item>
+        </list>
+        <p>Vivamus id pellentesque lectus. Nulla fringilla ex et leo elementum condimentum. Proin consectetur id magna vel posuere. Cras interdum nunc eget felis varius, pulvinar placerat nisi tempus. Aliquam est massa, cursus in vehicula vel, cursus eget ligula. Donec accumsan commodo accumsan. Phasellus erat lorem, efficitur a dignissim vitae, vehicula sit amet velit. Nulla feugiat semper gravida. Etiam gravida metus at ante venenatis, sed blandit orci eleifend. Donec ultrices pharetra lorem eget bibendum.</p>
+      </sec>
+      <sec id="sec-2_3">
+        <title>Measures</title>
+        <p>In hac habitasse platea dictumst. Nullam in magna vel velit vehicula commodo. Praesent dui velit, iaculis nec sagittis et, congue vitae nisl <xref ref-type="bibr" rid="bib1">1</xref> <xref ref-type="bibr" rid="bib22">22</xref> <xref ref-type="bibr" rid="bib23">23</xref>. Curabitur egestas neque in velit ultrices, et gravida odio elementum. Ut non eros ac dui blandit congue non sed nisl. Sed vestibulum congue risus, vitae aliquet ante ultricies quis. <italic>Quisque tortor nulla</italic>, ornare eget neque in, malesuada euismod mi. Curabitur in egestas neque. Praesent at facilisis erat. Morbi sodales justo purus, ac bibendum elit pharetra ac. Mauris ex dolor, auctor imperdiet dolor non, ullamcorper finibus orci. Mauris id mollis odio.</p>
+        <p>Praesent maximus tellus at nulla mattis, id cursus magna faucibus. In ut dui nec libero gravida fringilla. Vivamus quam justo, aliquam convallis ligula ut, feugiat faucibus eros. Etiam scelerisque viverra leo id facilisis. Pellentesque vel purus augue. Nullam eleifend commodo dictum. Morbi fermentum ut velit at tempor. Sed vehicula eros tortor, at molestie nunc tincidunt id. Sed et velit at turpis vulputate bibendum mattis eget odio. Vestibulum cursus sodales tempus. Vivamus ac libero viverra, ornare lacus eget, tempus quam. Ut tortor ligula, vulputate non turpis ut, dignissim sodales orci. In suscipit mauris vel dignissim efficitur.</p>
+      </sec>
+      <sec id="sec-2_4">
+        <title>Statistical analysis</title>
+        <p>Integer augue ipsum, hendrerit vitae ornare vel, condimentum et magna. Donec maximus varius nulla, vel viverra ligula porttitor scelerisque. Duis dictum tristique erat, et auctor ipsum. Etiam varius metus sed laoreet luctus. <bold>Vivamus suscipit</bold> gravida dui, non eleifend sapien sollicitudin eget. Donec maximus in arcu eu accumsan. Duis eleifend est velit, eget auctor felis volutpat nec. In laoreet arcu id purus commodo dignissim nec vel nisl. Quisque accumsan lectus felis, at pulvinar lacus rutrum non. Aliquam maximus ante sit amet ornare tristique. Cras tincidunt libero eleifend lorem fringilla elementum convallis ac nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse sed nulla est. Curabitur ut tortor enim.</p>
+        <p>Donec vel urna odio. Praesent efficitur eros eget purus accumsan, sed pellentesque felis tempor. Aenean hendrerit vulputate nisi, in vestibulum leo porttitor non. Aenean ut leo eget nunc dignissim convallis vitae a ante. Maecenas eget diam nec purus dignissim ullamcorper quis a elit. Nunc placerat maximus malesuada. Morbi blandit sem ac quam scelerisque, eget mollis massa consectetur. Quisque nulla tortor, volutpat ut urna eu, pellentesque cursus massa. Nullam eleifend sollicitudin felis at maximus.</p>
+      </sec>
+      <sec id="sec-2_5">
+        <title>Treatment algorithm</title>
+        <p>In sit amet lectus vel sem aliquet iaculis ut vel elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed quis mi sit amet arcu tempus rhoncus at varius est. Aliquam erat volutpat (see <xref ref-type="fig" rid="fig1">Figure 1</xref>). In fermentum aliquam ligula a commodo. Maecenas lobortis ornare arcu, sit amet lacinia neque ultrices et. Suspendisse porta tellus pulvinar, facilisis nisi ac, ornare arcu. Curabitur mattis massa velit, id auctor lorem efficitur vitae <xref ref-type="bibr" rid="bib24">24</xref>. Vestibulum faucibus, mauris vel commodo lobortis, enim nunc condimentum nulla, in hendrerit velit massa vel metus <xref ref-type="bibr" rid="bib25">25</xref> <xref ref-type="bibr" rid="bib26">26</xref> <xref ref-type="bibr" rid="bib27">27</xref>. Aliquam elementum vestibulum arcu non dictum. Etiam sit amet leo elit. Aenean nibh purus, tempus blandit metus in, finibus placerat dui. Integer lacinia ligula convallis lectus dapibus, rhoncus suscipit leo ornare. Fusce ullamcorper libero ligula, venenatis efficitur dolor mattis sed.</p>
+        <fig id="fig1">
+          <label>Figure </label>
+          <caption>
+            <title>1 In vel pellentesque est, eu placerat felis sed porttitor felis in aliquet imperdiet.</title>
+          </caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="image1.png"/>
+        </fig>
+      </sec>
+    </sec>
+    <sec id="sec-3">
+      <title>Results</title>
+      <sec id="sec-3_1">
+        <title>Primary outcome</title>
+        <p>Curabitur sodales neque eu tortor rutrum, id euismod lacus porttitor. Proin venenatis ullamcorper ante sit amet placerat. Cras semper scelerisque velit, id accumsan nisl interdum semper. Nulla vehicula sem vel neque commodo semper ac eget risus. Maecenas sit amet mattis metus, interdum hendrerit tortor. Mauris nec enim nibh. Nullam eget nunc vitae eros lobortis dignissim. Quisque posuere dolor id odio maximus viverra. Mauris fermentum ornare ultrices.</p>
+        <p>Morbi venenatis fringilla purus id laoreet. Nunc enim magna, aliquam quis justo vulputate in <xref ref-type="table" rid="tbl1">Table 1</xref>, ullamcorper suscipit libero. Mauris in arcu consequat diam volutpat aliquet quis mollis sem. Nam id lorem sit amet sapien viverra gravida. Praesent vel sem nec sapien fringilla commodo. Vestibulum turpis augue, placerat non mattis id, tempor eget nibh. Vestibulum tempus leo ut ullamcorper finibus. Donec bibendum egestas mi, a blandit odio fermentum at. Quisque iaculis arcu ac urna volutpat auctor. Nam sed nisl vitae ante vulputate convallis. Nunc sit amet ligula vel est gravida fermentum. Maecenas quis massa pellentesque, molestie augue eget, finibus ipsum. Ut porta luctus nulla, vitae accumsan risus vehicula vitae. Nullam aliquam leo id leo consequat elementum.</p>
+        <table-wrap id="tbl1">
+          <label>Table </label>
+          <caption>
+            <title>1 Interdum et malesuada fames ac ante ipsum primis in faucibus, quisque in erat nibh.</title>
+          </caption>
+          <table>
+            <tr>
+              <td>
+                <p>
+                  <bold>Measure</bold>
+                </p>
+              </td>
+              <td>
+                <p>
+                  <bold>Control group</bold>
+                </p>
+              </td>
+              <td>
+                <p>
+                  <bold>Active treatment</bold>
+                </p>
+              </td>
+              <td>
+                <p>
+                  <bold>Total</bold>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4">
+                <p>Males</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>N</p>
+              </td>
+              <td>
+                <p>33</p>
+              </td>
+              <td>
+                <p>32</p>
+              </td>
+              <td>
+                <p>65</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>% among groups</p>
+              </td>
+              <td>
+                <p>50,77%</p>
+              </td>
+              <td>
+                <p>49,23%</p>
+              </td>
+              <td>
+                <p>100%</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>% among general sample</p>
+              </td>
+              <td>
+                <p>61,11%</p>
+              </td>
+              <td>
+                <p>59,26%</p>
+              </td>
+              <td>
+                <p>60,19%</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4">
+                <p>Females</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>N</p>
+              </td>
+              <td>
+                <p>21</p>
+              </td>
+              <td>
+                <p>22</p>
+              </td>
+              <td>
+                <p>43</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>% among groups</p>
+              </td>
+              <td>
+                <p>48,84%</p>
+              </td>
+              <td>
+                <p>51,16%</p>
+              </td>
+              <td>
+                <p>100%</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>% among general sample</p>
+              </td>
+              <td>
+                <p>38,89%</p>
+              </td>
+              <td>
+                <p>40,74%</p>
+              </td>
+              <td>
+                <p>39,81%</p>
+              </td>
+            </tr>
+          </table>
+        </table-wrap>
+        <p>Vestibulum lacinia quam ut turpis vehicula, eu condimentum nisl eleifend. Sed aliquam fermentum tortor quis dapibus. Sed rhoncus est sed ligula maximus porttitor. Praesent non gravida diam. Integer sed malesuada leo. Donec posuere nulla a molestie commodo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;</p>
+        <p>Aliquam finibus interdum urna eget hendrerit. According to the <xref ref-type="table" rid="tbl1">Table 1</xref>, aliquam pharetra, erat non iaculis venenatis, ante magna blandit est, vel sodales nunc augue at ipsum <xref ref-type="bibr" rid="bib28">28</xref>. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse maximus interdum ligula, eu iaculis tellus. Aenean eleifend condimentum vehicula. Suspendisse potenti. Sed consequat finibus lectus ac accumsan. Donec congue, elit non lacinia egestas, libero urna laoreet erat, in molestie tellus libero nec nunc. Etiam et mi arcu. Sed scelerisque sapien nec tincidunt sodales. Phasellus semper lobortis dapibus. Suspendisse sem sem, dictum sit amet cursus vel, pulvinar nec metus. Suspendisse rhoncus et libero eget condimentum.</p>
+        <p>Mauris dui est, pharetra in tincidunt non, interdum vitae ex. Vivamus ac tempor arcu. Suspendisse sagittis ligula sed libero luctus vehicula. Pellentesque venenatis cursus dui, et egestas lorem malesuada ultrices. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet est interdum, tempus urna quis, tempus diam. Aliquam tincidunt sit amet orci eget tincidunt. Curabitur a metus mi. Suspendisse bibendum, nisi a accumsan sollicitudin, arcu magna vulputate nibh, et semper dui turpis sed felis. Donec ultricies nec metus ullamcorper consectetur. Integer auctor libero non hendrerit pulvinar. Phasellus in rutrum nibh, at faucibus erat. Nullam lacinia lacus scelerisque dolor consequat dapibus. Sed elementum malesuada diam, a tincidunt nisi sodales eget. Curabitur ultrices, nisi sed elementum rhoncus, tortor dolor ullamcorper tortor, at luctus ligula ante eget nisi.</p>
+      </sec>
+      <sec id="sec-3_2">
+        <title>Secondary outcomes</title>
+        <sec id="sec-3_2_1">
+          <title>Therapeutic criteria</title>
+          <p>Pellentesque ac eros id urna sodales scelerisque eget id mi. Vestibulum tempus diam non nibh facilisis feugiat. Pellentesque interdum, velit a porttitor semper, lorem lacus accumsan erat, ut tempor nulla metus sit amet urna. Quisque vitae leo lectus. Pellentesque at tincidunt turpis. Curabitur accumsan vel est quis vestibulum. Curabitur a ultricies sem, non dapibus felis. Nullam tincidunt blandit pulvinar. Duis diam neque, tincidunt in leo a, pellentesque accumsan libero. Morbi ornare dui non nibh bibendum, aliquam convallis libero venenatis <xref ref-type="bibr" rid="bib29">29</xref>. Nulla feugiat quam vel risus eleifend euismod. Phasellus lacus ligula, bibendum sit amet finibus nec, ullamcorper at purus. Aliquam gravida elementum dui, sollicitudin pharetra felis facilisis ac. Duis in mauris luctus, scelerisque felis id, vulputate nisl. Etiam turpis lectus, pretium quis egestas ac, dapibus nec nisl. Praesent ornare sapien et orci sollicitudin tristique.</p>
+          <p>Fusce at augue a ex accumsan bibendum nec porta enim: </p>
+          <list list-type="order">
+            <list-item>
+              <p>Vestibulum <italic>eget libero iaculis</italic>, sagittis mauris et, eleifend ipsum. </p>
+            </list-item>
+            <list-item>
+              <p>Suspendisse eget nibh in lacus varius laoreet. </p>
+            </list-item>
+            <list-item>
+              <p><bold>Sed elementum</bold>, lectus nec cursus ultricies, tortor libero condimentum est, nec aliquet dui ligula nec justo. </p>
+            </list-item>
+            <list-item>
+              <p>Donec ultrices, mi eu gravida pharetra, ante nulla vestibulum nisi, quis tincidunt augue justo sed mi. </p>
+            </list-item>
+            <list-item>
+              <p>Nulla et condimentum libero, id feugiat lectus. Integer lacus orci, consectetur eu finibus ut, aliquet quis ligula.</p>
+            </list-item>
+            <list-item>
+              <p>Donec maximus mauris sed tristique vulputate. Duis condimentum metus vel neque varius vehicula quis facilisis erat.</p>
+            </list-item>
+            <list-item>
+              <p>Suspendisse facilisis mattis dui, quis commodo dolor suscipit sit amet. Nullam ut lorem vitae orci faucibus congue. Praesent semper dui dictum, tincidunt metus non, posuere libero.</p>
+            </list-item>
+          </list>
+          <p>Etiam semper dui ut tincidunt sodales. Mauris libero sem, molestie in egestas non, hendrerit vel turpis. Proin id massa vitae ligula sagittis semper at eget justo. Morbi quis sodales eros. Vivamus in vehicula ex, ac posuere risus. Donec auctor magna lorem, quis consequat risus elementum a. Sed faucibus, nunc quis ornare scelerisque, nulla mi vestibulum augue, sit amet posuere nibh elit sed nisi. In ante tortor, dapibus vitae pulvinar et, dictum sit amet tellus (see <xref ref-type="table" rid="tbl2">Table 2</xref>).</p>
+          <table-wrap id="tbl2">
+            <label>Table </label>
+            <caption>
+              <title>2 Maecenas in urna blandit, pellentesque lectus eu, imperdiet nibh aliquam pretium dignissim purus, nec dapibus ligula.</title>
+            </caption>
+            <table>
+              <tr>
+                <td>
+                  <p>Measure</p>
+                </td>
+                <td>
+                  <p>N</p>
+                </td>
+                <td>
+                  <p>Mean</p>
+                </td>
+                <td>
+                  <p>SD</p>
+                </td>
+                <td>
+                  <p>95% CI</p>
+                </td>
+                <td>
+                  <p>Max</p>
+                </td>
+                <td>
+                  <p>Min</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Criterion B</p>
+                </td>
+                <td rowspan="5">
+                  <p>108</p>
+                </td>
+                <td>
+                  <p>12,00</p>
+                </td>
+                <td>
+                  <p>2,41</p>
+                </td>
+                <td>
+                  <p>11,54-12,46</p>
+                </td>
+                <td>
+                  <p>5</p>
+                </td>
+                <td>
+                  <p>19</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Criterion C</p>
+                </td>
+                <td/>
+                <td>
+                  <p>5,37</p>
+                </td>
+                <td>
+                  <p>1,13</p>
+                </td>
+                <td>
+                  <p>5,16-5,58</p>
+                </td>
+                <td>
+                  <p>3</p>
+                </td>
+                <td>
+                  <p>8</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Criterion D</p>
+                </td>
+                <td/>
+                <td>
+                  <p>16,48</p>
+                </td>
+                <td>
+                  <p>3,33</p>
+                </td>
+                <td>
+                  <p>15,85-17,12</p>
+                </td>
+                <td>
+                  <p>10</p>
+                </td>
+                <td>
+                  <p>23</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Criterion Е</p>
+                </td>
+                <td/>
+                <td>
+                  <p>13,09</p>
+                </td>
+                <td>
+                  <p>3,07</p>
+                </td>
+                <td>
+                  <p>12,51-13,68</p>
+                </td>
+                <td>
+                  <p>6</p>
+                </td>
+                <td>
+                  <p>20</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Total (B+C+D+E)</p>
+                </td>
+                <td/>
+                <td>
+                  <p>46,93</p>
+                </td>
+                <td>
+                  <p>8,44</p>
+                </td>
+                <td>
+                  <p>45,32-48,54</p>
+                </td>
+                <td>
+                  <p>26</p>
+                </td>
+                <td>
+                  <p>68</p>
+                </td>
+              </tr>
+            </table>
+          </table-wrap>
+          <p>In et semper nisi. Praesent tempus ex dui, et placerat tortor porta imperdiet. Nam placerat nisl at ipsum porttitor porttitor. Integer nibh orci, finibus eu convallis in, sollicitudin nec nunc. Pellentesque suscipit nisi nec condimentum hendrerit. Pellentesque eleifend nunc non feugiat bibendum. Ut dignissim turpis et tincidunt ullamcorper. Donec gravida et tellus vel condimentum. Mauris at sollicitudin velit. Aliquam sodales sem neque, id faucibus justo feugiat convallis. Proin feugiat purus a nulla mattis, nec tristique urna tincidunt. Quisque purus dolor, ultricies a est ac, vulputate congue mauris. Nulla tincidunt vitae purus vitae posuere. Curabitur molestie, quam vitae cursus molestie, mi risus vestibulum eros, nec egestas ex purus sit amet augue. Mauris ex eros, luctus iaculis tincidunt at, mattis eget ante.</p>
+        </sec>
+        <sec id="sec-3_2_2">
+          <title>Symptoms intensity</title>
+          <p>Praesent dignissim vel ante quis efficitur. Donec quis nulla tortor. Integer placerat ipsum in urna vehicula iaculis. Nunc in metus dui. Nam fringilla lectus vitae nisl commodo pharetra. Cras quis luctus nunc. Nullam lorem ante, sagittis sed vestibulum sit amet, placerat vel magna. In nisl orci, sodales vitae risus ac, congue pretium tellus. Nam non ultrices massa, non dignissim ante. Duis porta varius dui luctus venenatis. Donec pharetra vehicula ipsum id accumsan. Nullam vitae arcu lobortis, egestas ligula eget, ullamcorper nulla. Integer aliquam dolor id metus suscipit bibendum.</p>
+          <p>Curabitur tempus rhoncus nulla dignissim sollicitudin. As described in <xref ref-type="table" rid="tbl3">Table 3</xref>, integer faucibus sollicitudin dapibus. Donec congue dictum dolor quis mattis. Aenean dignissim orci est, id ultrices sapien efficitur eu. Suspendisse ultrices tincidunt gravida. Pellentesque enim dui, convallis id pretium dapibus, rutrum id magna. Morbi at lobortis lacus.</p>
+          <table-wrap id="tbl3">
+            <label>Table </label>
+            <caption>
+              <title>3 Vivamus feugiat felis lectus, sit amet tempor nunc sagittis at uspendisse tincidunt egestas porttitor, vestibulum mauris sapien, viverra ut ex vel, accumsan convallis tellus.</title>
+            </caption>
+            <table>
+              <tr>
+                <td>
+                  <p>Intensity</p>
+                </td>
+                <td>
+                  <p>Frequency</p>
+                </td>
+                <td>
+                  <p>% among general population</p>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  <p>Core symptoms</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Absence</p>
+                </td>
+                <td>
+                  <p>64</p>
+                </td>
+                <td>
+                  <p>59,26%</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Borderline</p>
+                </td>
+                <td>
+                  <p>28</p>
+                </td>
+                <td>
+                  <p>25,93%</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Clinically significant</p>
+                </td>
+                <td>
+                  <p>16</p>
+                </td>
+                <td>
+                  <p>14,81%</p>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  <p>Secondary symptoms</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Absence</p>
+                </td>
+                <td>
+                  <p>93</p>
+                </td>
+                <td>
+                  <p>86,11%</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Borderline</p>
+                </td>
+                <td>
+                  <p>14</p>
+                </td>
+                <td>
+                  <p>12,96%</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Clinically significant</p>
+                </td>
+                <td>
+                  <p>1</p>
+                </td>
+                <td>
+                  <p>0,93%</p>
+                </td>
+              </tr>
+            </table>
+          </table-wrap>
+        </sec>
+      </sec>
+    </sec>
+    <sec id="sec-4">
+      <title>Discussion</title>
+      <p>Aliquam erat volutpat. Curabitur blandit libero lacinia condimentum pharetra. Sed pellentesque laoreet porttitor. Etiam ullamcorper commodo nunc, sit amet iaculis augue semper a. Nunc eu lobortis augue. Phasellus dignissim ante a turpis varius, eget laoreet massa porta. Sed efficitur nulla lacus, ac sagittis ligula venenatis vel <xref ref-type="bibr" rid="bib30">30</xref> <xref ref-type="bibr" rid="bib4">4</xref> <xref ref-type="bibr" rid="bib31">31</xref>. Donec condimentum lectus sapien, ac commodo erat malesuada et. Mauris congue, lorem vel lacinia laoreet, lectus ipsum malesuada orci, vitae tincidunt lorem sapien vitae est.</p>
+      <p>Nulla aliquet magna vel urna interdum luctus. Morbi eu metus interdum, mattis orci id, dignissim tellus. Vivamus et accumsan odio, ut tempor elit <xref ref-type="bibr" rid="bib32">32</xref> <xref ref-type="bibr" rid="bib33">33</xref> <xref ref-type="bibr" rid="bib34">34</xref>. Praesent vestibulum iaculis ligula, vitae pharetra dolor rutrum ut. Pellentesque sem urna, porta a luctus vel, viverra nec enim <xref ref-type="bibr" rid="bib35">35</xref>. Aenean vitae venenatis risus <xref ref-type="bibr" rid="bib36">36</xref> <xref ref-type="bibr" rid="bib37">37</xref>. Cras ut massa efficitur, facilisis odio sed, scelerisque magna.</p>
+      <p>Vivamus felis eros, dignissim quis ultricies sit amet, hendrerit sed erat. Curabitur rhoncus finibus risus. Integer euismod dictum egestas. Fusce maximus convallis felis ac accumsan. Sed consectetur odio quis nisi facilisis, pharetra cursus diam ultricies. Mauris sit amet nisl eget nulla imperdiet iaculis. Morbi nisl urna, luctus ut sapien et, congue feugiat odio.</p>
+      <p>Sed vel iaculis nulla. Aenean magna lorem, posuere at hendrerit vehicula, viverra nec mauris. Nulla fermentum placerat est, sed laoreet nisi iaculis nec <xref ref-type="bibr" rid="bib38">38</xref> <xref ref-type="bibr" rid="bib39">39</xref> <xref ref-type="bibr" rid="bib40">40</xref>. Nullam nibh nulla, posuere eu ornare non, aliquam non neque. Cras quis consectetur arcu. Integer sit amet vestibulum lorem. Sed orci dui, egestas sit amet leo et, eleifend faucibus arcu. Integer elit metus, egestas sed massa in, egestas mollis sapien <xref ref-type="bibr" rid="bib41">41</xref> <xref ref-type="bibr" rid="bib42">42</xref> <xref ref-type="bibr" rid="bib43">43</xref> <xref ref-type="bibr" rid="bib44">44</xref>. Nulla tempor mauris eu eros rhoncus scelerisque. Suspendisse interdum congue felis, ut ultricies neque euismod in. Suspendisse et vehicula mauris. Donec maximus leo mattis turpis efficitur aliquet.</p>
+    </sec>
+    <sec id="sec-5">
+      <title>Conclusion</title>
+      <p>Aliquam elit tortor, <bold>bibendum nec</bold> ultricies ut, <bold>elementum</bold> in diam. Aenean non faucibus tellus. Aenean scelerisque, dolor ac scelerisque fringilla, lorem neque vehicula mauris, sed sodales arcu risus sit amet lectus. Donec ullamcorper pharetra nulla, ut tempus ligula iaculis eu. Cras euismod auctor sem et condimentum. Integer fringilla orci at nulla elementum, scelerisque posuere nunc dictum. Duis sodales turpis a nisl volutpat maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet augue nec sapien facilisis volutpat. Nunc sit amet venenatis dui. Ut nec neque sit amet elit tristique suscipit. Nulla quis fermentum leo.</p>
+    </sec>
+  </body>
+  <back>
+    <ref-list>
+      <ref id="bib1">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Abdallah</surname>
+              <given-names>Chadi G.</given-names>
+            </name>
+            <name>
+              <surname>Southwick</surname>
+              <given-names>Steven M.</given-names>
+            </name>
+            <name>
+              <surname>Krystal</surname>
+              <given-names>John H.</given-names>
+            </name>
+          </person-group>
+          <article-title>Neurobiology of posttraumatic stress disorder (PTSD): A path from novel pathophysiology to innovative therapeutics</article-title>
+          <source>Neuroscience Letters</source>
+          <volume>649</volume>
+          <page-range>130-132</page-range>
+          <pub-id pub-id-type="doi">10.1016/j.neulet.2017.04.046</pub-id>
+          <issn>1872-7972</issn>
+          <year>2017</year>
+        </element-citation>
+      </ref>
+      <ref id="bib2">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Stowe</surname>
+              <given-names>M. K.</given-names>
+            </name>
+            <name>
+              <surname>Turlings</surname>
+              <given-names>T. C.</given-names>
+            </name>
+            <name>
+              <surname>Loughrin</surname>
+              <given-names>J. H.</given-names>
+            </name>
+            <name>
+              <surname>Lewis</surname>
+              <given-names>W. J.</given-names>
+            </name>
+            <name>
+              <surname>Tumlinson</surname>
+              <given-names>J. H.</given-names>
+            </name>
+          </person-group>
+          <article-title>The chemistry of eavesdropping, alarm, and deceit</article-title>
+          <source>Proceedings of the National Academy of Sciences of the United States of America</source>
+          <volume>92</volume>
+          <issue>1</issue>
+          <page-range>23-28</page-range>
+          <pub-id pub-id-type="doi">10.1073/pnas.92.1.23</pub-id>
+          <issn>0027-8424</issn>
+          <year>1995</year>
+          <month>1</month>
+          <day>3</day>
+        </element-citation>
+      </ref>
+      <ref id="bib3">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sadeghi</surname>
+              <given-names>Ehsan</given-names>
+            </name>
+            <name>
+              <surname>Mahtabani</surname>
+              <given-names>Aidin</given-names>
+            </name>
+            <name>
+              <surname>Etminan</surname>
+              <given-names>Alireza</given-names>
+            </name>
+            <name>
+              <surname>Karami</surname>
+              <given-names>Farahnaz</given-names>
+            </name>
+          </person-group>
+          <article-title>Stabilization of soybean oil during accelerated storage by essential oil of ferulago angulata boiss</article-title>
+          <source>Journal of Food Science and Technology</source>
+          <volume>53</volume>
+          <issue>2</issue>
+          <page-range>1199-1204</page-range>
+          <pub-id pub-id-type="doi">10.1007/s13197-015-2078-7</pub-id>
+          <issn>0022-1155</issn>
+          <year>2016</year>
+          <month>2</month>
+        </element-citation>
+      </ref>
+      <ref id="bib4">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Asselmann</surname>
+              <given-names>E.</given-names>
+            </name>
+            <name>
+              <surname>Wittchen</surname>
+              <given-names>H.-U.</given-names>
+            </name>
+            <name>
+              <surname>Lieb</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Höfler</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Beesdo-Baum</surname>
+              <given-names>K.</given-names>
+            </name>
+          </person-group>
+          <article-title>The role of behavioral inhibition and parenting for an unfavorable emotional trauma response and PTSD</article-title>
+          <source>Acta Psychiatrica Scandinavica</source>
+          <volume>131</volume>
+          <issue>4</issue>
+          <page-range>279-289</page-range>
+          <pub-id pub-id-type="doi">10.1111/acps.12316</pub-id>
+          <issn>1600-0447</issn>
+          <year>2015</year>
+          <month>4</month>
+        </element-citation>
+      </ref>
+      <ref id="bib5">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bech</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Allerup</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <article-title>A categorical approach to depression by a three-dimensional system</article-title>
+          <source>Psychopathology</source>
+          <volume>19</volume>
+          <issue>6</issue>
+          <page-range>327-339</page-range>
+          <pub-id pub-id-type="doi">10.1159/000284457</pub-id>
+          <issn>0254-4962</issn>
+          <year>1986</year>
+        </element-citation>
+      </ref>
+      <ref id="bib6">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Anderson</surname>
+              <given-names>R. H.</given-names>
+            </name>
+            <name>
+              <surname>Tynan</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Freedom</surname>
+              <given-names>R. M.</given-names>
+            </name>
+            <name>
+              <surname>Quero-Jiménez</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Macartney</surname>
+              <given-names>F. J.</given-names>
+            </name>
+            <name>
+              <surname>Shinebourne</surname>
+              <given-names>E. A.</given-names>
+            </name>
+            <name>
+              <surname>Wilkinson</surname>
+              <given-names>J. L.</given-names>
+            </name>
+            <name>
+              <surname>Becker</surname>
+              <given-names>A. E.</given-names>
+            </name>
+          </person-group>
+          <article-title>Ventricular morphology in the univentricular heart</article-title>
+          <source>Herz</source>
+          <volume>4</volume>
+          <issue>2</issue>
+          <page-range>184-197</page-range>
+          <issn>0340-9937</issn>
+          <year>1979</year>
+          <month>4</month>
+        </element-citation>
+      </ref>
+      <ref id="bib7">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nevermann</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Kaiser</surname>
+              <given-names>H. E.</given-names>
+            </name>
+            <name>
+              <surname>Xylander</surname>
+              <given-names>W. E.</given-names>
+            </name>
+          </person-group>
+          <article-title>Microbial induced hemocytic immune reactions in chilopods</article-title>
+          <source>In Vivo (Athens, Greece)</source>
+          <volume>10</volume>
+          <issue>2</issue>
+          <page-range>161-167</page-range>
+          <issn>0258-851X</issn>
+          <year>1996</year>
+          <month>4</month>
+        </element-citation>
+      </ref>
+      <ref id="bib8">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gao</surname>
+              <given-names>Wei</given-names>
+            </name>
+            <name>
+              <surname>Zhu</surname>
+              <given-names>Hongtu</given-names>
+            </name>
+            <name>
+              <surname>Giovanello</surname>
+              <given-names>Kelly S.</given-names>
+            </name>
+            <name>
+              <surname>Smith</surname>
+              <given-names>J. Keith</given-names>
+            </name>
+            <name>
+              <surname>Shen</surname>
+              <given-names>Dinggang</given-names>
+            </name>
+            <name>
+              <surname>Gilmore</surname>
+              <given-names>John H.</given-names>
+            </name>
+            <name>
+              <surname>Lin</surname>
+              <given-names>Weili</given-names>
+            </name>
+          </person-group>
+          <article-title>Evidence on the emergence of the brain's default network from 2-week-old to 2-year-old healthy pediatric subjects</article-title>
+          <source>Proceedings of the National Academy of Sciences of the United States of America</source>
+          <volume>106</volume>
+          <issue>16</issue>
+          <page-range>6790-6795</page-range>
+          <pub-id pub-id-type="doi">10.1073/pnas.0811221106</pub-id>
+          <issn>1091-6490</issn>
+          <year>2009</year>
+          <month>4</month>
+          <day>21</day>
+        </element-citation>
+      </ref>
+      <ref id="bib9">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Colantonio</surname>
+              <given-names>Natalie</given-names>
+            </name>
+            <name>
+              <surname>Kim</surname>
+              <given-names>Younggy</given-names>
+            </name>
+          </person-group>
+          <article-title>Cadmium (II) removal mechanisms in microbial electrolysis cells</article-title>
+          <source>Journal of Hazardous Materials</source>
+          <volume>311</volume>
+          <page-range>134-141</page-range>
+          <pub-id pub-id-type="doi">10.1016/j.jhazmat.2016.02.062</pub-id>
+          <issn>1873-3336</issn>
+          <year>2016</year>
+          <month>7</month>
+          <day>5</day>
+        </element-citation>
+      </ref>
+      <ref id="bib10">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Steensel</surname>
+              <given-names>Bas</given-names>
+            </name>
+          </person-group>
+          <article-title>Scientific honesty and publicly shared lab notebooks: Sharing lab notebooks along with publication would increase transparency and help to improve honesty when reporting results</article-title>
+          <source>EMBO reports</source>
+          <volume>19</volume>
+          <issue>10</issue>
+          <pub-id pub-id-type="doi">10.15252/embr.201846866</pub-id>
+          <issn>1469-3178</issn>
+          <year>2018</year>
+        </element-citation>
+      </ref>
+      <ref id="bib11">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cline</surname>
+              <given-names>Jared</given-names>
+            </name>
+            <name>
+              <surname>Duncan</surname>
+              <given-names>David P.</given-names>
+            </name>
+            <name>
+              <surname>Molloy</surname>
+              <given-names>Chris</given-names>
+            </name>
+            <name>
+              <surname>Zuberi</surname>
+              <given-names>Omar S.</given-names>
+            </name>
+          </person-group>
+          <article-title>Survey of Intern Year Experiences for Those Going into Interventional Radiology: Comparing Surgery, Medicine and Transitional Year Internships</article-title>
+          <source>Academic Radiology</source>
+          <volume>26</volume>
+          <issue>11</issue>
+          <page-range>1555-1561</page-range>
+          <pub-id pub-id-type="doi">10.1016/j.acra.2019.03.016</pub-id>
+          <issn>1878-4046</issn>
+          <year>2019</year>
+        </element-citation>
+      </ref>
+      <ref id="bib12">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ju</surname>
+              <given-names>Yo-El</given-names>
+            </name>
+            <name>
+              <surname>Larson-Prior</surname>
+              <given-names>Linda</given-names>
+            </name>
+            <name>
+              <surname>Duntley</surname>
+              <given-names>Stephen</given-names>
+            </name>
+          </person-group>
+          <article-title>RBD and antidepressants</article-title>
+          <source>Sleep Medicine</source>
+          <volume>13</volume>
+          <issue>2</issue>
+          <page-range>211-212</page-range>
+          <pub-id pub-id-type="doi">10.1016/j.sleep.2011.05.001</pub-id>
+          <issn>1878-5506</issn>
+          <year>2012</year>
+          <month>2</month>
+        </element-citation>
+      </ref>
+      <ref id="bib13">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kieferle</surname>
+              <given-names>I.</given-names>
+            </name>
+            <name>
+              <surname>Hiller</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>Kulozik</surname>
+              <given-names>U.</given-names>
+            </name>
+            <name>
+              <surname>Germann</surname>
+              <given-names>N.</given-names>
+            </name>
+          </person-group>
+          <article-title>Rheological properties of fresh and reconstituted milk protein concentrates under standard and processing conditions</article-title>
+          <source>Journal of Colloid and Interface Science</source>
+          <volume>537</volume>
+          <page-range>458-464</page-range>
+          <pub-id pub-id-type="doi">10.1016/j.jcis.2018.11.048</pub-id>
+          <issn>1095-7103</issn>
+          <year>2019</year>
+          <month>3</month>
+          <day>1</day>
+        </element-citation>
+      </ref>
+      <ref id="bib14">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gasco</surname>
+              <given-names>Maria Rosa</given-names>
+            </name>
+            <name>
+              <surname>Priano</surname>
+              <given-names>Lorenzo</given-names>
+            </name>
+            <name>
+              <surname>Zara</surname>
+              <given-names>Gian Paolo</given-names>
+            </name>
+          </person-group>
+          <article-title>Chapter 10 - Solid lipid nanoparticles and microemulsions for drug delivery The CNS</article-title>
+          <source>Progress in Brain Research</source>
+          <volume>180</volume>
+          <page-range>181-192</page-range>
+          <pub-id pub-id-type="doi">10.1016/S0079-6123(08)80010-6</pub-id>
+          <issn>1875-7855</issn>
+          <year>2009</year>
+        </element-citation>
+      </ref>
+      <ref id="bib15">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name/>
+          </person-group>
+          <article-title>Internet-based cognitive behaviour therapy for depression and anxiety</article-title>
+          <source>Australian Family Physician</source>
+          <volume>42</volume>
+          <issue>11</issue>
+          <page-range>803-804</page-range>
+          <issn>0300-8495</issn>
+          <year>2013</year>
+          <month>11</month>
+        </element-citation>
+      </ref>
+      <ref id="bib16">
+        <element-citation publication-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Foa</surname>
+              <given-names>Edna B.</given-names>
+            </name>
+            <name>
+              <surname>Rothbaum</surname>
+              <given-names>Barbara Olasov</given-names>
+            </name>
+          </person-group>
+          <source>Treating the trauma of rape: Cognitive-behavioral therapy for PTSD</source>
+          <publisher-name>Guilford Press</publisher-name>
+          <ext-link>https://www.google.com/books?hl=ru&amp;lr=&amp;id=kVpKXYk57gkC&amp;oi=fnd&amp;pg=PA1&amp;dq=PTSD&amp;ots=ylKSAxnLq8&amp;sig=KyusLBETE-diaTVhWVpbrQL3d8Q</ext-link>
+          <year>2001</year>
+        </element-citation>
+      </ref>
+      <ref id="bib17">
+        <element-citation publication-type="chapter">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sadiq</surname>
+              <given-names>Usama</given-names>
+            </name>
+            <name>
+              <surname>Venkateswaran</surname>
+              <given-names>Seetha</given-names>
+            </name>
+            <name>
+              <surname>Guzman</surname>
+              <given-names>Nilmarie</given-names>
+            </name>
+          </person-group>
+          <chapter-title>HIV Prevention Of Opportunistic Infections</chapter-title>
+          <source>StatPearls</source>
+          <publisher-name>StatPearls Publishing</publisher-name>
+          <publisher-loc>Treasure Island (FL)</publisher-loc>
+          <ext-link>http://www.ncbi.nlm.nih.gov/books/NBK513345/</ext-link>
+          <year>2020</year>
+        </element-citation>
+      </ref>
+      <ref id="bib18">
+        <element-citation publication-type="chapter">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Leung</surname>
+              <given-names>Kam</given-names>
+            </name>
+          </person-group>
+          <chapter-title>5-Methyl-8-(4-[11C]methyl-piperazin-1-yl)-4-oxo-4H-chromene-2-carboxylic acid (4-morpholin-4-yl-phenyl)-amide</chapter-title>
+          <source>Molecular Imaging and Contrast Agent Database (MICAD)</source>
+          <publisher-name>National Center for Biotechnology Information (US)</publisher-name>
+          <publisher-loc>Bethesda (MD)</publisher-loc>
+          <ext-link>http://www.ncbi.nlm.nih.gov/books/NBK23439/</ext-link>
+          <year>2004</year>
+        </element-citation>
+      </ref>
+      <ref id="bib19">
+        <element-citation publication-type="book">
+          <source>Angiotensin-Converting Enzyme (ACE) Inhibitors: A Review of the Comparative Clinical and Cost-Effectiveness</source>
+          <publisher-name>Canadian Agency for Drugs and Technologies in Health</publisher-name>
+          <publisher-loc>Ottawa (ON)</publisher-loc>
+          <ext-link>http://www.ncbi.nlm.nih.gov/books/NBK304523/</ext-link>
+          <year>2015</year>
+        </element-citation>
+      </ref>
+      <ref id="bib20">
+        <element-citation publication-type="chapter">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Dubé</surname>
+              <given-names>Céline M.</given-names>
+            </name>
+            <name>
+              <surname>McClelland</surname>
+              <given-names>Shawn</given-names>
+            </name>
+            <name>
+              <surname>Choy</surname>
+              <given-names>ManKin</given-names>
+            </name>
+            <name>
+              <surname>Brewster</surname>
+              <given-names>Amy L.</given-names>
+            </name>
+            <name>
+              <surname>Noam</surname>
+              <given-names>Yoav</given-names>
+            </name>
+            <name>
+              <surname>Baram</surname>
+              <given-names>Tallie Z.</given-names>
+            </name>
+          </person-group>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Noebels</surname>
+              <given-names>Jeffrey L.</given-names>
+            </name>
+            <name>
+              <surname>Avoli</surname>
+              <given-names>Massimo</given-names>
+            </name>
+            <name>
+              <surname>Rogawski</surname>
+              <given-names>Michael A.</given-names>
+            </name>
+            <name>
+              <surname>Olsen</surname>
+              <given-names>Richard W.</given-names>
+            </name>
+            <name>
+              <surname>Delgado-Escueta</surname>
+              <given-names>Antonio V.</given-names>
+            </name>
+          </person-group>
+          <chapter-title>Fever, febrile seizures and epileptogenesis</chapter-title>
+          <source>Jasper's Basic Mechanisms of the Epilepsies</source>
+          <publisher-name>National Center for Biotechnology Information (US)</publisher-name>
+          <publisher-loc>Bethesda (MD)</publisher-loc>
+          <ext-link>http://www.ncbi.nlm.nih.gov/books/NBK98211/</ext-link>
+          <year>2012</year>
+        </element-citation>
+      </ref>
+      <ref id="bib21">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Anisman</surname>
+              <given-names>Hymie</given-names>
+            </name>
+            <name>
+              <surname>Matheson</surname>
+              <given-names>Kim</given-names>
+            </name>
+          </person-group>
+          <article-title>Stress, depression, and anhedonia: caveats concerning animal models</article-title>
+          <source>Neuroscience and Biobehavioral Reviews</source>
+          <volume>29</volume>
+          <issue>4-5</issue>
+          <page-range>525-546</page-range>
+          <pub-id pub-id-type="doi">10.1016/j.neubiorev.2005.03.007</pub-id>
+          <issn>0149-7634</issn>
+          <year>2005</year>
+        </element-citation>
+      </ref>
+      <ref id="bib22">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Larriva-Sahd</surname>
+              <given-names>Jorge</given-names>
+            </name>
+          </person-group>
+          <article-title>Juxtacapsular nucleus of the stria terminalis of the adult rat: extrinsic inputs, cell types, and neuronal modules: a combined Golgi and electron microscopic study</article-title>
+          <source>The Journal of Comparative Neurology</source>
+          <volume>475</volume>
+          <issue>2</issue>
+          <page-range>220-237</page-range>
+          <pub-id pub-id-type="doi">10.1002/cne.20185</pub-id>
+          <issn>0021-9967</issn>
+          <year>2004</year>
+          <month>7</month>
+          <day>19</day>
+        </element-citation>
+      </ref>
+      <ref id="bib23">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nieh</surname>
+              <given-names>Chiping</given-names>
+            </name>
+            <name>
+              <surname>Dorevitch</surname>
+              <given-names>Samuel</given-names>
+            </name>
+            <name>
+              <surname>Liu</surname>
+              <given-names>Li C.</given-names>
+            </name>
+            <name>
+              <surname>Jones</surname>
+              <given-names>Rachael M.</given-names>
+            </name>
+          </person-group>
+          <article-title>Evaluation of imputation methods for microbial surface water quality studies</article-title>
+          <source>Environmental Science. Processes &amp; Impacts</source>
+          <volume>16</volume>
+          <issue>5</issue>
+          <page-range>1145-1153</page-range>
+          <pub-id pub-id-type="doi">10.1039/c3em00721a</pub-id>
+          <issn>2050-7895</issn>
+          <year>2014</year>
+          <month>5</month>
+        </element-citation>
+      </ref>
+      <ref id="bib24">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ji</surname>
+              <given-names>Qiang</given-names>
+            </name>
+            <name>
+              <surname>Song</surname>
+              <given-names>Kai</given-names>
+            </name>
+            <name>
+              <surname>Xia</surname>
+              <given-names>LiMin</given-names>
+            </name>
+            <name>
+              <surname>Shi</surname>
+              <given-names>YunQing</given-names>
+            </name>
+            <name>
+              <surname>Ma</surname>
+              <given-names>RunHua</given-names>
+            </name>
+            <name>
+              <surname>Shen</surname>
+              <given-names>JinQiang</given-names>
+            </name>
+            <name>
+              <surname>Ding</surname>
+              <given-names>WenJun</given-names>
+            </name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>ChunSheng</given-names>
+            </name>
+          </person-group>
+          <article-title>Sequential Saphenous Vein Coronary Bypass Grafting</article-title>
+          <source>International Heart Journal</source>
+          <volume>59</volume>
+          <issue>6</issue>
+          <page-range>1211-1218</page-range>
+          <pub-id pub-id-type="doi">10.1536/ihj.17-639</pub-id>
+          <issn>1349-3299</issn>
+          <year>2018</year>
+          <month>11</month>
+          <day>28</day>
+        </element-citation>
+      </ref>
+      <ref id="bib25">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Aaron</surname>
+              <given-names>Daniel L.</given-names>
+            </name>
+            <name>
+              <surname>Fadale</surname>
+              <given-names>Paul D.</given-names>
+            </name>
+            <name>
+              <surname>Harrington</surname>
+              <given-names>Colin J.</given-names>
+            </name>
+            <name>
+              <surname>Born</surname>
+              <given-names>Christopher T.</given-names>
+            </name>
+          </person-group>
+          <article-title>Posttraumatic stress disorders in civilian orthopaedics</article-title>
+          <source>The Journal of the American Academy of Orthopaedic Surgeons</source>
+          <volume>19</volume>
+          <issue>5</issue>
+          <page-range>245-250</page-range>
+          <pub-id pub-id-type="doi">10.5435/00124635-201105000-00001</pub-id>
+          <issn>1067-151X</issn>
+          <year>2011</year>
+          <month>5</month>
+        </element-citation>
+      </ref>
+      <ref id="bib26">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Davis</surname>
+              <given-names>P. L.</given-names>
+            </name>
+            <name>
+              <surname>Raff</surname>
+              <given-names>G. L.</given-names>
+            </name>
+            <name>
+              <surname>Glantz</surname>
+              <given-names>S. A.</given-names>
+            </name>
+          </person-group>
+          <article-title>A method to identify implanted radiopaque markers despite rotation of the heart</article-title>
+          <source>The American Journal of Physiology</source>
+          <volume>239</volume>
+          <issue>4</issue>
+          <page-range>H573-H580</page-range>
+          <pub-id pub-id-type="doi">10.1152/ajpheart.1980.239.4.H573</pub-id>
+          <issn>0002-9513</issn>
+          <year>1980</year>
+          <month>10</month>
+        </element-citation>
+      </ref>
+      <ref id="bib27">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bernardy</surname>
+              <given-names>Nancy C.</given-names>
+            </name>
+            <name>
+              <surname>Friedman</surname>
+              <given-names>Matthew J.</given-names>
+            </name>
+          </person-group>
+          <article-title>Psychopharmacological strategies in the management of posttraumatic stress disorder (PTSD): what have we learned?</article-title>
+          <source>Current Psychiatry Reports</source>
+          <volume>17</volume>
+          <issue>4</issue>
+          <page-range>564</page-range>
+          <pub-id pub-id-type="doi">10.1007/s11920-015-0564-2</pub-id>
+          <issn>1535-1645</issn>
+          <year>2015</year>
+          <month>4</month>
+        </element-citation>
+      </ref>
+      <ref id="bib28">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Alwahhabi</surname>
+              <given-names>Fahad</given-names>
+            </name>
+          </person-group>
+          <article-title>Anxiety symptoms and generalized anxiety disorder in the elderly: a review</article-title>
+          <source>Harvard Review of Psychiatry</source>
+          <volume>11</volume>
+          <issue>4</issue>
+          <page-range>180-193</page-range>
+          <pub-id pub-id-type="doi">10.1080/10673220303944</pub-id>
+          <issn>1067-3229</issn>
+          <year>2003</year>
+          <month>8</month>
+        </element-citation>
+      </ref>
+      <ref id="bib29">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ahmed</surname>
+              <given-names>Mohammad I.</given-names>
+            </name>
+            <name>
+              <surname>Farrell</surname>
+              <given-names>Maureen A.</given-names>
+            </name>
+            <name>
+              <surname>Parrish</surname>
+              <given-names>Katie</given-names>
+            </name>
+            <name>
+              <surname>Karla</surname>
+              <given-names>Aman</given-names>
+            </name>
+          </person-group>
+          <article-title>Preoperative anxiety in children risk factors and non-pharmacological management</article-title>
+          <source>Middle East Journal of Anaesthesiology</source>
+          <volume>21</volume>
+          <issue>2</issue>
+          <page-range>153-164</page-range>
+          <issn>0544-0440</issn>
+          <year>2011</year>
+          <month>6</month>
+        </element-citation>
+      </ref>
+      <ref id="bib30">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ahearn</surname>
+              <given-names>Eileen P.</given-names>
+            </name>
+            <name>
+              <surname>Juergens</surname>
+              <given-names>Timothy</given-names>
+            </name>
+            <name>
+              <surname>Smith</surname>
+              <given-names>Tracey</given-names>
+            </name>
+            <name>
+              <surname>Krahn</surname>
+              <given-names>Dean</given-names>
+            </name>
+            <name>
+              <surname>Kalin</surname>
+              <given-names>Ned</given-names>
+            </name>
+          </person-group>
+          <article-title>Fear, anxiety, and the neuroimaging of PTSD</article-title>
+          <source>Psychopharmacology Bulletin</source>
+          <volume>40</volume>
+          <issue>3</issue>
+          <page-range>88-103</page-range>
+          <issn>0048-5764</issn>
+          <year>2007</year>
+        </element-citation>
+      </ref>
+      <ref id="bib31">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Andréen</surname>
+              <given-names>Lotta</given-names>
+            </name>
+            <name>
+              <surname>Nyberg</surname>
+              <given-names>Sigrid</given-names>
+            </name>
+            <name>
+              <surname>Turkmen</surname>
+              <given-names>Sharuh</given-names>
+            </name>
+            <name>
+              <surname>Wingen</surname>
+              <given-names>Guido</given-names>
+            </name>
+            <name>
+              <surname>Fernández</surname>
+              <given-names>Guillen</given-names>
+            </name>
+            <name>
+              <surname>Bäckström</surname>
+              <given-names>Torbjörn</given-names>
+            </name>
+          </person-group>
+          <article-title>Sex steroid induced negative mood may be explained by the paradoxical effect mediated by GABAA modulators</article-title>
+          <source>Psychoneuroendocrinology</source>
+          <volume>34</volume>
+          <issue>8</issue>
+          <page-range>1121-1132</page-range>
+          <pub-id pub-id-type="doi">10.1016/j.psyneuen.2009.02.003</pub-id>
+          <issn>1873-3360</issn>
+          <year>2009</year>
+          <month>9</month>
+        </element-citation>
+      </ref>
+      <ref id="bib32">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Anderson</surname>
+              <given-names>Jake</given-names>
+            </name>
+            <name>
+              <surname>Burney</surname>
+              <given-names>Susan</given-names>
+            </name>
+            <name>
+              <surname>Brooker</surname>
+              <given-names>Joanne E.</given-names>
+            </name>
+            <name>
+              <surname>Ricciardelli</surname>
+              <given-names>Lina A.</given-names>
+            </name>
+            <name>
+              <surname>Fletcher</surname>
+              <given-names>Jane M.</given-names>
+            </name>
+            <name>
+              <surname>Satasivam</surname>
+              <given-names>Prassannah</given-names>
+            </name>
+            <name>
+              <surname>Frydenberg</surname>
+              <given-names>Mark</given-names>
+            </name>
+          </person-group>
+          <article-title>Anxiety in the management of localised prostate cancer by active surveillance</article-title>
+          <source>BJU international</source>
+          <volume>114 Suppl 1</volume>
+          <page-range>55-61</page-range>
+          <pub-id pub-id-type="doi">10.1111/bju.12765</pub-id>
+          <issn>1464-410X</issn>
+          <year>2014</year>
+          <month>11</month>
+        </element-citation>
+      </ref>
+      <ref id="bib33">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Auxéméry</surname>
+              <given-names>Yann</given-names>
+            </name>
+          </person-group>
+          <article-title>Post-traumatic psychiatric disorders: PTSD is not the only diagnosis</article-title>
+          <source>Presse Medicale (Paris, France: 1983)</source>
+          <volume>47</volume>
+          <issue>5</issue>
+          <page-range>423-430</page-range>
+          <pub-id pub-id-type="doi">10.1016/j.lpm.2017.12.006</pub-id>
+          <issn>2213-0276</issn>
+          <year>2018</year>
+          <month>5</month>
+        </element-citation>
+      </ref>
+      <ref id="bib34">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cousins</surname>
+              <given-names>Ian T.</given-names>
+            </name>
+            <name>
+              <surname>Vestergren</surname>
+              <given-names>Robin</given-names>
+            </name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>Zhanyun</given-names>
+            </name>
+            <name>
+              <surname>Scheringer</surname>
+              <given-names>Martin</given-names>
+            </name>
+            <name>
+              <surname>McLachlan</surname>
+              <given-names>Michael S.</given-names>
+            </name>
+          </person-group>
+          <article-title>The precautionary principle and chemicals management: The example of perfluoroalkyl acids in groundwater</article-title>
+          <source>Environment International</source>
+          <volume>94</volume>
+          <page-range>331-340</page-range>
+          <pub-id pub-id-type="doi">10.1016/j.envint.2016.04.044</pub-id>
+          <issn>1873-6750</issn>
+          <year>2016</year>
+          <month>9</month>
+        </element-citation>
+      </ref>
+      <ref id="bib35">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Asmundson</surname>
+              <given-names>Gordon J. G.</given-names>
+            </name>
+            <name>
+              <surname>Taylor</surname>
+              <given-names>Steven</given-names>
+            </name>
+          </person-group>
+          <article-title>PTSD diagnostic criteria: understanding etiology and treatment</article-title>
+          <source>The American Journal of Psychiatry</source>
+          <volume>166</volume>
+          <issue>6</issue>
+          <page-range>726; author reply 727</page-range>
+          <pub-id pub-id-type="doi">10.1176/appi.ajp.2009.08121799</pub-id>
+          <issn>1535-7228</issn>
+          <year>2009</year>
+          <month>6</month>
+        </element-citation>
+      </ref>
+      <ref id="bib36">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Auxemery</surname>
+              <given-names>Yann</given-names>
+            </name>
+          </person-group>
+          <article-title>Etiopathogenic perspectives on chronic psycho traumatic and chronic psychotic symptoms: the hypothesis of a hyperdopaminergic endophenotype of PTSD</article-title>
+          <source>Medical Hypotheses</source>
+          <volume>79</volume>
+          <issue>5</issue>
+          <page-range>667-672</page-range>
+          <pub-id pub-id-type="doi">10.1016/j.mehy.2012.08.005</pub-id>
+          <issn>1532-2777</issn>
+          <year>2012</year>
+          <month>11</month>
+        </element-citation>
+      </ref>
+      <ref id="bib37">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cao</surname>
+              <given-names>Shiyue</given-names>
+            </name>
+            <name>
+              <surname>Wei</surname>
+              <given-names>Li</given-names>
+            </name>
+          </person-group>
+          <article-title>Predictive value of serum CRH/5-HT ratio for postpartum depression</article-title>
+          <source>International Journal of Gynaecology and Obstetrics: The Official Organ of the International Federation of Gynaecology and Obstetrics</source>
+          <pub-id pub-id-type="doi">10.1002/ijgo.13351</pub-id>
+          <issn>1879-3479</issn>
+          <year>2020</year>
+          <month>8</month>
+          <day>19</day>
+        </element-citation>
+      </ref>
+      <ref id="bib38">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Funaki</surname>
+              <given-names>Yasushi</given-names>
+            </name>
+            <name>
+              <surname>Ogasawara</surname>
+              <given-names>Naotaka</given-names>
+            </name>
+            <name>
+              <surname>Kawamura</surname>
+              <given-names>Yurika</given-names>
+            </name>
+            <name>
+              <surname>Yoshimine</surname>
+              <given-names>Takashi</given-names>
+            </name>
+            <name>
+              <surname>Tamura</surname>
+              <given-names>Yasuhiro</given-names>
+            </name>
+            <name>
+              <surname>Izawa</surname>
+              <given-names>Shinya</given-names>
+            </name>
+            <name>
+              <surname>Tsuyuki</surname>
+              <given-names>Takuji</given-names>
+            </name>
+            <name>
+              <surname>Ebi</surname>
+              <given-names>Masahide</given-names>
+            </name>
+            <name>
+              <surname>Sasaki</surname>
+              <given-names>Makoto</given-names>
+            </name>
+            <name>
+              <surname>Kasugai</surname>
+              <given-names>Kunio</given-names>
+            </name>
+          </person-group>
+          <article-title>Markedly Effective Steroid Treatment of Three Patients with Allergy-related Jackhammer Esophagus</article-title>
+          <source>Internal Medicine (Tokyo, Japan)</source>
+          <volume>59</volume>
+          <issue>5</issue>
+          <page-range>633-639</page-range>
+          <pub-id pub-id-type="doi">10.2169/internalmedicine.3865-19</pub-id>
+          <issn>1349-7235</issn>
+          <year>2020</year>
+          <month>3</month>
+          <day>1</day>
+        </element-citation>
+      </ref>
+      <ref id="bib39">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Funke</surname>
+              <given-names>Mary E.</given-names>
+            </name>
+            <name>
+              <surname>Fischetti</surname>
+              <given-names>Chanel E.</given-names>
+            </name>
+            <name>
+              <surname>Rodino</surname>
+              <given-names>Anne M.</given-names>
+            </name>
+            <name>
+              <surname>Shaheen</surname>
+              <given-names>Stephen P.</given-names>
+            </name>
+          </person-group>
+          <article-title>Methemoglobinemia Induced By Ingesting Lava Lamp Contents</article-title>
+          <source>Clinical Practice and Cases in Emergency Medicine</source>
+          <volume>2</volume>
+          <issue>3</issue>
+          <page-range>207-210</page-range>
+          <pub-id pub-id-type="doi">10.5811/cpcem.2018.5.38261</pub-id>
+          <issn>2474-252X</issn>
+          <year>2018</year>
+          <month>8</month>
+        </element-citation>
+      </ref>
+      <ref id="bib40">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Acquarone</surname>
+              <given-names>Erica</given-names>
+            </name>
+            <name>
+              <surname>Argyrousi</surname>
+              <given-names>Elentina K.</given-names>
+            </name>
+            <name>
+              <surname>Berg</surname>
+              <given-names>Manon</given-names>
+            </name>
+            <name>
+              <surname>Gulisano</surname>
+              <given-names>Walter</given-names>
+            </name>
+            <name>
+              <surname>Fà</surname>
+              <given-names>Mauro</given-names>
+            </name>
+            <name>
+              <surname>Staniszewski</surname>
+              <given-names>Agnieszka</given-names>
+            </name>
+            <name>
+              <surname>Calcagno</surname>
+              <given-names>Elisa</given-names>
+            </name>
+            <name>
+              <surname>Zuccarello</surname>
+              <given-names>Elisa</given-names>
+            </name>
+            <name>
+              <surname>D'Adamio</surname>
+              <given-names>Luciano</given-names>
+            </name>
+            <name>
+              <surname>Deng</surname>
+              <given-names>Shi-Xian</given-names>
+            </name>
+            <name>
+              <surname>Puzzo</surname>
+              <given-names>Daniela</given-names>
+            </name>
+            <name>
+              <surname>Arancio</surname>
+              <given-names>Ottavio</given-names>
+            </name>
+            <name>
+              <surname>Fiorito</surname>
+              <given-names>Jole</given-names>
+            </name>
+          </person-group>
+          <article-title>Synaptic and memory dysfunction induced by tau oligomers is rescued by up-regulation of the nitric oxide cascade</article-title>
+          <source>Molecular Neurodegeneration</source>
+          <volume>14</volume>
+          <issue>1</issue>
+          <page-range>26</page-range>
+          <pub-id pub-id-type="doi">10.1186/s13024-019-0326-4</pub-id>
+          <issn>1750-1326</issn>
+          <year>2019</year>
+        </element-citation>
+      </ref>
+      <ref id="bib41">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Adámeková</surname>
+              <given-names>E.</given-names>
+            </name>
+            <name>
+              <surname>Marková</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Kubatka</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Bojková</surname>
+              <given-names>B.</given-names>
+            </name>
+            <name>
+              <surname>Ahlers</surname>
+              <given-names>I.</given-names>
+            </name>
+            <name>
+              <surname>Ahlersová</surname>
+              <given-names>E.</given-names>
+            </name>
+          </person-group>
+          <article-title>NMU-induced mammary carcinogenesis in female rats is influenced by repeated psychoemotional stress</article-title>
+          <source>Neoplasma</source>
+          <volume>50</volume>
+          <issue>6</issue>
+          <page-range>428-432</page-range>
+          <issn>0028-2685</issn>
+          <year>2003</year>
+        </element-citation>
+      </ref>
+      <ref id="bib42">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Jiang</surname>
+              <given-names>Tongtong</given-names>
+            </name>
+            <name>
+              <surname>Liu</surname>
+              <given-names>Wang</given-names>
+            </name>
+            <name>
+              <surname>Lu</surname>
+              <given-names>Yu</given-names>
+            </name>
+            <name>
+              <surname>Fang</surname>
+              <given-names>Yanfen</given-names>
+            </name>
+            <name>
+              <surname>Chen</surname>
+              <given-names>Rui</given-names>
+            </name>
+            <name>
+              <surname>Zhang</surname>
+              <given-names>Wanli</given-names>
+            </name>
+            <name>
+              <surname>Liu</surname>
+              <given-names>Xuan</given-names>
+            </name>
+            <name>
+              <surname>Zhang</surname>
+              <given-names>Xiongwen</given-names>
+            </name>
+          </person-group>
+          <article-title>Antitumor activity of a novel Aurora A/B kinases inhibitor TY-011 against gastric cancer by inducing DNA damage</article-title>
+          <source>Anti-Cancer Drugs</source>
+          <volume>31</volume>
+          <issue>5</issue>
+          <page-range>440-451</page-range>
+          <pub-id pub-id-type="doi">10.1097/CAD.0000000000000928</pub-id>
+          <issn>1473-5741</issn>
+          <year>2020</year>
+        </element-citation>
+      </ref>
+      <ref id="bib43">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Alves</surname>
+              <given-names>Ana Rita</given-names>
+            </name>
+            <name>
+              <surname>Almeida</surname>
+              <given-names>Nuno</given-names>
+            </name>
+            <name>
+              <surname>Ferreira</surname>
+              <given-names>Margarida</given-names>
+            </name>
+            <name>
+              <surname>Tomé</surname>
+              <given-names>Luís</given-names>
+            </name>
+          </person-group>
+          <article-title>Endoscopic management of afferent loop syndrome caused by enteroliths and anastomotic stricture. A case report</article-title>
+          <source>Revista Espanola De Enfermedades Digestivas: Organo Oficial De La Sociedad Espanola De Patologia Digestiva</source>
+          <volume>109</volume>
+          <issue>6</issue>
+          <page-range>457</page-range>
+          <issn>1130-0108</issn>
+          <year>2017</year>
+          <month>6</month>
+        </element-citation>
+      </ref>
+      <ref id="bib44">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Christiansen</surname>
+              <given-names>Dorte M.</given-names>
+            </name>
+            <name>
+              <surname>Berke</surname>
+              <given-names>Emma T.</given-names>
+            </name>
+          </person-group>
+          <article-title>Gender- and Sex-Based Contributors to Sex Differences in PTSD</article-title>
+          <source>Current Psychiatry Reports</source>
+          <volume>22</volume>
+          <issue>4</issue>
+          <page-range>19</page-range>
+          <pub-id pub-id-type="doi">10.1007/s11920-020-1140-y</pub-id>
+          <issn>1535-1645</issn>
+          <year>2020</year>
+        </element-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
