@@ -175,7 +175,7 @@ class Document extends \DOMDocument {
 
 										if ($hasSublist) {
 											$subList[$content->getNumberingLevel()] = $this->createElement('list');
-											if ($content->getNumberingType() == Par::DOCX_LIST_TYPE_ORDERED) {
+											if ($content->getSubNumberingType() == Par::DOCX_LIST_TYPE_ORDERED) {
 												$subList[$content->getNumberingLevel()]->setAttribute("list-type", "order");
 											} else {
 												$subList[$content->getNumberingLevel()]->setAttribute("list-type", "bullet");

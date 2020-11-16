@@ -319,10 +319,23 @@ class Document {
 		return false;
 	}
 
+	/**
+	 * @param string $id
+	 * @param string $lvl
+	 * @return string|null
+	 * @brief Find w:num element by value of m:val attribute; retrieve w:abstractNumId element's m:val value;
+	 * Find w:abstractNum by a value of w:abstractNumId; retrieve the type of the list by the value of w:numFmt element under
+	 * w:lvl element with a correspondent value (see $lvl parameter)
+	 */
 	static function getNumberingTypeById(string $id, string $lvl): ?string {
 		if (!self::$numberingXpath) return null; // the numbering styles are missing.
 
-		$element = self::$numberingXpath->query("//*[@w:abstractNumId='" . $id . "']");
+		$abstractNumIdEl = self::$numberingXpath->query("//w:num[@w:numId='" . $id . "']/w:abstractNumId");
+		if ($abstractNumIdEl->count() == 0) return null;
+
+		$abstractNumId = $abstractNumIdEl[0]->getAttribute("w:val");
+
+		$element = self::$numberingXpath->query("//*[@w:abstractNumId='" . $abstractNumId . "']");
 		if ($element->count() == 0) return null;
 
 		$level = self::$numberingXpath->query("w:lvl[@w:ilvl='" . $lvl . "']", $element[0]);

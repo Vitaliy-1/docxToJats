@@ -44,6 +44,7 @@ class Par extends DataObject {
 
 	/* @var $numberingType int const DOCX_LIST_TYPE_ */
 	private $numberingType;
+	private $subNumberingType;
 
 	/**
 	 * @var $numberingUnorderedMarkers array
@@ -286,7 +287,10 @@ class Par extends DataObject {
 		if ($this->isOnlyChildNode($nextNumberNode)) {
 			$nextNumber = intval($nextNumberNode[0]->nodeValue);
 			if ($nextNumber < $number) $propArray[self::DOCX_LIST_END] = true;
-			if ($nextNumber > $number) $propArray[self::DOCX_LIST_HAS_SUBLIST] = true;
+			if ($nextNumber > $number) {
+				$propArray[self::DOCX_LIST_HAS_SUBLIST] = true;
+				$this->subNumberingType = $this->extractNumberingType($nextNumberNode[0]);
+			}
 		} else {
 			$propArray[self::DOCX_LIST_END] = true;
 		}
@@ -317,12 +321,12 @@ class Par extends DataObject {
 		return $this->numberingItemProp;
 	}
 
-	private function extractNumberingType(): int {
+	private function extractNumberingType($domElement = null): int {
 		$numberingType = self::DOCX_LIST_TYPE_UNORDERED;
-
 		$numberingPrNode = null;
+		if ($domElement === null) $domElement = $this->getDomElement();
 		if (in_array(self::DOCX_PAR_LIST, $this->type)) {
-			$numberingPrNode = $this->getXpath()->query("w:pPr/w:numPr", $this->getDomElement());
+			$numberingPrNode = $this->getXpath()->query("w:pPr/w:numPr", $domElement);
 		} else {
 			// shouldn't be true; keeping if other algorithm for numbering detection would be used
 			return $numberingType;
@@ -359,5 +363,9 @@ class Par extends DataObject {
 			$text .= $content->getContent();
 		}
 		return $text;
+	}
+
+	public function getSubNumberingType() {
+		return $this->subNumberingType;
 	}
 }
