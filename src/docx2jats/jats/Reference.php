@@ -15,11 +15,12 @@ class Reference extends \DOMElement {
 
 	public const JATS_REF_ID_PREFIX = 'bib';
 
+	/** @var $refTypeCSLMap string[]  compatible with Texture */
 	public static $refTypeCSLMap = [
 		'article-journal' => 'journal',
 		'book' => 'book',
 		'chapter' => 'chapter',
-		'paper-conference' => 'conference',
+		'paper-conference' => 'confproc',
 		'dataset' => 'data',
 		'article-magazine' => 'periodical',
 		'article-newspaper' => 'periodical',
@@ -62,7 +63,7 @@ class Reference extends \DOMElement {
 		if (array_key_exists($cslPubType, self::$refTypeCSLMap)) {
 			$jatsPubType = self::$refTypeCSLMap[$cslPubType];
 		} else {
-			$jatsPubType = array_key_first(self::$refTypeCSLMap);
+			$jatsPubType = current(self::$refTypeCSLMap);
 		}
 		$elementCitationEl = $this->createAndAppendElement($this, 'element-citation', null, ['publication-type' => $jatsPubType]);
 
