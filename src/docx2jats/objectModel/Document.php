@@ -70,8 +70,8 @@ class Document {
 	public $bookMarks = array();
 
 	public function __construct(array $params) {
-		if (array_key_exists("relationships", $params)) {
-			$this->relationships = $params["relationships"];
+		if (array_key_exists("partRelationships", $params)) {
+			$this->relationships = $params["partRelationships"];
 			self::$relationshipsXpath = new \DOMXPath($this->relationships);
 		}
 
