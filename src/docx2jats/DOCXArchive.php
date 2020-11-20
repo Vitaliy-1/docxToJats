@@ -206,7 +206,11 @@ class DOCXArchive extends \ZipArchive {
 		try {
 			$this->findDocumentByPath($path);
 		} catch (\Exception $e) {
-			trigger_error($e->getMessage(), E_USER_ERROR);
+			if ($defaultPath === self::CONTENT_TYPE_DOCUMENT_MAIN) {
+				trigger_error($e->getMessage(), E_USER_ERROR);
+			} else {
+				trigger_error($e->getMessage(), E_USER_NOTICE);
+			}
 		}
 
 		return $path;
