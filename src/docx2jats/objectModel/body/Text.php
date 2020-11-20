@@ -225,10 +225,12 @@ class Text extends DataObject {
 	 * @return string
 	 * @brief search for the bookmarks content in the docProps/custom.xml by bookmarkStart ID
 	 * particularly this is for searching of CSL Mendeley references
+	 * TODO search in other places
 	 */
 	public function searchBookmarkContentByName(string $bookmarkName): ?string {
-		$xpath = Document::$docPropsCustomXpath;
-		$propertyEls = $this->getOwnerDocument()->docPropsCustom()->getElementsByTagName('property');
+		$customProps = $this->getOwnerDocument()->docPropsCustom();
+		if (!$customProps) return null; // custom.xml or analog doesn't exist
+		$propertyEls = $customProps->getElementsByTagName('property');
 		$contentEls = [];
 		$nameLen = strlen($bookmarkName);
 		foreach ($propertyEls as $propertyEl) { /* @var $propertyEl \DOMElement */
@@ -255,6 +257,8 @@ class Text extends DataObject {
 			return ($aInt < $bInt) ? -1 : 1;
 		});
 
+		$xpath = Document::$docPropsCustomXpath;
+		if (!$xpath) return null;
 		$resultString = '';
 		foreach ($contentEls as $contentEl) {
 			$lpwstr = $xpath->query('./vt:lpwstr[1]', $contentEl)[0];

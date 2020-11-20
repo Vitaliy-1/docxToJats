@@ -282,6 +282,7 @@ class Document {
 				$id = $basedOn ? $basedOn->getAttribute("w:val") : null;
 
 				$name = self::$stylesXpath->query("w:name", $element)[0];
+				if (!$name) return null;
 				$styleName = $name->getAttribute("w:val");
 
 				if (in_array(strtolower($styleName), $builtinStyles)) return $styleName;
