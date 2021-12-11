@@ -99,9 +99,10 @@ class Cell extends DataObject {
 		if ($mergedNode) {
 			$isActuallyMerged = $this->getXpath()->query('w:tcPr/w:vMerge', $mergedNode);
 			if ($isActuallyMerged->count() > 0) {
-
-				$this->rowspan ++;
-				$this->extractRowspanRecursion($mergedNode);
+				if ($isActuallyMerged[0]->getAttribute('w:val') !== 'restart') {
+					$this->rowspan ++;
+					$this->extractRowspanRecursion($mergedNode);
+				}
 			}
 		}
 	}
