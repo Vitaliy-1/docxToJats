@@ -18,7 +18,7 @@ abstract class InfoBlock extends DataObject
     protected $title = null;
     protected $bookmarkIds = array();
     protected $bookmarkText = ''; // TODO Check if there are situation where bookmark text is needed for JATS
-    protected $references = array();
+    protected $refIds = array();
 
     /**
      * @param \DOMElement $el
@@ -83,12 +83,12 @@ abstract class InfoBlock extends DataObject
 
     public function hasReferences(): bool
     {
-        return (!empty($this->references));
+        return (!empty($this->refIds));
     }
 
-    public function getReferences(): array
+    public function getRefIds(): array
     {
-        return $this->references;
+        return $this->refIds;
     }
 
     /**
@@ -98,11 +98,35 @@ abstract class InfoBlock extends DataObject
      * Mendeley puts references in bookmarkStart element's name attribute, e.g.: <w:bookmarkStart w:id="3" w:name="Mendeley_Bookmark_6APrKwxfpO"/>
      * Zotero embraces references with fldChar elements (start - end), inside instructions, which start with CLS_CITATION, e.g.:
      * <w:instrText xml:space="preserve"> ADDIN ZOTERO_ITEM CSL_CITATION
+     * TODO Refactor and remove artificial Field element
      */
     protected function parseReferences(\DOMElement $el)
     {
+        $contentNodes = $this->getXpath()->query('./w:r', $el);
 
+        // Iterating through all text runs to find fields with CSL citations
+        $field = null;
+        foreach ($contentNodes as $contentNode) {
+            if (!$field && Field::complexFieldStarts($contentNode)) {
+                $field = new Field($contentNode, $this->getOwnerDocument(), $this);
+            } elseif ($field && !Field::complexFieldLast($contentNode)) {
+                $field->addContent($contentNode);
+            } elseif ($field && Field::complexFieldLast($contentNode)) {
+                $field->addContent($contentNode);
+                // Field data is recorded, write a reference if exists
+                if ($field->getType() === Field::DOCX_FIELD_CSL) {
+                    $this->addRefIds($field->getRefIds());
+                }
+            }
+        }
     }
+
+	protected function addRefIds(array $ids) {
+		$this->refIds = array_merge(
+			$this->refIds,
+			$ids
+		);
+	}
 
     abstract function getId(): int;
 }

@@ -21,6 +21,10 @@ class Table extends Element {
 	}
 
 	public function setContent() {
+		/**
+		 * TODO Table, Figure and Formula have the same caption, id and label elements handling,
+		 * consider ancestor class or trait
+		 */
 		$dataObject = $this->getDataObject(); /* @var $dataObject \docx2jats\objectModel\body\Table */
 
 		if ($dataObject->getId()) {
@@ -34,7 +38,24 @@ class Table extends Element {
 		if ($dataObject->getTitle()) {
 			$captionNode = $this->ownerDocument->createElement('caption');
 			$this->appendChild($captionNode);
-			$captionNode->appendChild($this->ownerDocument->createElement('title', $dataObject->getTitle()));
+			$title = $this->ownerDocument->createElement('title', $dataObject->getTitle());
+			// append citation if exists
+			if ($dataObject->hasReferences()) {
+				$refIds = $dataObject->getRefIds();
+				$lastKey = array_key_last($refIds->getRefIds());
+				foreach ($refIds as $key => $id) {
+					$refEl = $this->ownerDocument->createElement('xref', $id);
+					$refEl->setAttribute('ref-type', 'bibr');
+					$refEl->setAttribute('rid', Reference::JATS_REF_ID_PREFIX . $id);
+					if ($key !== $lastKey) {
+						$empty = $this->ownerDocument->createTextNode(' ');
+						$title->appendChild($empty);
+					}
+					$title->appendChild($refEl);
+	            }
+	        }
+
+			$captionNode->appendChild($title);
 		}
 
 		$tableNode = $this->ownerDocument->createElement('table');
