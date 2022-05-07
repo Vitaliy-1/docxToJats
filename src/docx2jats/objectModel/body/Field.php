@@ -41,7 +41,10 @@ class Field extends DataObject {
 	 */
 	public $figureIdRef = 0;
 
-	public function __construct(\DOMElement $domElement, Document $ownerDocument, Par $parent) {
+	/**
+	 * @param Par|InfoBlock $parent
+	 */
+	public function __construct(\DOMElement $domElement, Document $ownerDocument, DataObject $parent) {
 		parent::__construct($domElement, $ownerDocument, $parent);
 		$this->rawRuns[] = $domElement;
 	}
