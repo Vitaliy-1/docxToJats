@@ -42,7 +42,7 @@ class Table extends Element {
 			// append citation if exists
 			if ($dataObject->hasReferences()) {
 				$refIds = $dataObject->getRefIds();
-				$lastKey = array_key_last($refIds->getRefIds());
+				$lastKey = array_key_last($refIds);
 				foreach ($refIds as $key => $id) {
 					$refEl = $this->ownerDocument->createElement('xref', $id);
 					$refEl->setAttribute('ref-type', 'bibr');

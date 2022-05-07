@@ -11,14 +11,16 @@
 
 use docx2jats\objectModel\DataObject;
 use docx2jats\objectModel\Document;
+use docx2jats\objectModel\traits\Bookmarkable;
 
 abstract class InfoBlock extends DataObject
 {
+	use Bookmarkable;
+
     protected $label = null;
     protected $title = null;
     protected $bookmarkIds = array();
     protected $bookmarkText = ''; // TODO Check if there are situation where bookmark text is needed for JATS
-    protected $refIds = array();
 
     /**
      * @param \DOMElement $el
@@ -33,13 +35,22 @@ abstract class InfoBlock extends DataObject
         $this->parseReferences($el);
 
         // Identifying and parsing block element's label and title
-        $textNodes = Document::$xpath->query('./w:r/w:t', $el);
-        foreach ($textNodes as $key => $textNode) {
+        $runs = Document::$xpath->query('./w:r', $el);
+        foreach ($runs as $key => $run) {
+			$textNodes = Document::$xpath->query('./w:t', $run);
+			if (!count($textNodes)) continue;
+
+			// Just assuming that the first text run is a label, default for MS Word and Libreoffice Writer
             if ($key == 0) {
-                $label .= $textNode->nodeValue;
-            } else {
-                $title .= $textNode->nodeValue;
+                $label .= $textNodes[0]->nodeValue;
             }
+
+			// This detects if text run contains a bookmark
+			$refCount = count($this->refIds);
+	        $this->setBookmarks($run);
+			if (count($this->refIds) > $refCount) continue; // Don't parse text if a text run
+
+	        $title .= $textNodes[0]->nodeValue;
         }
 
         $labelNumber = Document::$xpath->query('./w:fldSimple//w:t', $el)[0];
@@ -86,11 +97,6 @@ abstract class InfoBlock extends DataObject
         return (!empty($this->refIds));
     }
 
-    public function getRefIds(): array
-    {
-        return $this->refIds;
-    }
-
     /**
      * @param \DOMElement $el
      * @return void
@@ -100,7 +106,7 @@ abstract class InfoBlock extends DataObject
      * <w:instrText xml:space="preserve"> ADDIN ZOTERO_ITEM CSL_CITATION
      * TODO Refactor and remove artificial Field element
      */
-    protected function parseReferences(\DOMElement $el)
+    protected function parseReferences(\DOMElement $el): void
     {
         $contentNodes = $this->getXpath()->query('./w:r', $el);
 
@@ -119,6 +125,9 @@ abstract class InfoBlock extends DataObject
                 }
             }
         }
+
+		// Try to find Mendeley references
+	    if (empty($this->bookmarkIds)) return;
     }
 
 	protected function addRefIds(array $ids) {

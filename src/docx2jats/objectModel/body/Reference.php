@@ -87,7 +87,7 @@ class Reference {
 				return $mendeley->{'formattedCitation'};
 			}
 
-			if (property_exists($mendeley, 'previouslyFormattedCitation')) {
+			if (property_exists($mendeley, 'plainTextFormattedCitation')) {
 				return $mendeley->{'plainTextFormattedCitation'};
 			}
 
