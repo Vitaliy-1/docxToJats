@@ -141,8 +141,11 @@ class Document {
 
 					} elseif ($this->isCaption($childNode)) {
 						// Check if previous node is drawing or table
-						$prevObject =& $content[array_key_last($content)];
-						if (get_class($prevObject) === 'docx2jats\objectModel\body\Table' || get_class($prevObject) === 'docx2jats\objectModel\body\Image') {
+						if (!empty($content)) { // may be empty if caption is the first element
+							$prevObject =& $content[array_key_last($content)];
+						}
+
+						if (isset($prevObject) && (get_class($prevObject) === 'docx2jats\objectModel\body\Table' || get_class($prevObject) === 'docx2jats\objectModel\body\Image')) {
 							$prevObject->setCaption($childNode);
 						} else {
 							$unUsedCaption = $childNode;
