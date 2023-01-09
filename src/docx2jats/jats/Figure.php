@@ -54,7 +54,7 @@ class Figure extends Element {
 					$title->appendChild($refEl);
 				}
 			}
-			$captionNode->appendChild();
+			$captionNode->appendChild($title);
 		}
 
 		$figureNode = $this->ownerDocument->createElement('graphic');
